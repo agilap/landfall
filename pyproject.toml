@@ -1,0 +1,21 @@
+[project]
+name = "landfall"
+version = "0.1.0"
+description = "Counterfactual typhoon damage simulation for the Philippines — research demonstration, not an operational tool"
+requires-python = ">=3.10,<3.12"
+dependencies = [
+    # CLIMADA is installed via conda/mamba (see docs/week1-plan.md), not listed here:
+    # its geospatial deps (GDAL etc.) do not resolve reliably from PyPI.
+    "anthropic",
+    "pydantic>=2",
+]
+
+[project.scripts]
+landfall = "landfall.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

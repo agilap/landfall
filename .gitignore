@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Data — large/downloaded artifacts stay out of git
+data/tracks/*
+data/sitreps/*
+data/cache/*
+!data/tracks/.gitkeep
+!data/sitreps/.gitkeep
+!data/cache/.gitkeep
+
+# CLIMADA's own data dir if created locally
+climada/
+
+# Outputs (hero images get committed deliberately, not by default)
+outputs/*
+!outputs/.gitkeep
+
+# Secrets
+.env
+
+# OMC state
+.omc/
