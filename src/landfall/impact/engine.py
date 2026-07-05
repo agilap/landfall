@@ -12,7 +12,11 @@ from pathlib import Path
 from climada.engine import ImpactCalc
 from climada.entity.impact_funcs.trop_cyclone import ImpfSetTropCyclone
 
-from landfall.exposure.litpop import asset_exposure, population_exposure
+# v1.1 Phase 3: hybrid replaces pure LitPop -- OSM buildings + PSA census population
+# for Catanduanes/Albay/Camarines Sur, LitPop everywhere else. See
+# docs/v1.1-phase3-result.md for why (LitPop's nightlights weighting undervalues rural
+# Bicol) and what this doesn't resolve (uneven OSM mapping completeness by province).
+from landfall.exposure.hybrid import asset_exposure, population_exposure
 from landfall.hazard.tracks import get_track
 from landfall.hazard.wind import wind_field
 from landfall.impact.municipality import affected_population_by_municipality, damage_by_municipality

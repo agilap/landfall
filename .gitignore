@@ -10,9 +10,11 @@ venv/
 data/tracks/*
 data/sitreps/*
 data/cache/*
+data/exposure_v1_1/*
 !data/tracks/.gitkeep
 !data/sitreps/.gitkeep
 !data/cache/.gitkeep
+!data/exposure_v1_1/.gitkeep
 
 # CLIMADA's own data dir if created locally
 climada/

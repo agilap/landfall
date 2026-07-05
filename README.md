@@ -34,8 +34,9 @@ each storm's regional exposure corridor:
 Phases 1–8 of the PRD (`landfall-prd.md`) are done. What's built and what isn't, honestly:
 
 **Built:** IBTrACS track ingestion for all three storms; Holland (1980) wind fields;
-LitPop exposure; WP2-calibrated impact functions (Eberenz et al. 2021, RMSF calibration
-as of v1.1 Phase 1 — see E1 below); per-municipality
+LitPop exposure nationally, with a hybrid OSM-buildings + PSA-census layer for
+Catanduanes/Albay/Camarines Sur (v1.1 Phase 3 — see E1 below); WP2-calibrated impact
+functions (Eberenz et al. 2021, RMSF calibration as of v1.1 Phase 1 — see E1 below); per-municipality
 damage and affected-population breakdown (GADM administrative boundaries, spatially
 joined against impact-engine output — Odette's top municipality is Cebu City, Haiyan's is
 Tacloban City, both matching real-world reporting); a validated, hard-range-checked
@@ -99,11 +100,51 @@ matched historical event equally instead. Curve shapes compared in
 `docs/impact_curves_tdr_vs_rmsf.png`. Full derivation, including the honest Odette
 finding below, in `docs/v1.1-phase1-result.md`.
 
-| Storm | Baseline (TDR) | Fix 1: RMSF calibration | NDRRMC actual |
-|---|---|---|---|
-| Haiyan (2013) | $49.3M (18.6× under) | $775.6M (**1.18× under**) | ~$917M |
-| Rolly (2020) | $0.40M (575× under) | $7.86M (**29.6× under**) | ~$233M |
-| Odette (2021) — **held out** | $184.1M (2.5–5.0× under) | $3,532.1M (**3.9–7.7× over**) | $459M–$915M |
+**v1.1, Phase 2 (hazard-layer investigation)** tested whether Rolly's remaining 29.6×
+gap was hazard-side: compared IBTrACS' USA/JTWC vs Tokyo/JMA agency tracks directly
+(converting Tokyo's 10-min winds to 1-min-sustained via the same Knapp & Kruk 2010
+factor CLIMADA applies internally), checked the simulated peak wind over Catanduanes
+against the storm's observed landfall intensity, and ran three sensitivity tests
+(alternate agency, RMW, grid resolution). One finding worth flagging on its own: the
+task's "~62 m/s 1-min sustained" reference figure turned out to be JMA's raw 10-minute
+value mislabeled — properly rescaled, the correct 1-min-sustained comparison range is
+81.9–87.5 m/s, against which the current pipeline's simulated peak (73.8 m/s) is a real
+but modest ~10–16% shortfall, nowhere near enough to explain a 29.6× damage error on its
+own. All three sensitivity levers tested (agency, RMW, grid resolution) left the peak
+essentially unchanged or slightly worse — a clean negative result, not reworked until
+something moved. **No configuration change is adopted**; E1's Phase 2 column is
+unchanged from Phase 1 for exactly that reason. Full derivation, including an
+unexplained anomaly (Bato, Rolly's actual landfall municipality, shows a much lower
+simulated wind than its neighbors) flagged for future investigation, in
+`docs/v1.1-phase2-result.md`.
+
+**v1.1, Phase 3 (exposure upgrade)** replaced LitPop with real OSM building footprints
++ PSA 2020 census population for the three Rolly-affected provinces (Catanduanes,
+Albay, Camarines Sur) — LitPop's nightlights weighting structurally undervalues rural,
+low-luminosity areas exactly like these. Each building's value comes from its footprint
+area × a construction-cost rate (₱9,949/m², a commercial QS-guide national average —
+PSA's own regional building-permit cost statistics are blocked from this environment,
+so this is a disclosed lower-authority substitute) converted at the World Bank's 2020
+average exchange rate (₱49.624/USD). Population comes from PSA's actual 2020 census,
+barangay by barangay (80.0% exact name-match to GADM boundaries; the rest filled by an
+area-proportional split that conserves each municipality's true PSA total exactly — two
+real name-join bugs, PSA's parenthetical alt-names and City-name word-order
+differences, were caught and fixed here rather than left as silent undercounts).
+**Sanity check, reported as found**: Catanduanes' total exposed value jumped 27.79×
+over LitPop's figure ($27.9M → $774.7M) — checked against per-capita plausibility
+(LitPop implied $103/person, implausibly low; the new figure implies ~$2,850/person,
+plausible against ~$3,300 Philippine per-capita GDP) rather than assumed correct.
+**Important caveat**: OSM building-mapping completeness is wildly uneven across the
+three provinces — 102% of PSA's housing-unit count in Catanduanes, but only 57.8% in
+Albay and just 19.2% in Camarines Sur — so this phase's result likely still
+*undercounts* true exposure in two of three provinces. Full derivation in
+`docs/v1.1-phase3-result.md`.
+
+| Storm | Baseline (TDR) | Fix 1: RMSF calibration | Fix 2: hazard-layer (Phase 2) | Fix 3: hybrid exposure (Phase 3) | NDRRMC actual |
+|---|---|---|---|---|---|
+| Haiyan (2013) | $49.3M (18.6× under) | $775.6M (1.18× under) | no change | $775.6M (unchanged) | ~$917M |
+| Rolly (2020) | $0.40M (575× under) | $7.86M (29.6× under) | no change | **$91.6M (2.54× under)** | ~$233M |
+| Odette (2021) — **held out** | $184.1M (2.5–5.0× under) | $3,532.1M (3.9–7.7× over) | no change | $3,532.1M (unchanged) | $459M–$915M |
 
 No target error factor — this table exists to be honest, not to hit a number (PRD §6).
 Fit on Haiyan + Rolly only; Odette was never previewed or used to choose RMSF over

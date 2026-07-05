@@ -18,6 +18,9 @@ dependencies = [
     "pdfplumber",
     "sentence-transformers",
     "numpy",
+    "osmnx",
+    "openpyxl",
+    "requests",
 ]
 
 [project.scripts]
