@@ -19,6 +19,16 @@ failure mode. It does not make attribution a *proven* property in general — a 
 row can still be about the wrong entity if retrieval itself returns the wrong row, which
 is a retrieval-quality question, not a groundedness one. Groundedness here is necessary,
 not sufficient.
+
+A second instance of "not sufficient," found later: groundedness checks numeric
+*presence*, not comparative *correctness* across multiple grounded numbers. Directly
+testing comparison queries (v1.2, see README's "Multi-storm comparison edge cases"
+section and evals/rag_storm_date_cases.py) found "Which suffered more damage,
+Catanduanes or Albay, during Rolly?" answering "Catanduanes suffered more" while citing
+the *same* 293,000,000 figure from the finding above against Albay's 1,271,000,000 —
+every number individually grounded, the comparison between them simply wrong, stable
+across 4/4 repeated calls. Fixed via an explicit write-the-numbers-out-before-concluding
+instruction in SYSTEM_PROMPT below; verified 5/5 correct after.
 """
 
 import logging
@@ -42,7 +52,15 @@ typhoon, using ONLY the numbered source passages you're given below. Every factu
 must be attributable to one of the passages — cite it inline like [1], [2] using the \
 passage numbers given. Do not state any number that does not appear in the passages \
 themselves; do not compute, estimate, sum, or extrapolate new numbers from them. If the \
-passages don't answer the question, say so plainly rather than guessing."""
+passages don't answer the question, say so plainly rather than guessing.
+
+If the question asks you to compare, rank, or say which of two or more things is \
+larger/smaller/worse/better, first write out the specific numbers you are about to \
+cite for each side, then numerically compare those written-out digits before stating \
+which one is larger — do not conclude which side "wins" first and rationalize it \
+afterward. If the numbers you can cite for each side aren't measuring the same thing \
+(e.g. one is a single sector's damage and the other is a broader total), say that \
+explicitly rather than presenting them as a clean comparison."""
 
 
 def _format_passages(results: list[dict]) -> str:

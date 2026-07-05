@@ -1,22 +1,36 @@
-"""RAG interrogator storm/date phrasing robustness check.
+"""RAG interrogator storm/date phrasing and multi-entity comparison robustness check.
 
 Not a numbered E-eval (no PRD §6 slot for this) -- a regression check born out of
-directly testing how `landfall/llm/rag_answer.py` handles storm identity and date
-references in free-text questions, both with and without the `storm_key` filter
-(landfall/cli.py's `--storm`). Two failure modes matter here, checked differently:
+directly testing how `landfall/llm/rag_answer.py` handles storm identity, dates, and
+comparisons in free-text questions, both with and without the `storm_key` filter
+(landfall/cli.py's `--storm`). Three failure modes matter here, checked differently:
 
 1. Retrieval correctness when no filter is given: does the query text alone (a PH-local
    name, an international name, a bare date) correctly surface the right storm's
    passages? Checked by asserting the top retrieved passage's `storm_key`.
-2. Synthesis safety when the filter and the query's own storm/date reference disagree
-   (a user error, or a storm/date genuinely absent from the filtered corpus): does the
-   model correctly decline rather than fabricate a cross-storm answer? Checked by
-   asserting the *raw* (pre-verifier) draft has zero ungrounded claims -- not that zero
-   claims are stated at all. A correct decline often restates a truthfully-grounded
-   date while explaining the mismatch (e.g. "they only reference events in November
-   2020"), which is legitimate context, not fabrication; the first version of this
-   check asserted zero claims and wrongly flagged two such correct, safe declines as
-   failures before this was caught and fixed.
+2. Synthesis safety when the filter and the query's own storm/date reference disagree,
+   or when a question spans multiple storms the single-storm-scoped system can't
+   compare: does the model correctly decline rather than fabricate a cross-storm/
+   cross-date answer? Checked by asserting the *raw* (pre-verifier) draft has zero
+   ungrounded claims -- not that zero claims are stated at all. A correct decline often
+   restates a truthfully-grounded date while explaining the mismatch (e.g. "they only
+   reference events in November 2020"), which is legitimate context, not fabrication;
+   the first version of this check asserted zero claims and wrongly flagged two such
+   correct, safe declines as failures before this was caught and fixed.
+3. Comparative reasoning correctness: when the model DOES attempt a comparison (e.g.
+   between two regions within one storm, not a cross-storm case), are the individually-
+   grounded numbers actually compared correctly? A real, stable bug was found here:
+   "Which suffered more damage, Catanduanes or Albay, during Rolly?" (filter=rolly)
+   answered "Catanduanes suffered more" while citing 293,000,000 for Catanduanes vs.
+   1,271,000,000 for Albay -- the model's own cited numbers contradicted its own stated
+   conclusion, reproduced on 4/4 repeated calls before the fix below. Every individual
+   number was grounded (present in a retrieved passage); the comparison drawn between
+   them was simply wrong. Groundedness checks numeric presence, not comparative
+   correctness -- a new instance of the "groundedness != correct attribution" limitation
+   documented in docs/phase6-result.md, extended here to reasoning across grounded facts
+   rather than attributing a single one. Fixed by adding an explicit
+   write-the-numbers-out-before-concluding instruction to rag_answer.py's SYSTEM_PROMPT;
+   verified 5/5 correct after the fix (up from 0/4 before it).
 
 Requires OPENAI_API_KEY. Run from the `landfall` conda env: python evals/rag_storm_date_cases.py
 """
@@ -44,6 +58,33 @@ REFUSAL_CASES = [
     ),
     ("plausible-but-wrong date, filter=rolly", "What happened in Catanduanes on November 15, 2020?", "rolly"),
     ("vague relative date, no filter", "What happened last week during the typhoon?", None),
+    (
+        "three-way ranking, no filter",
+        "Rank Haiyan, Rolly, and Odette by total agricultural damage.",
+        None,
+    ),
+    ("mixed aliases two storms, no filter", "Compare Yolanda and Goni's storm surge impact.", None),
+    (
+        "registered vs unregistered storm",
+        "How does Rolly compare to Typhoon Ondoy in terms of flooding?",
+        "rolly",
+    ),
+    (
+        "implicit 'the three typhoons', no filter",
+        "Which of the three typhoons caused the most damage overall?",
+        None,
+    ),
+]
+
+# (label, question, storm_filter, phrase that must NOT appear -- the exact wrong
+# conclusion the real bug produced, case-insensitive substring match).
+COMPARISON_CASES = [
+    (
+        "within-storm region comparison (the bug case)",
+        "Which suffered more damage, Catanduanes or Albay, during Rolly?",
+        "rolly",
+        "catanduanes suffered more",
+    ),
 ]
 
 
@@ -59,7 +100,7 @@ def main():
         if not ok:
             failures.append(label)
 
-    print("\n--- synthesis safety (filter/query mismatch must decline, not fabricate) ---")
+    print("\n--- synthesis safety (filter/query mismatch, or cross-storm comparison, must decline) ---")
     for label, question, storm_filter in REFUSAL_CASES:
         text, _results, raw, _final = answer_verified(question, storm_key=storm_filter)
         ok = not raw.ungrounded
@@ -68,7 +109,17 @@ def main():
             print(f"    text: {text}")
             failures.append(label)
 
-    print(f"\n{len(RETRIEVAL_CASES) + len(REFUSAL_CASES) - len(failures)}/{len(RETRIEVAL_CASES) + len(REFUSAL_CASES)} passed")
+    print("\n--- comparative reasoning correctness (grounded numbers, compared correctly) ---")
+    for label, question, storm_filter, forbidden_phrase in COMPARISON_CASES:
+        text, _results, raw, _final = answer_verified(question, storm_key=storm_filter)
+        ok = not raw.ungrounded and forbidden_phrase not in text.lower()
+        print(f"[{'OK' if ok else 'FAIL'}] {label}: raw ungrounded={raw.ungrounded}")
+        if not ok:
+            print(f"    text: {text}")
+            failures.append(label)
+
+    total = len(RETRIEVAL_CASES) + len(REFUSAL_CASES) + len(COMPARISON_CASES)
+    print(f"\n{total - len(failures)}/{total} passed")
     if failures:
         print(f"failures: {failures}")
 

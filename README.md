@@ -337,23 +337,42 @@ stating plainly rather than letting a 5/5 score imply more than it does. Full wr
 including a second finding (retrieval quality is sensitive to whether a question is
 phrased as natural language vs. keywords), in `docs/phase6-result.md`.
 
-**v1.2 follow-up — storm/date phrasing robustness, a clean result rather than another
-bug.** Directly tested whether the interrogator confuses storm identity or dates:
-PH-local vs. international storm names with no `--storm` filter (retrieval correctly
-resolves both, since the sitreps self-identify with both names in their own headers),
-a bare-date query with no storm name at all, and — the more adversarial cases — a
-`--storm` filter deliberately mismatched against a query naming a *different* storm or
-year, and a compound query spanning two storms at once. All 9 cases passed: the
-`storm_key` filter correctly restricts retrieval, and the model correctly declines
-rather than fabricating a cross-storm or cross-date answer, with zero ungrounded
-claims in the raw draft even for the adversarial cases. One thing worth disclosing
-about the check itself: the first version of this eval used too strict a pass
-criterion (asserting zero claims stated at all) and wrongly flagged two of these
-correct, safe declines as failures — a correct decline often restates a truthfully-
-grounded date while explaining the mismatch (e.g. "they only reference events in
-November 2020"), which is legitimate context, not fabrication. Caught by reading the
-actual failing output before trusting the eval's verdict, and fixed to check for
-ungrounded claims specifically. Reusable regression check: `evals/rag_storm_date_cases.py`.
+**v1.2 follow-up — storm/date phrasing robustness, a clean result.** Directly tested
+whether the interrogator confuses storm identity or dates: PH-local vs. international
+storm names with no `--storm` filter (retrieval correctly resolves both, since the
+sitreps self-identify with both names in their own headers), a bare-date query with no
+storm name at all, and — the more adversarial cases — a `--storm` filter deliberately
+mismatched against a query naming a *different* storm or year, and a compound query
+spanning two storms at once. All 9 cases passed: the `storm_key` filter correctly
+restricts retrieval, and the model correctly declines rather than fabricating a
+cross-storm or cross-date answer, with zero ungrounded claims in the raw draft even for
+the adversarial cases. One thing worth disclosing about the check itself: the first
+version of this eval used too strict a pass criterion (asserting zero claims stated at
+all) and wrongly flagged two of these correct, safe declines as failures — a correct
+decline often restates a truthfully-grounded date while explaining the mismatch (e.g.
+"they only reference events in November 2020"), which is legitimate context, not
+fabrication. Caught by reading the actual failing output before trusting the eval's
+verdict, and fixed to check for ungrounded claims specifically.
+
+**Multi-storm comparison edge cases — a real bug, and a new instance of "groundedness
+!= correct attribution."** Extending the same testing to genuine multi-entity
+*comparison* queries (three-way rankings, mixed PH-local/international aliases across
+two different storms, a registered-vs-unregistered comparison) found the same safe
+decline behavior in every actually-cross-storm case — the system correctly recognizes
+it can't compare across storms and says so. But a *within-storm* region comparison
+surfaced a genuine, stable bug: **"Which suffered more damage, Catanduanes or Albay,
+during Rolly?" answered "Catanduanes suffered more" while citing 293,000,000 for
+Catanduanes against 1,271,000,000 for Albay** — the model's own cited numbers
+contradicted its own stated conclusion, reproduced on 4 of 4 repeated calls. Every
+individual number was grounded (present in a retrieved passage); the *comparison*
+drawn between them was simply wrong — a new instance of the "groundedness ≠ correct
+attribution" limitation from `docs/phase6-result.md`, extended from misattributing a
+single number to mis-comparing two correctly-attributed ones. Fixed by adding an
+explicit instruction to `rag_answer.py`'s system prompt: write out the specific cited
+numbers for each side and numerically compare the digits before concluding, rather than
+stating a conclusion first and rationalizing it afterward. Verified 5 of 5 correct
+after the fix (up from 0 of 4 before it), with no regression across the other 13 cases.
+Reusable regression check for all of the above: `evals/rag_storm_date_cases.py`.
 
 The PRD's representative queries (§3) ask things like *"which municipalities in Cebu see
 the highest housing damage?"* — answerable now via a spatial join against GADM
