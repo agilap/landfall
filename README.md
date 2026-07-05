@@ -172,5 +172,3 @@ these fixed 50 cases would be overfitting the exam.
 - `src/landfall/verify/` — groundedness verifier
 - `evals/` — E2 groundedness eval; E3 compiler-accuracy eval + its 50-case dataset
 - `docs/` — phase-by-phase build log and honest results, including every bug caught
-
-Part of the Verified AI portfolio (Mulat · Receipts · **Landfall**).
