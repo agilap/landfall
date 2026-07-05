@@ -7,15 +7,18 @@ reference set is built from the passages themselves, not from cached impact-engi
 output. Same verification pattern (extract numbers, check, regenerate, redact), applied
 to a different source of truth.
 
-IMPORTANT LIMITATION (see docs/phase6-result.md): this proves a stated number appears
-*somewhere* in a retrieved passage, not that it's correctly attributed to what the answer
-claims it's about. NDRRMC sitreps are table-heavy PDFs; pypdf's linear text extraction
-flattens multi-column tables, so a chunk can interleave numbers and labels from unrelated
-rows. A confirmed real example: a query about Catanduanes water-infrastructure damage
-retrieved a passage and produced a fully "grounded" (5/5) answer attributing 293,000,000
-to a specific municipality — but the raw extracted text shows that figure sitting among
-fragments of what looks like a different province's table entirely. Groundedness here is
-necessary, not sufficient.
+IMPORTANT LIMITATION, partially addressed (see docs/phase6-result.md and
+docs/phase7-result.md): groundedness proves a stated number appears *somewhere* in a
+retrieved passage, not that it's correctly attributed to what the answer claims it's
+about. The original finding was pypdf's linear text extraction flattening multi-column
+NDRRMC tables so a chunk interleaved numbers and labels from unrelated rows — a confirmed
+real example attributed a province-level subtotal (293,000,000) to one municipality's
+row. Phase 7 replaced that with table-aware extraction (landfall/llm/rag.py) so a chunk
+built from one table row never contains another row's numbers, which fixes that specific
+failure mode. It does not make attribution a *proven* property in general — a retrieved
+row can still be about the wrong entity if retrieval itself returns the wrong row, which
+is a retrieval-quality question, not a groundedness one. Groundedness here is necessary,
+not sufficient.
 """
 
 import logging
@@ -24,7 +27,7 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from landfall.llm.rag import query
+from landfall.llm.rag import query_with_expansion
 from landfall.verify.groundedness import GroundednessReport, check, extract_numbers, redact_ungrounded
 
 load_dotenv()
@@ -65,7 +68,7 @@ def answer_verified(
     question: str, storm_key: str | None = None, top_k: int = 5
 ) -> tuple[str, list[dict], GroundednessReport, GroundednessReport]:
     """Returns (answer_text, cited_passages, raw_report, final_report)."""
-    results = query(question, top_k=top_k, storm_key=storm_key)
+    results = query_with_expansion(question, top_k=top_k, storm_key=storm_key)
     passages_text = _format_passages(results)
 
     reference_values = [v for r in results for v in extract_numbers(r["text"])]

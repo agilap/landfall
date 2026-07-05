@@ -31,7 +31,7 @@ each storm's regional exposure corridor:
 
 ## Status
 
-Phases 1–6 of the PRD (`landfall-prd.md`) are done. What's built and what isn't, honestly:
+Phases 1–8 of the PRD (`landfall-prd.md`) are done. What's built and what isn't, honestly:
 
 **Built:** IBTrACS track ingestion for all three storms; Holland (1980) wind fields;
 LitPop exposure; WP2-calibrated impact functions (Eberenz et al. 2021); per-municipality
@@ -41,9 +41,12 @@ Tacloban City, both matching real-world reporting); a validated, hard-range-chec
 counterfactual scenario schema (track offset/bearing, intensity delta) with a
 scenario-hash disk cache; an LLM narrator with a groundedness verifier that regenerates or
 redacts any numeric claim it can't trace to cached impact output; a local RAG interrogator
-(bge-m3 embeddings, no API calls) over NDRRMC sitreps with source citations; an answer-
-synthesis layer on top of that retrieval, with its own groundedness check — **and a real
-limitation that check surfaced**, see below.
+(bge-m3 embeddings, no API calls) over NDRRMC sitreps with source citations, using
+table-aware extraction (`pdfplumber`) so a retrieved number stays attached to its own
+table row instead of a neighboring one, plus LLM-assisted query rewriting to compensate
+for retrieval missing a passage that a terser keyword query finds; an answer-synthesis
+layer on top of that retrieval, with its own groundedness check — **and a real
+limitation that check surfaced and Phase 8 partially fixed**, see below.
 
 Also built: the **NL → scenario-config compiler** (`src/landfall/llm/compiler.py`) and
 its E3 eval — with a disclosed caveat. PRD §6 says E3's ground-truth configs are
@@ -55,14 +58,18 @@ stated here rather than hidden, and the eval set is plain JSON
 
 **Not built / deferred:**
 - **Tagalog narration** — English only so far; same verifier applies once added.
-- **Query rewriting and table-aware PDF extraction** for the RAG layer — see the
-  groundedness-vs-attribution finding below.
+- **Attribution as a proven property in general** — Phase 8's table-aware extraction
+  fixes the specific documented misattribution (a province-level subtotal read as
+  belonging to one municipality), but doesn't guarantee every retrieved row is about the
+  entity a question asks about; an eval for retrieval/attribution quality analogous to
+  E2/E3 isn't built, for the same reason E3 flagged — it needs human-checked ground truth,
+  not agent-generated ground truth. See `docs/phase8-result.md`.
 - **Stack deviation:** PRD §5.2 specifies an Anthropic Haiku-class model for the narrator;
   no Anthropic key was available in the build environment, so the narrator uses OpenAI's
   `gpt-4o-mini` instead, per the author's direction. Functionally equivalent for this
   project's purposes.
 
-See `docs/phase1-plan.md` through `docs/phase6-result.md` for the session-by-session build
+See `docs/phase1-plan.md` through `docs/phase8-result.md` for the session-by-session build
 log, including three real bugs caught before they reached a shipped number (a wrong
 IBTrACS storm ID, a stale post-redaction groundedness report, and a wasted GPU-torch
 install), each described alongside how it was caught.
