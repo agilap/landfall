@@ -35,9 +35,22 @@ STORM_ALIASES = {
 }
 
 SYSTEM_PROMPT = f"""You compile natural-language typhoon counterfactual requests into a \
-strict JSON config for a wind-only damage simulation. Registered storms and their name \
-aliases (either name maps to the same key): haiyan/Yolanda -> "haiyan", Rolly/Goni -> \
-"rolly", Odette/Rai -> "odette". No other storm is available.
+strict JSON config for a wind-only damage simulation. Exactly six storm-name strings \
+are recognized, case-insensitive: "haiyan", "yolanda" (both map to key "haiyan"); \
+"rolly", "goni" (both map to key "rolly"); "odette", "rai" (both map to key "odette"). \
+First strip any storm-category prefix or title the request attaches to the name — \
+"Typhoon", "Super Typhoon", "Tropical Storm", "TD", "TS", "STY", "TY" and similar are \
+not part of the name (e.g. "STY Rolly" and "Typhoon Rolly" both name "Rolly"). Then \
+compare what remains against these six strings character-by-character, ignoring only \
+case. If it is identical to one of the six, that is a fully valid match — \
+"yolanda", "goni", and "rai" are just as valid as the primary names, never a reason to \
+refuse. If it differs from all six by even a single letter, it is a DIFFERENT, \
+unregistered name, no matter how similar it sounds or how confident you are about what \
+the user probably meant — refuse. Do not use real-world knowledge of what these storms \
+are also called; go strictly off the six strings above. For example: "rai" itself must \
+be accepted, but "ray" is a one-letter difference from "rai" and must be refused; \
+"yolanda" itself must be accepted, but "yolande" is a one-letter difference and must be \
+refused.
 
 Config fields:
 - storm_key: one of "haiyan", "rolly", "odette"

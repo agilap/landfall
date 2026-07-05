@@ -1,5 +1,5 @@
 {
-  "_note": "E3 ground truth (PRD §6): 40 valid NL scenarios with hand-labeled configs + 27 deliberately invalid scenarios that must be rejected (10 original + 6 track-offset range-phrased cases added after a real bug: 'Shift Rolly 50 to 200 km south' was silently accepted at the range's high end instead of refused + 11 further range-phrased cases covering intensity, bearing, and compound multi-field ranges, all verified for repeat-stability at temperature=0 before being added). PRD §6 says ground truth is labeled by the author and is not delegable; this set was authored by the coding agent at the author's explicit direction — that circularity caveat is disclosed in the README rather than hidden.",
+  "_note": "E3 ground truth (PRD §6): 46 valid NL scenarios with hand-labeled configs + 36 deliberately invalid scenarios that must be rejected. Invalid set: 10 original + 17 range-phrased cases (added after a real bug: 'Shift Rolly 50 to 200 km south' was silently accepted at the range's high end instead of refused) + 4 storm-name-error cases (added after a second real bug: 'Typhoon Yolande' — a misspelling of the registered alias 'Yolanda' — was silently accepted as Haiyan) + 5 tricky-refusal-phrasing cases (rhetorical questions, compound valid+out-of-scope requests, indirect references, sarcastic tone). Valid set also gained 6 cases testing storm-name/phrasing robustness (casing, category-prefix abbreviations like 'STY', dual PH-local+international naming, negation, question form). PRD §6 says ground truth is labeled by the author and is not delegable; this set was authored by the coding agent at the author's explicit direction — that circularity caveat is disclosed in the README rather than hidden.",
   "valid": [
     {"id": 1, "text": "Replay Typhoon Haiyan exactly as it happened in 2013.", "expected": {"storm_key": "haiyan", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 0.0}},
     {"id": 2, "text": "Run the historical Rolly scenario with no changes.", "expected": {"storm_key": "rolly", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 0.0}},
@@ -40,7 +40,13 @@
     {"id": 37, "text": "Haiyan with max winds up by 55 knots and the track unchanged.", "expected": {"storm_key": "haiyan", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 55.0}},
     {"id": 38, "text": "Move Odette's entire track 220 km at bearing 270 and drop intensity 20 kn.", "expected": {"storm_key": "odette", "track_offset_km": 220.0, "track_bearing_deg": 270.0, "intensity_delta_kn": -20.0}},
     {"id": 39, "text": "What if Rolly had come ashore 60 km north of its real landfall with 30 additional knots of wind?", "expected": {"storm_key": "rolly", "track_offset_km": 60.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 30.0}},
-    {"id": 40, "text": "Shift Haiyan 90 km at bearing 135 and strengthen it by 25 knots.", "expected": {"storm_key": "haiyan", "track_offset_km": 90.0, "track_bearing_deg": 135.0, "intensity_delta_kn": 25.0}}
+    {"id": 40, "text": "Shift Haiyan 90 km at bearing 135 and strengthen it by 25 knots.", "expected": {"storm_key": "haiyan", "track_offset_km": 90.0, "track_bearing_deg": 135.0, "intensity_delta_kn": 25.0}},
+    {"id": 68, "text": "HAIYAN, 100 km north.", "expected": {"storm_key": "haiyan", "track_offset_km": 100.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 0.0}},
+    {"id": 69, "text": "typhoon haiyan, 50 km south.", "expected": {"storm_key": "haiyan", "track_offset_km": 50.0, "track_bearing_deg": 180.0, "intensity_delta_kn": 0.0}},
+    {"id": 70, "text": "STY Rolly, 20 knots stronger.", "expected": {"storm_key": "rolly", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 20.0}},
+    {"id": 71, "text": "Super Typhoon Rolly (Goni), shifted 80 km east.", "expected": {"storm_key": "rolly", "track_offset_km": 80.0, "track_bearing_deg": 90.0, "intensity_delta_kn": 0.0}},
+    {"id": 72, "text": "Don't change Rolly's track, just make it 20 knots weaker.", "expected": {"storm_key": "rolly", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": -20.0}},
+    {"id": 73, "text": "Is it possible for Rolly to have been 30 knots stronger?", "expected": {"storm_key": "rolly", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 30.0}}
   ],
   "invalid": [
     {"id": 41, "text": "Shift Haiyan 800 km north.", "why_invalid": "track offset above the 500 km hard limit"},
@@ -69,6 +75,15 @@
     {"id": 64, "text": "Rolly's track bearing could be anywhere from 200 to 250 degrees, offset 80 km.", "why_invalid": "track bearing given as a range"},
     {"id": 65, "text": "Push Odette in a general northeasterly direction, bearing 20-70 degrees, 90 km.", "why_invalid": "track bearing given as a hyphenated range"},
     {"id": 66, "text": "Shift Haiyan's bearing by roughly 180 degrees, give or take 20, offset 100 km.", "why_invalid": "track bearing given as an implicit 'give or take' range"},
-    {"id": 67, "text": "Shift Rolly 50 to 100 km south and weaken it by 10 to 30 knots.", "why_invalid": "compound case: both track offset and intensity delta given as ranges in the same request"}
+    {"id": 67, "text": "Shift Rolly 50 to 100 km south and weaken it by 10 to 30 knots.", "why_invalid": "compound case: both track offset and intensity delta given as ranges in the same request"},
+    {"id": 74, "text": "Typhoon Hagupit, 50 km north.", "why_invalid": "Hagupit (2014, PH-local name Ruby) is a real Philippine typhoon but not one of the three registered storms"},
+    {"id": 75, "text": "Typhoon Ray, 100 km west.", "why_invalid": "one-letter difference from the registered alias 'Rai' (Odette's international name) — must not be fuzzy-matched"},
+    {"id": 76, "text": "The November 2020 super typhoon, 50 km south.", "why_invalid": "describes Rolly by date/category instead of naming it — no registered storm identified"},
+    {"id": 77, "text": "Typhoon Yolande, 100 km north.", "why_invalid": "one-letter misspelling of the registered alias 'Yolanda' (Haiyan's PH-local name) — must not be fuzzy-matched; a real bug caught here where this was silently accepted as Haiyan"},
+    {"id": 78, "text": "Wouldn't it be devastating if Rolly's winds were even 100 knots higher?", "why_invalid": "rhetorical-question phrasing; 'even 100 knots higher' is not a stated intensity delta value, just a rhetorical amount"},
+    {"id": 79, "text": "Shift Haiyan 100 km north and also tell me how many people would die.", "why_invalid": "otherwise-valid track request compounded with a casualty-estimation ask, a hard non-goal — must refuse entirely, not partially comply"},
+    {"id": 80, "text": "Move Odette 100 km west and simulate the resulting flood risk.", "why_invalid": "otherwise-valid track request compounded with a flood-risk ask outside the wind-only schema"},
+    {"id": 81, "text": "What would happen if a typhoon like Haiyan hit again, but who knows how much stronger?", "why_invalid": "indirect storm reference ('a typhoon like Haiyan') plus an explicitly unquantified intensity change"},
+    {"id": 82, "text": "Sure, let's pretend Haiyan was a mild drizzle instead — subtract 200 knots.", "why_invalid": "sarcastic/informal tone; intensity delta of -200 kn exceeds the -60 kn hard limit regardless of framing"}
   ]
 }
