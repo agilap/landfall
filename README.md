@@ -29,15 +29,17 @@ each storm's regional exposure corridor:
 
 ## Status
 
-Phases 1–4 of the PRD (`landfall-prd.md`) are done. What's built and what isn't, honestly:
+Phases 1–5 of the PRD (`landfall-prd.md`) are done. What's built and what isn't, honestly:
 
 **Built:** IBTrACS track ingestion for all three storms; Holland (1980) wind fields;
-LitPop exposure; WP2-calibrated impact functions (Eberenz et al. 2021); a validated,
-hard-range-checked counterfactual scenario schema (track offset/bearing, intensity delta)
-with a scenario-hash disk cache; an LLM narrator with a groundedness verifier that
-regenerates or redacts any numeric claim it can't trace to cached impact output; a local
-RAG interrogator (bge-m3 embeddings, no API calls) over NDRRMC sitreps with source
-citations.
+LitPop exposure; WP2-calibrated impact functions (Eberenz et al. 2021); per-municipality
+damage and affected-population breakdown (GADM administrative boundaries, spatially
+joined against impact-engine output — Odette's top municipality is Cebu City, Haiyan's is
+Tacloban City, both matching real-world reporting); a validated, hard-range-checked
+counterfactual scenario schema (track offset/bearing, intensity delta) with a
+scenario-hash disk cache; an LLM narrator with a groundedness verifier that regenerates or
+redacts any numeric claim it can't trace to cached impact output; a local RAG interrogator
+(bge-m3 embeddings, no API calls) over NDRRMC sitreps with source citations.
 
 **Not built / deferred:**
 - **The NL → scenario-config compiler (and its E3 eval)** — PRD §6 requires E3's 40
@@ -52,7 +54,7 @@ citations.
   `gpt-4o-mini` instead, per the author's direction. Functionally equivalent for this
   project's purposes.
 
-See `docs/phase1-plan.md` through `docs/phase4b-result.md` for the session-by-session build
+See `docs/phase1-plan.md` through `docs/phase5-result.md` for the session-by-session build
 log, including three real bugs caught before they reached a shipped number (a wrong
 IBTrACS storm ID, a stale post-redaction groundedness report, and a wasted GPU-torch
 install), each described alongside how it was caught.
@@ -87,6 +89,26 @@ restating a scenario *input* (track offset/bearing/intensity delta) embedded in 
 prompt — true, but not cached impact-engine *output*, so the verifier correctly flags it
 per PRD §5.2's literal rule. Full derivation, including a bug caught in the verifier
 itself before this number was trusted, in `docs/phase4-result.md`.
+
+## Per-municipality breakdown
+
+The PRD's representative queries (§3) ask things like *"which municipalities in Cebu see
+the highest housing damage?"* — answerable now via a spatial join against GADM
+administrative boundaries:
+
+```
+Odette — top municipalities by damage:        Haiyan — top municipalities by damage:
+  Cebu City, Cebu:        $66.9M                 Tacloban City, Leyte:  $12.0M
+  Lapu-Lapu City, Cebu:   $47.2M                 Santa Fe, Leyte:        $5.6M
+  Mandaue City, Cebu:     $19.6M                 Ormoc City, Leyte:      $4.9M
+```
+
+Both rankings land exactly where independent knowledge of these storms says they should
+— Odette's real-world damage concentrated in Metro Cebu (its track crossed directly over
+Cebu Island, a widely reported surprise at the time), and Tacloban City is the single most
+iconic ground-zero location in Haiyan's actual history — without either boundary dataset
+(GADM) or wind model (IBTrACS/CLIMADA) having been tuned to produce that match. Full
+derivation in `docs/phase5-result.md`.
 
 ## E3 — Scenario compiler accuracy
 

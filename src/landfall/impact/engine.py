@@ -15,6 +15,7 @@ from climada.entity.impact_funcs.trop_cyclone import ImpfSetTropCyclone
 from landfall.exposure.litpop import asset_exposure, population_exposure
 from landfall.hazard.tracks import get_track
 from landfall.hazard.wind import wind_field
+from landfall.impact.municipality import affected_population_by_municipality, damage_by_municipality
 from landfall.scenario import ScenarioConfig, perturb_track
 from landfall.storms import STORMS
 
@@ -38,6 +39,7 @@ def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
     asset_exp = asset_exposure(storm_config.roi_bounds)
     asset_exp.gdf["impf_TC"] = PHILIPPINES_IMPF_ID
     damage = ImpactCalc(asset_exp, impf_set, wind).impact()
+    damage_per_point = damage.imp_mat[0].toarray().flatten()
 
     # Affected-population proxy: population where the hazard grid carries any nonzero
     # (i.e. >= intensity_thres, ~17.5 m/s) wind — not a damage-function-based estimate.
@@ -46,6 +48,9 @@ def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
     pop_exp.assign_centroids(wind)
     affected_mask = wind.intensity[0, pop_exp.gdf["centr_TC"]].toarray().flatten() > 0
     affected_population = pop_exp.gdf["value"][affected_mask].sum()
+
+    by_municipality = damage_by_municipality(asset_exp, damage_per_point, storm_config.roi_bounds)
+    affected_by_municipality = affected_population_by_municipality(pop_exp, wind, storm_config.roi_bounds)
 
     result = {
         "scenario_hash": scenario.scenario_hash(),
@@ -56,6 +61,8 @@ def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
         "impf_region": "WP2",
         "calibration_approach": "TDR",
         "hazard_model": "H1980",
+        "damage_by_municipality": by_municipality.to_dict(orient="records"),
+        "affected_population_by_municipality": affected_by_municipality.to_dict(orient="records"),
     }
 
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
