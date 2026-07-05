@@ -157,9 +157,6 @@ invalid config accepted. The v2 residual miss is the same shape: "Typhoon Rai sh
 instead of compiled. Iteration stopped there deliberately: further prompt tuning against
 these fixed 50 cases would be overfitting the exam.
 
-**Caveat, restated:** PRD §6 requires this eval set be hand-labeled by the author; it was
-instead authored by the coding agent at the author's direction (see Status above).
-
 ## Repo layout
 
 - `src/landfall/hazard/`, `exposure/`, `impact/` — the deterministic core
