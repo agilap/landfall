@@ -304,7 +304,7 @@ breakdown remains point-estimate only. Full derivation in `docs/v1.2-phase2-resu
 
 ```
 N briefings: 63
-Raw groundedness (no verifier):    252/270 = 93.3%
+Raw groundedness (no verifier):    252/264 = 95.5%
 Final groundedness (with verifier): 252/252 = 100.0%
 ```
 
@@ -313,11 +313,25 @@ population figure across 63 generations. Every ungrounded number traced to the m
 restating a scenario *input* (track offset/bearing/intensity delta) embedded in its own
 prompt — true, but not cached impact-engine *output*, so the verifier correctly flags it
 per PRD §5.2's literal rule. Full derivation, including a bug caught in the verifier
-itself before this number was trusted, in `docs/phase4-result.md`. Re-run after v1.2
-Phase 2 switched the narrator from a point estimate to a low/high range (three core
-reference values instead of two, hence 270 vs. the original 220 total claims) — raw
-groundedness moved from 85.5% to 93.3%, and final groundedness is still 100.0% by
-construction either way.
+itself before this number was trusted, in `docs/phase4-result.md`.
+
+**A second verifier bug, found by directly stress-testing its number parsing.** The
+verifier is the load-bearing correctness boundary, so its extraction was probed head-on
+rather than only through the LLM — and a real hole turned up: **abbreviated magnitude
+figures ("$49.3M", "₱1.2B") silently bypassed it entirely.** Extraction truncated them
+to 49.3 / 1.2, which then fell under the small-number (< 100) exemption, so a fabricated
+"$49.3M" against a true ~$695M figure passed with *zero* flagged claims, while the
+identical "$49.3 million" was correctly caught. Fixed by parsing currency-prefixed
+attached abbreviations — carefully, because the naive fix (treat any "M"/"B" as a
+magnitude) is *unsafe* on this corpus: a scan of all 6,255 chunks showed "20m"/"3.8m"
+mean *metres* in road-damage tables (dozens of them) and "₱2,229,439.00 b" is a peso
+amount followed by a list-marker "b.", both of which the naive fix would wildly
+magnify. The guards (require a currency prefix; require the suffix be directly attached)
+were validated against the whole corpus — only the one legitimate token "₱400M"
+qualifies. A bare un-prefixed "49.3M" is left deliberately un-parsed, since "m" can't be
+disambiguated from metres here. Pinned by the project's first unit-test file,
+`tests/test_groundedness.py` (11 cases, no API). E2 was re-run afterward: raw 95.5%,
+final still 100.0%, no regression.
 
 ## RAG answer synthesis — groundedness is not the same as correct attribution
 
@@ -477,4 +491,5 @@ as a stable guarantee.*
 - `src/landfall/cli.py` — `landfall` console-script entry point
 - `evals/` — E2 groundedness eval; E3 compiler-accuracy eval + its 82-case dataset;
   RAG storm/date phrasing robustness check
+- `tests/` — unit tests for the groundedness verifier (deterministic, no API)
 - `docs/` — phase-by-phase build log and honest results, including every bug caught
