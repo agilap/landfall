@@ -29,7 +29,7 @@ each storm's regional exposure corridor:
 
 ## Status
 
-Phases 1–5 of the PRD (`landfall-prd.md`) are done. What's built and what isn't, honestly:
+Phases 1–6 of the PRD (`landfall-prd.md`) are done. What's built and what isn't, honestly:
 
 **Built:** IBTrACS track ingestion for all three storms; Holland (1980) wind fields;
 LitPop exposure; WP2-calibrated impact functions (Eberenz et al. 2021); per-municipality
@@ -39,7 +39,9 @@ Tacloban City, both matching real-world reporting); a validated, hard-range-chec
 counterfactual scenario schema (track offset/bearing, intensity delta) with a
 scenario-hash disk cache; an LLM narrator with a groundedness verifier that regenerates or
 redacts any numeric claim it can't trace to cached impact output; a local RAG interrogator
-(bge-m3 embeddings, no API calls) over NDRRMC sitreps with source citations.
+(bge-m3 embeddings, no API calls) over NDRRMC sitreps with source citations; an answer-
+synthesis layer on top of that retrieval, with its own groundedness check — **and a real
+limitation that check surfaced**, see below.
 
 **Not built / deferred:**
 - **The NL → scenario-config compiler (and its E3 eval)** — PRD §6 requires E3's 40
@@ -47,14 +49,14 @@ redacts any numeric claim it can't trace to cached impact output; a local RAG in
   compiler being evaluated against them. Counterfactuals currently run from
   directly-specified configs (`ScenarioConfig(...)`), not natural language.
 - **Tagalog narration** — English only so far; same verifier applies once added.
-- **RAG answer synthesis** — the interrogator returns cited passages, not a synthesized
-  narrative answer.
+- **Query rewriting and table-aware PDF extraction** for the RAG layer — see the
+  groundedness-vs-attribution finding below.
 - **Stack deviation:** PRD §5.2 specifies an Anthropic Haiku-class model for the narrator;
   no Anthropic key was available in the build environment, so the narrator uses OpenAI's
   `gpt-4o-mini` instead, per the author's direction. Functionally equivalent for this
   project's purposes.
 
-See `docs/phase1-plan.md` through `docs/phase5-result.md` for the session-by-session build
+See `docs/phase1-plan.md` through `docs/phase6-result.md` for the session-by-session build
 log, including three real bugs caught before they reached a shipped number (a wrong
 IBTrACS storm ID, a stale post-redaction groundedness report, and a wasted GPU-torch
 install), each described alongside how it was caught.
@@ -89,6 +91,24 @@ restating a scenario *input* (track offset/bearing/intensity delta) embedded in 
 prompt — true, but not cached impact-engine *output*, so the verifier correctly flags it
 per PRD §5.2's literal rule. Full derivation, including a bug caught in the verifier
 itself before this number was trusted, in `docs/phase4-result.md`.
+
+## RAG answer synthesis — groundedness is not the same as correct attribution
+
+An LLM synthesis layer sits on top of the sitrep retrieval, reusing the same verify/
+regenerate/redact pattern — but against a harder problem. There's no fixed reference pair
+here; every number the model states must trace back to *some* number present in the
+retrieved passages. Testing it surfaced a real, important limitation rather than a clean
+win: a query about Catanduanes water-infrastructure damage retrieved a passage and
+produced a fully "grounded" answer (5/5, no regeneration needed) attributing ₱293,000,000
+to a specific municipality. Checking the raw extracted PDF text shows that figure sitting
+among fragments of what looks like an entirely different province's damage table —
+`pdftotext`/`pypdf`'s linear extraction flattens multi-column tables, scrambling
+row/column structure. **The number is real and present in the source document; whether it
+means what the synthesized answer claims is a different question, and nothing built so
+far checks that.** Groundedness proves numeric fidelity, not semantic correctness — worth
+stating plainly rather than letting a 5/5 score imply more than it does. Full write-up,
+including a second finding (retrieval quality is sensitive to whether a question is
+phrased as natural language vs. keywords), in `docs/phase6-result.md`.
 
 ## Per-municipality breakdown
 

@@ -35,7 +35,7 @@ class GroundednessReport:
         return self.grounded_claims / self.total_claims if self.total_claims else 1.0
 
 
-def _extract_numbers(text: str) -> list[float]:
+def extract_numbers(text: str) -> list[float]:
     values = []
     for match in _NUMBER_RE.finditer(text):
         raw = match.group("num").replace(",", "")
@@ -65,7 +65,7 @@ def check(text: str, reference_values: list[float]) -> GroundednessReport:
     within RELATIVE_TOLERANCE. Small integers (years, single-digit counts) are exempt —
     they're structurally unlikely to be fabricated damage/population claims and the PRD's
     concern is specifically disaster-figure hallucination, not incidental phrasing."""
-    found = _extract_numbers(text)
+    found = extract_numbers(text)
     claims = [v for v in found if v >= 100]  # exempt years/small incidental numbers
 
     ungrounded = [v for v in claims if not _is_grounded(v, reference_values)]
