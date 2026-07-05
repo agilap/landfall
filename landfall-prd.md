@@ -132,7 +132,17 @@ Public repo; three eval tables with real numbers; limitation write-up; hazard-ma
 
 ## 11. Roadmap (post-v1, do not build now)
 
-Storm surge via published hazard maps (Project NOAH rasters); OSM/PSA exposure upgrade; additional storms; interactive map UI; evacuation-behavior agent layer (Multo pattern); multilingual briefings beyond Tagalog.
+~~OSM/PSA exposure upgrade~~ — done, v1.1 Phase 3 (`docs/v1.1-phase3-result.md`), for
+the three Rolly-affected provinces only; nationwide OSM/PSA coverage (beyond
+Catanduanes/Albay/Camarines Sur) and closing the uneven-OSM-mapping-completeness gap
+found there remain open. Storm surge via published hazard maps (Project NOAH rasters)
+— v1.1 Phase 4 tried and failed to estimate a flood/rain-attributable damage share from
+the NDRRMC sitreps (sector-based reporting doesn't support a hazard-cause split), so
+there's still no evidence-based case for prioritizing this over the other open items;
+kept on the roadmap, not promoted. Additional storms; interactive map UI;
+evacuation-behavior agent layer (Multo pattern); multilingual briefings beyond Tagalog;
+resolving the Rolly reference-figure discrepancy and Odette's overestimation (both
+surfaced by v1.1, see README's v1.1 section) before further calibration work.
 
 ---
 
