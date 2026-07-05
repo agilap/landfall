@@ -5,10 +5,19 @@ description = "Counterfactual typhoon damage simulation for the Philippines — 
 requires-python = ">=3.10,<3.12"
 dependencies = [
     # CLIMADA is installed via conda/mamba (see docs/week1-plan.md), not listed here:
-    # its geospatial deps (GDAL etc.) do not resolve reliably from PyPI.
+    # its geospatial deps (GDAL etc.) do not resolve reliably from PyPI. geopandas and
+    # pandas ride along with it in the conda env but are listed here too since
+    # landfall's own code (municipality.py, scenario.py) imports them directly.
     "openai",
     "python-dotenv",
     "pydantic>=2",
+    "geopandas",
+    "geopy",
+    "pandas",
+    "pypdf",
+    "pdfplumber",
+    "sentence-transformers",
+    "numpy",
 ]
 
 [project.scripts]
