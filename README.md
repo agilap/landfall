@@ -74,6 +74,17 @@ log, including three real bugs caught before they reached a shipped number (a wr
 IBTrACS storm ID, a stale post-redaction groundedness report, and a wasted GPU-torch
 install), each described alongside how it was caught.
 
+## Usage
+
+```
+pip install -e .
+landfall run haiyan                                   # historical replay
+landfall run rolly --offset-km 100 --bearing 0         # counterfactual: 100 km north
+landfall narrate odette --intensity-delta 20           # + verified narration
+landfall compile "Shift Rolly 50 km south"              # NL -> ScenarioConfig
+landfall ask "What happened in Catanduanes?" --storm rolly   # sitrep RAG interrogator
+```
+
 ## E1 — Historical validation
 
 | Storm | Simulated damage (USD) | NDRRMC-recorded damage (USD, approx.) | Error factor |
@@ -170,5 +181,6 @@ these fixed 50 cases would be overfitting the exam.
 - `src/landfall/scenario.py` — counterfactual config, validation, track perturbation
 - `src/landfall/llm/` — scenario compiler, narrator, RAG interrogator
 - `src/landfall/verify/` — groundedness verifier
+- `src/landfall/cli.py` — `landfall` console-script entry point
 - `evals/` — E2 groundedness eval; E3 compiler-accuracy eval + its 50-case dataset
 - `docs/` — phase-by-phase build log and honest results, including every bug caught
