@@ -26,3 +26,4 @@ outputs/*
 
 # OMC state
 .omc/
+.claude/scheduled_tasks.lock
