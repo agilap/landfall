@@ -6,7 +6,8 @@ requires-python = ">=3.10,<3.12"
 dependencies = [
     # CLIMADA is installed via conda/mamba (see docs/week1-plan.md), not listed here:
     # its geospatial deps (GDAL etc.) do not resolve reliably from PyPI.
-    "anthropic",
+    "openai",
+    "python-dotenv",
     "pydantic>=2",
 ]
 
