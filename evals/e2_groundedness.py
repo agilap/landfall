@@ -52,10 +52,12 @@ def main():
             result = run_baseline(storm_key) if not variant else run(config)
             description = _describe(storm_key, variant)
 
+            damage_range = result["total_damage_usd_range"]
             for _ in range(GENERATIONS_PER_SCENARIO):
                 text, raw_report, final_report = narrate_verified(
                     description,
-                    result["total_damage_usd"],
+                    damage_range["low"],
+                    damage_range["high"],
                     result["affected_population"],
                     permitted_values=[years[storm_key]],
                 )

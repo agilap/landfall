@@ -30,7 +30,9 @@ def _scenario_from_args(args: argparse.Namespace) -> ScenarioConfig:
 
 
 def _print_result(result: dict) -> None:
-    print(f"Total damage (USD): {result['total_damage_usd']:,.2f}")
+    damage_range = result["total_damage_usd_range"]
+    print(f"Total damage (USD): {result['total_damage_usd']:,.2f} point estimate "
+          f"(range: {damage_range['low']:,.2f} - {damage_range['high']:,.2f})")
     print(f"Affected population: {result['affected_population']:,.0f}")
     print("Top municipalities by damage:")
     for row in result["damage_by_municipality"][:5]:
@@ -55,8 +57,13 @@ def cmd_narrate(args: argparse.Namespace) -> None:
             f"{scenario.track_offset_km} km at bearing {scenario.track_bearing_deg}°, "
             f"intensity changed by {scenario.intensity_delta_kn:+} kn."
         )
+    damage_range = result["total_damage_usd_range"]
     text, raw_report, final_report = narrate_verified(
-        description, result["total_damage_usd"], result["affected_population"], permitted_values=[year]
+        description,
+        damage_range["low"],
+        damage_range["high"],
+        result["affected_population"],
+        permitted_values=[year],
     )
     print(text)
     print(f"\n[groundedness: {final_report.grounded_claims}/{final_report.total_claims} final, "

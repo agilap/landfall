@@ -74,10 +74,11 @@ stated here rather than hidden, and the eval set is plain JSON
 
 See `docs/phase1-plan.md` through `docs/phase8-result.md` (v1), `docs/v1.1-phase1-result.md`
 through `docs/v1.1-phase5-result.md` (v1.1's underestimation fix), and
-`docs/v1.2-phase1-result.md` (v1.2's calibration-uncertainty fix) for the
-session-by-session build log, including three real bugs caught before they reached a
-shipped number (a wrong IBTrACS storm ID, a stale post-redaction groundedness report,
-and a wasted GPU-torch install), each described alongside how it was caught.
+`docs/v1.2-phase1-result.md` through `docs/v1.2-phase2-result.md` (v1.2's
+calibration-uncertainty fix) for the session-by-session build log, including three
+real bugs caught before they reached a shipped number (a wrong IBTrACS storm ID, a
+stale post-redaction groundedness report, and a wasted GPU-torch install), each
+described alongside how it was caught.
 
 ## Usage
 
@@ -258,26 +259,38 @@ uncomfortably wide number. The width is itself the finding — a wind-only model
 calibrated this way cannot narrow Philippine typhoon damage down to better than roughly
 two orders of magnitude for some storms.
 
-Deliberately not touched in this pass: the narrator, verifier, and CLI still speak in
-the single point-estimate number (`total_damage_usd` is unchanged in shape, so nothing
-downstream broke — verified end to end); per-municipality breakdown is still
-point-estimate only; v1.1's Phase 1–4 waterfall columns above are historical record,
-not rewritten. Full derivation in `docs/v1.2-phase1-result.md`.
+Not touched in Phase 1: the narrator, verifier, and CLI still spoke in the single
+point-estimate number (`total_damage_usd` unchanged in shape, so nothing downstream
+broke). Full derivation in `docs/v1.2-phase1-result.md`.
+
+**v1.2 Phase 2** closed that gap: the narrator now states damage as a low–high range
+("an estimated $185.1M to $23,530.7M in damage") instead of a point estimate, with the
+system prompt explicitly forbidding the model from averaging the two bounds into a new
+figure — that would be exactly the kind of invented statistic the groundedness verifier
+exists to catch, so both bounds are permitted reference values and nothing between them
+is. Verified end to end for a historical replay (Odette: correctly stated $185,091,240.57
+to $23,530,739,646.49, 4/4 grounded) and a counterfactual (Rolly +100km/+20kn: correctly
+labeled as a counterfactual, range stated correctly, 4/4 grounded). Per-municipality
+breakdown remains point-estimate only. Full derivation in `docs/v1.2-phase2-result.md`.
 
 ## E2 — Narration groundedness
 
 ```
 N briefings: 63
-Raw groundedness (no verifier):    188/220 = 85.5%
-Final groundedness (with verifier): 189/189 = 100.0%
+Raw groundedness (no verifier):    252/270 = 93.3%
+Final groundedness (with verifier): 252/252 = 100.0%
 ```
 
-The 14.5% raw gap is not fabricated statistics — the model never invented a damage or
+The raw gap is not fabricated statistics — the model never invented a damage or
 population figure across 63 generations. Every ungrounded number traced to the model
 restating a scenario *input* (track offset/bearing/intensity delta) embedded in its own
 prompt — true, but not cached impact-engine *output*, so the verifier correctly flags it
 per PRD §5.2's literal rule. Full derivation, including a bug caught in the verifier
-itself before this number was trusted, in `docs/phase4-result.md`.
+itself before this number was trusted, in `docs/phase4-result.md`. Re-run after v1.2
+Phase 2 switched the narrator from a point estimate to a low/high range (three core
+reference values instead of two, hence 270 vs. the original 220 total claims) — raw
+groundedness moved from 85.5% to 93.3%, and final groundedness is still 100.0% by
+construction either way.
 
 ## RAG answer synthesis — groundedness is not the same as correct attribution
 
