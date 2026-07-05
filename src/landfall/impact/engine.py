@@ -26,18 +26,27 @@ from landfall.storms import STORMS
 PHILIPPINES_IMPF_ID = 7  # WP2 region, Eberenz et al. 2021 — see ImpfSetTropCyclone lookup
 CACHE_DIR = Path(__file__).resolve().parents[3] / "data" / "cache" / "scenarios"
 
-# v1.1 Phase 1: RMSF replaces the CLIMADA default of TDR for the WP2 (Philippines)
-# calibration. Eberenz et al. 2021 (NHESS 21:393-415, https://doi.org/10.5194/nhess-21-393-2021)
-# calibrate v_half three ways per region; for WP2-4 specifically they report that TDR
-# ("larger weight to events with large damage values... these results indicate that
-# these events are systematically overestimated by the model in the regions WP2-4")
-# fits an anomalously flat curve (v_half=188.4 m/s) that is near-zero at any wind speed
-# a real typhoon reaches. RMSF weights every matched historical event equally
-# (v_half=84.7 m/s) instead of letting the region's few largest-damage events dominate
-# the fit — see docs/v1.1-phase1-result.md for the E1 before/after this produces,
-# including Odette (held out from this decision) flipping from underestimation to
-# overestimation under this same curve.
-IMPF_CALIBRATION_APPROACH = "RMSF"
+# v1.1 Phase 1: RMSF replaced the CLIMADA default of TDR for the WP2 (Philippines)
+# calibration -- see docs/v1.1-phase1-result.md. v1.1 Phase 5 then found that no single
+# v_half can fit Haiyan/Rolly/Odette simultaneously: their pre-existing TDR-era deficits
+# (18.6x, 575x, 2.5-5x under) are too far apart for one point-estimate curve to close
+# without overshooting at least one storm, and Odette did get overshot. See
+# docs/v1.1-phase5-result.md.
+#
+# v1.2 Phase 1: rather than search for a better single v_half, report the genuine
+# calibration uncertainty Eberenz et al. 2021 already publish. Their "EDR" approach
+# fits v_half individually per historical WP2 event (83 events, 1980-2016) rather than
+# to one region-wide aggregate; CLIMADA exposes any quantile of that per-event
+# distribution via `calibration_approach="EDR", q=...`. The interquartile range
+# (q0.25-q0.75) of that *already-published, already-bundled* distribution brackets all
+# three storms' actual recorded damage simultaneously -- the first thing tried across
+# v1.1 and v1.2 that works for Haiyan, Rolly, *and* the held-out Odette at once. See
+# docs/v1.2-phase1-result.md. This is not a new curve (PRD's non-goal on custom
+# fragility curves is unaffected) -- it's a different, still-published quantile
+# selection from data CLIMADA already ships.
+IMPF_CALIBRATION_APPROACH = "EDR"
+IMPF_POINT_QUANTILE = 0.5  # median -- kept for backward-compatible single-number consumers
+IMPF_RANGE_QUANTILES = (0.25, 0.75)  # interquartile range reported alongside the point estimate
 
 
 def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
@@ -51,12 +60,32 @@ def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
         tracks = perturb_track(tracks, scenario)
     wind = wind_field(tracks, storm_config.roi_bounds)
 
-    impf_set = ImpfSetTropCyclone.from_calibrated_regional_ImpfSet(calibration_approach=IMPF_CALIBRATION_APPROACH)
+    impf_set = ImpfSetTropCyclone.from_calibrated_regional_ImpfSet(
+        calibration_approach=IMPF_CALIBRATION_APPROACH, q=IMPF_POINT_QUANTILE
+    )
 
     asset_exp = asset_exposure(storm_config.roi_bounds)
     asset_exp.gdf["impf_TC"] = PHILIPPINES_IMPF_ID
     damage = ImpactCalc(asset_exp, impf_set, wind).impact()
     damage_per_point = damage.imp_mat[0].toarray().flatten()
+
+    # v_half increases monotonically with quantile, so damage *decreases* with quantile:
+    # the lower quantile (steeper curve) gives the higher damage figure and vice versa.
+    q_for_high_damage, q_for_low_damage = IMPF_RANGE_QUANTILES  # (0.25, 0.75)
+    range_high = ImpactCalc(
+        asset_exp,
+        ImpfSetTropCyclone.from_calibrated_regional_ImpfSet(
+            calibration_approach=IMPF_CALIBRATION_APPROACH, q=q_for_high_damage
+        ),
+        wind,
+    ).impact()
+    range_low = ImpactCalc(
+        asset_exp,
+        ImpfSetTropCyclone.from_calibrated_regional_ImpfSet(
+            calibration_approach=IMPF_CALIBRATION_APPROACH, q=q_for_low_damage
+        ),
+        wind,
+    ).impact()
 
     # Affected-population proxy: population where the hazard grid carries any nonzero
     # (i.e. >= intensity_thres, ~17.5 m/s) wind — not a damage-function-based estimate.
@@ -73,10 +102,13 @@ def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
         "scenario_hash": scenario.scenario_hash(),
         "scenario": scenario.model_dump(),
         "total_damage_usd": float(damage.at_event[0]),
+        "total_damage_usd_range": {"low": float(range_low.at_event[0]), "high": float(range_high.at_event[0])},
         "affected_population": float(affected_population),
         "impf_id": PHILIPPINES_IMPF_ID,
         "impf_region": "WP2",
         "calibration_approach": IMPF_CALIBRATION_APPROACH,
+        "calibration_point_quantile": IMPF_POINT_QUANTILE,
+        "calibration_range_quantiles": list(IMPF_RANGE_QUANTILES),
         "hazard_model": "H1980",
         "damage_by_municipality": by_municipality.to_dict(orient="records"),
         "affected_population_by_municipality": affected_by_municipality.to_dict(orient="records"),

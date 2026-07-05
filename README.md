@@ -36,7 +36,8 @@ Phases 1–8 of the PRD (`landfall-prd.md`) are done. What's built and what isn'
 **Built:** IBTrACS track ingestion for all three storms; Holland (1980) wind fields;
 LitPop exposure nationally, with a hybrid OSM-buildings + PSA-census layer for
 Catanduanes/Albay/Camarines Sur (v1.1 Phase 3 — see E1 below); WP2-calibrated impact
-functions (Eberenz et al. 2021, RMSF calibration as of v1.1 Phase 1 — see E1 below); per-municipality
+functions (Eberenz et al. 2021, EDR calibration with an interquartile uncertainty range
+as of v1.2 Phase 1 — see below); per-municipality
 damage and affected-population breakdown (GADM administrative boundaries, spatially
 joined against impact-engine output — Odette's top municipality is Cebu City, Haiyan's is
 Tacloban City, both matching real-world reporting); a validated, hard-range-checked
@@ -71,11 +72,12 @@ stated here rather than hidden, and the eval set is plain JSON
   `gpt-4o-mini` instead, per the author's direction. Functionally equivalent for this
   project's purposes.
 
-See `docs/phase1-plan.md` through `docs/phase8-result.md` (v1) and `docs/v1.1-phase1-result.md`
-through `docs/v1.1-phase5-result.md` (v1.1's underestimation fix) for the session-by-session
-build log, including three real bugs caught before they reached a shipped number (a wrong
-IBTrACS storm ID, a stale post-redaction groundedness report, and a wasted GPU-torch
-install), each described alongside how it was caught.
+See `docs/phase1-plan.md` through `docs/phase8-result.md` (v1), `docs/v1.1-phase1-result.md`
+through `docs/v1.1-phase5-result.md` (v1.1's underestimation fix), and
+`docs/v1.2-phase1-result.md` (v1.2's calibration-uncertainty fix) for the
+session-by-session build log, including three real bugs caught before they reached a
+shipped number (a wrong IBTrACS storm ID, a stale post-redaction groundedness report,
+and a wasted GPU-torch install), each described alongside how it was caught.
 
 ## Usage
 
@@ -211,6 +213,56 @@ visible here rather than getting rounded off into "2 of 3 improved." Full deriva
   unreconciled.
 - **Bato's anomalously low simulated wind** (Phase 2) relative to its neighbors, despite
   being Rolly's reported landfall municipality — unexplained, not investigated further.
+
+## v1.2 — reporting genuine calibration uncertainty instead of a doomed point estimate
+
+v1.1 Phase 5 proved the Odette problem was structural: swapping one national `v_half`
+for another multiplies every storm's damage total by a near-uniform ~16–19×, so no
+single point-estimate curve can close Haiyan's 18.6×, Rolly's 575×, and Odette's
+2.5–5× deficits simultaneously without overshooting the shallowest one. v1.2 stopped
+searching for a better single number and asked whether the calibration data CLIMADA
+already ships could report a *range* instead.
+
+**Ruled out first**: filtering Eberenz et al. 2021's 83-event WP2 calibration dataset
+(each event individually fitted, tagged with `Surge`/`Rain`/`Flood`/`Slide` flags —
+Haiyan itself is in it, individually fitted to `v_half=50.9`, flagged `Surge=True`) down
+to the 47 "clean," unflagged wind-dominated events gives a median `v_half=81.0` —
+nearly identical to the RMSF value already in use, and not statistically distinguishable
+from the 36 flagged events (p=0.16). Per-event variance swamps any hazard-contamination
+signal; this isn't where the problem lives.
+
+**What works**: CLIMADA exposes any quantile of that same 83-event distribution
+(`calibration_approach="EDR", q=...`) — already-published, already-bundled data, not a
+new curve. Computing the interquartile range (q0.25–q0.75) for all three storms under
+the current pipeline:
+
+| Storm | q0.25 (high damage) | Point estimate (q0.5) | q0.75 (low damage) | NDRRMC actual | Bracketed? |
+|---|---|---|---|---|---|
+| Haiyan (2013) | $2,891.2M | $695.4M | $49.6M | $917M | **✓** |
+| Rolly (2020) | $456.8M | $81.4M | $5.4M | $233M | **✓** |
+| Odette (2021) — held out | $23,530.7M | $3,095.2M | $185.1M | $459–915M | **✓** |
+
+**All three storms' actual recorded damage falls inside the interquartile range —
+including Odette, the storm every point-estimate approach in v1.1 broke.** This is the
+first thing tried across the whole v1.1/v1.2 effort that works for all three
+simultaneously. Not a new fragility curve — CLAUDE.md's hard non-goal on custom curves
+is unaffected; it's a different quantile selection from data already cited in Phase 1.
+
+**The honest catch, stated plainly rather than hidden**: the ranges are wide, and
+Odette's upper bound ($23.5B) is not a plausible standalone damage estimate for any
+Philippine typhoon on record — it's what the published distribution's low-`v_half`
+tail produces when applied to Odette's exposure. It is reported un-trimmed here rather
+than capped to look more credible: deciding in advance which parts of a genuinely messy
+published uncertainty distribution to hide would be a worse failure mode than an
+uncomfortably wide number. The width is itself the finding — a wind-only model
+calibrated this way cannot narrow Philippine typhoon damage down to better than roughly
+two orders of magnitude for some storms.
+
+Deliberately not touched in this pass: the narrator, verifier, and CLI still speak in
+the single point-estimate number (`total_damage_usd` is unchanged in shape, so nothing
+downstream broke — verified end to end); per-municipality breakdown is still
+point-estimate only; v1.1's Phase 1–4 waterfall columns above are historical record,
+not rewritten. Full derivation in `docs/v1.2-phase1-result.md`.
 
 ## E2 — Narration groundedness
 
