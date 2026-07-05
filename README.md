@@ -72,7 +72,7 @@ stated here rather than hidden, and the eval set is plain JSON
   project's purposes.
 
 See `docs/phase1-plan.md` through `docs/phase8-result.md` (v1) and `docs/v1.1-phase1-result.md`
-through `docs/v1.1-phase4-result.md` (v1.1's underestimation fix) for the session-by-session
+through `docs/v1.1-phase5-result.md` (v1.1's underestimation fix) for the session-by-session
 build log, including three real bugs caught before they reached a shipped number (a wrong
 IBTrACS storm ID, a stale post-redaction groundedness report, and a wasted GPU-torch
 install), each described alongside how it was caught.
@@ -174,23 +174,34 @@ infra+agri total (≈$318.6M) is higher than the ~$233M figure used as Rolly's "
 throughout this table — not reconciled here. Full derivation in
 `docs/v1.1-phase4-result.md`.
 
-**Odette's verdict — the credibility check for the whole exercise.** Odette was the
-only storm that started in-range (2.5–5.0× under). It now sits at **3.9–7.7× over** — a
-full reversal, not a drift, and it happened entirely in Phase 1; Phases 2 and 3 never
-touched it (zero ROI overlap). This is the honest risk this table can't paper over:
-**the single fix that did the most good is the same fix that broke the one storm that
-was previously fine.** A single national WP2 curve, fit on aggregate historical damage,
-cannot obviously fit both a narrow, concentrated storm (Rolly) and a broad one (Odette
-— Phase 5's municipality analysis showed damage spread across Metro Cebu at a scale
-Haiyan's narrower track didn't) at the same time. This table should not be read as "the
-model is now well-calibrated" — it's better calibrated for two of three storms, at the
-cost of the third, and that trade stays visible here rather than getting rounded off
-into "2 of 3 improved."
+**Odette's verdict — the credibility check for the whole exercise, now explained.**
+Odette was the only storm that started in-range (2.5–5.0× under). It now sits at
+**3.9–7.7× over** — a full reversal, not a drift, and it happened entirely in Phase 1;
+Phases 2 and 3 never touched it (zero ROI overlap). v1.1 Phase 5 investigated why,
+rather than leaving it as a hypothesis. The first suspect — Metro Cebu's concentrated,
+high-value exposure (72% of Odette's total damage, at a moderate simulated 49–58 m/s) —
+turned out to be where the dollars sit, not why the total overshot: Metro Cebu's
+*share* of the total barely moved between curves (72.7%→72.2%). **The real mechanism
+is arithmetic**: the TDR→RMSF curve swap multiplies every storm's total by a
+near-uniform factor (15.72× for Haiyan, 19.43× for Rolly, 19.19× for Odette — all in
+the same band, verified exactly, not estimated), because each storm's damage-weighted
+exposure sits somewhere in the curve's sensitive middle range regardless of its
+specific wind-speed distribution. Applying each storm's own multiplier to its
+pre-existing TDR-era deficit **predicts the post-RMSF error factor for all three
+storms almost exactly** (e.g. Odette: 2.5–5.0× under ÷ 19.19 → 3.84–7.68× over,
+matching the actual 3.9–7.7× over). **Odette didn't get a uniquely bad multiplier — it
+started closest to correct under TDR, so the same proportional fix that rescues Haiyan
+and Rolly necessarily overshoots the one storm that needed the least correcting.** This
+is a structural property of swapping one single national `v_half` for another, not a
+storm-specific bug: no single v_half can close an 18.6×, a 575×, and a 2.5–5× deficit
+simultaneously without over- or under-shooting at least one. This table should not be
+read as "the model is now well-calibrated" — it's better calibrated for two of three
+storms, at the cost of the third, by mathematical necessity, and that trade stays
+visible here rather than getting rounded off into "2 of 3 improved." Full derivation in
+`docs/v1.1-phase5-result.md`.
 
 ### What's still unexplained
 
-- **Why Odette flipped, specifically** — concentrated-vs-spread damage profile is a
-  hypothesis, not a confirmed cause.
 - **Rolly's residual 2.54× under** — real, but exposure Phase 3 was reached through an
   incomplete OSM dataset in two of three provinces, so this number itself carries
   uncertainty in an unclear direction.
