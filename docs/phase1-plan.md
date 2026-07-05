@@ -1,9 +1,9 @@
-# Week 1 plan — "First number"
+# Phase 1 plan — "First number"
 
 **Definition of done (from PRD §7):** one damage number for one storm (Haiyan), however wrong.
 
 Deliberately minimal. Everything here uses CLIMADA tutorials verbatim before customizing
-(PRD risk mitigation: the learning curve is the Week 1 risk, not the physics).
+(PRD risk mitigation: the learning curve is the Phase 1 risk, not the physics).
 
 ## Session 1 — Environment (highest-risk step, do first)
 
@@ -24,7 +24,7 @@ that's the whole session's output and that's fine — log what broke.
 2. Plot the raw track over the Philippines; eyeball landfall over Guiuan/Tacloban.
 3. Save the fetched track to `data/tracks/` so subsequent runs are offline + deterministic.
 4. Code lands in `src/landfall/hazard/tracks.py` — thin, tutorial-grade, no perturbation
-   logic yet (that's Week 3).
+   logic yet (that's Phase 3).
 
 ## Session 3 — Wind field
 
@@ -40,15 +40,15 @@ that's the whole session's output and that's fine — log what broke.
 2. Attach CLIMADA's calibrated Western Pacific TC impact function (Emanuel-type sigmoid,
    `ImpfTropCyclone`) — cited defaults, zero tuning.
 3. `ImpactCalc` → total damage (USD) + affected population for the ROI.
-4. **Write the number down** in `docs/week1-result.md` with the exact config that produced
-   it. However wrong. That closes Week 1.
+4. **Write the number down** in `docs/phase1-result.md` with the exact config that produced
+   it. However wrong. That closes Phase 1.
 
 ## Explicitly deferred
 
-- Rolly/Odette replays, NDRRMC sitrep extraction, E1 table → Week 2.
-- Track perturbation, scenario compiler, E3 → Week 3.
-- Narrator, verifier, RAG, E2 → Week 4.
-- Scenario-hash cache: introduce in Week 2 when there's more than one run to cache.
+- Rolly/Odette replays, NDRRMC sitrep extraction, E1 table → Phase 2.
+- Track perturbation, scenario compiler, E3 → Phase 3.
+- Narrator, verifier, RAG, E2 → Phase 4.
+- Scenario-hash cache: introduce in Phase 2 when there's more than one run to cache.
 
 ## Known traps
 

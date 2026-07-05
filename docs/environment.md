@@ -29,7 +29,7 @@ avoid it rather than debug around it repeatedly).
   exponent weighting) requires a free NASA Earthdata account and a manual SEDAC
   download; SEDAC's server was unresponsive from both a browser and a direct `curl`
   test. Substituted a WorldPop Philippines population raster instead — see
-  `scripts/build_gpw_substitute.py` and `docs/week1-result.md` for the full rationale
+  `scripts/build_gpw_substitute.py` and `docs/phase1-result.md` for the full rationale
   and validation (total matches PHL's actual 2020 population, ~110.2M).
 - IBTrACS (`TCTracks.from_ibtracs_netcdf`) and nightlights (CLIMADA's BlackMarble
   downloader) both auto-download fine — no issues there.

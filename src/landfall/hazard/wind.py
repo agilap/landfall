@@ -1,6 +1,6 @@
 """Storm-generic wind-field synthesis from a TCTracks track.
 
-Counterfactual perturbation (track offset / intensity delta) is Week 3.
+Counterfactual perturbation (track offset / intensity delta) is Phase 3.
 """
 
 from climada.hazard import Centroids, TCTracks, TropCyclone

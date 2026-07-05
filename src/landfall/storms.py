@@ -1,6 +1,6 @@
 """Registry of the three PRD-scoped replay storms — the only three in v1 (PRD §2 non-goals:
 no nationwide coverage). IBTrACS SIDs and ROI bounds are verified against fetched data, not
-guessed; see docs/week2-result.md for how each ROI was chosen.
+guessed; see docs/phase2-result.md for how each ROI was chosen.
 """
 
 from dataclasses import dataclass

@@ -29,7 +29,7 @@ each storm's regional exposure corridor:
 
 ## Status
 
-Weeks 1–4 of the PRD (`landfall-prd.md`) are done. What's built and what isn't, honestly:
+Phases 1–4 of the PRD (`landfall-prd.md`) are done. What's built and what isn't, honestly:
 
 **Built:** IBTrACS track ingestion for all three storms; Holland (1980) wind fields;
 LitPop exposure; WP2-calibrated impact functions (Eberenz et al. 2021); a validated,
@@ -52,7 +52,7 @@ citations.
   `gpt-4o-mini` instead, per the author's direction. Functionally equivalent for this
   project's purposes.
 
-See `docs/week1-plan.md` through `docs/week4b-result.md` for the session-by-session build
+See `docs/phase1-plan.md` through `docs/phase4b-result.md` for the session-by-session build
 log, including three real bugs caught before they reached a shipped number (a wrong
 IBTrACS storm ID, a stale post-redaction groundedness report, and a wasted GPU-torch
 install), each described alongside how it was caught.
@@ -71,7 +71,7 @@ Haiyan and Rolly do not, and that gap is understood, not hand-waved: the WP2 cal
 damage curve is close to zero below ~30 m/s wind speed and still only ~3.6% at 80 m/s.
 Rolly's compact wind field (Goni's real-world reputation) left most of its exposed value
 below that curve's effective start, while Odette's broader wind field pushed far more
-value into the curve's higher-damage range. Full derivation in `docs/week2-result.md`.
+value into the curve's higher-damage range. Full derivation in `docs/phase2-result.md`.
 
 ## E2 — Narration groundedness
 
@@ -86,7 +86,7 @@ population figure across 63 generations. Every ungrounded number traced to the m
 restating a scenario *input* (track offset/bearing/intensity delta) embedded in its own
 prompt — true, but not cached impact-engine *output*, so the verifier correctly flags it
 per PRD §5.2's literal rule. Full derivation, including a bug caught in the verifier
-itself before this number was trusted, in `docs/week4-result.md`.
+itself before this number was trusted, in `docs/phase4-result.md`.
 
 ## E3 — Scenario compiler accuracy
 
@@ -101,6 +101,6 @@ compiler would be circular.
 - `src/landfall/llm/` — narrator, RAG interrogator
 - `src/landfall/verify/` — groundedness verifier
 - `evals/` — E2 groundedness eval
-- `docs/` — week-by-week build log and honest results, including every bug caught
+- `docs/` — phase-by-phase build log and honest results, including every bug caught
 
 Part of the Verified AI portfolio (Mulat · Receipts · **Landfall**).

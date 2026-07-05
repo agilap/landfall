@@ -1,4 +1,4 @@
-# Week 4b result — sitrep RAG interrogator
+# Phase 4b result — sitrep RAG interrogator
 
 ## Corpus acquisition (the actual work here)
 
@@ -20,7 +20,7 @@ them was the hard part, not the RAG mechanics:
    report (Sitrep 108, April 2014) that has a real text layer and used that instead.
 
 Final corpus: one sitrep per storm — Haiyan (Sitrep 108), Rolly (Sitrep 12, the
-highest-numbered/most cumulative found), Odette (Sitrep 36). Small by design for Week 4;
+highest-numbered/most cumulative found), Odette (Sitrep 36). Small by design for Phase 4;
 expanding to more sitreps per storm is a mechanical repeat of the same pipeline, not a new
 capability.
 
@@ -51,7 +51,7 @@ Top result: `sitrep_12.pdf p.37` — a DA (Department of Agriculture) regional d
 with per-region PHP figures, correctly surfaced from a 2,067-chunk corpus. Other results
 in the top 5 pulled DSWD DROMIC family-assistance tables and a general hazard-exposure
 note. This is retrieval working as intended: real, citable NDRRMC figures, not invented
-ones — directly reusable as ground truth for the E1 comparison table (Week 2) if a tighter
+ones — directly reusable as ground truth for the E1 comparison table (Phase 2) if a tighter
 per-region figure is ever needed there.
 
 ## Known limitation, stated honestly
@@ -59,7 +59,7 @@ per-region figure is ever needed there.
 One sitrep per storm is a thin corpus — a single document's assessment stage (e.g.
 Rolly's Sitrep 12 is from 11 Nov 2020, days after landfall; later revisions likely
 adjusted figures upward, same pattern as Odette's figures that were still growing months
-after the storm per Week 2's E1 write-up). Retrieval quality and citation correctness are
+after the storm per Phase 2's E1 write-up). Retrieval quality and citation correctness are
 solid; corpus *completeness* is not — a query asking about a region not covered in the one
 ingested sitrep will retrieve the closest available match rather than admit absence. No
 "I don't know" / insufficient-evidence path is implemented yet. Worth flagging in any
@@ -70,7 +70,7 @@ write-up rather than implying full coverage.
 - **Answer synthesis** — this delivers retrieval + citations, not a synthesized
   natural-language answer. PRD §5.2's "supports 'what actually happened' queries" reads
   as retrieval-level support; adding an LLM synthesis pass on top (with its own
-  groundedness verification, reusing the Week 4 narrator/verifier pattern) is a natural
+  groundedness verification, reusing the Phase 4 narrator/verifier pattern) is a natural
   next step, not attempted here to avoid extending an already-long session.
 - **PAGASA bulletins** — only NDRRMC sitreps ingested so far. Same pipeline, different
   source.

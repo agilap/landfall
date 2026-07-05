@@ -1,4 +1,4 @@
-# Week 1 result — first damage number (Haiyan)
+# Phase 1 result — first damage number (Haiyan)
 
 **Definition of done met:** one damage number for Haiyan over the Visayas ROI, produced by
 the full hazard → exposure → impact pipeline described in PRD §5.1.
@@ -24,7 +24,7 @@ This number is **very low** against Haiyan's actual recorded damage — NDRRMC/E
 figures for Haiyan are commonly cited in the $2–3B+ range (some estimates higher), putting
 today's error factor far outside the PRD's own stated expectation of a typical 2–5× model
 error. Per PRD §4.3 ("honest error is the product"), this is recorded rather than tuned
-away. Hypotheses to test in Week 2's validation pass, in priority order:
+away. Hypotheses to test in Phase 2's validation pass, in priority order:
 
 1. **`fin_mode='pc'` (produced capital) may be the wrong or an incomplete total-value
    base.** NDRRMC damage figures typically aggregate agriculture, housing, and
@@ -57,7 +57,7 @@ honest").
    unnecessary, though the WorldPop-based result is arguably higher-resolution than
    native GPW (3 arc-sec vs. 30 arc-sec) and could reasonably just stay.
 
-## Next (Week 2)
+## Next (Phase 2)
 
 NDRRMC sitrep extraction for Haiyan, Rolly, and Odette; E1 table with the error
 attribution above formalized; exposure sanity checks (total PHL `pc` value vs. total

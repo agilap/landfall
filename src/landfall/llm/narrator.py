@@ -1,7 +1,7 @@
 """Narrator: cached impact-engine output -> plain-language briefing.
 
 PRD §5.2 (originally specified as a Haiku-class Anthropic model; the user directed a
-switch to an OpenAI small model instead — see docs/week4-result.md for that decision).
+switch to an OpenAI small model instead — see docs/phase4-result.md for that decision).
 No load-bearing number may originate here: the prompt hands the model exactly the cached
 figures it's allowed to state and instructs it not to introduce others. The groundedness
 verifier (landfall/verify/groundedness.py) is what actually enforces that, not the prompt

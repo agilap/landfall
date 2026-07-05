@@ -2,7 +2,7 @@
 citations. PRD §5.2: "Retrieval must attach source-document citations."
 
 Local embeddings only — no API calls for retrieval itself, per PRD §5.3's local-model
-stack. The corpus is small (one sitrep per storm, Week 4 scope); a flat numpy cosine
+stack. The corpus is small (one sitrep per storm, Phase 4 scope); a flat numpy cosine
 search is simpler and just as correct as a real vector DB at this size, and adding one
 would be premature.
 """

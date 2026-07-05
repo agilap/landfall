@@ -6,7 +6,7 @@ plausible" — invalid inputs are rejected outright, not clamped or guessed past
 
 Known simplification: intensity_delta_kn adjusts max_sustained_wind only. central_pressure
 is left untouched, so the Holland model's implied pressure-wind relationship becomes
-mildly inconsistent after a large intensity perturbation. Acceptable for Week 3's "however
+mildly inconsistent after a large intensity perturbation. Acceptable for Phase 3's "however
 wrong" scope; revisit if counterfactual results look physically implausible.
 """
 

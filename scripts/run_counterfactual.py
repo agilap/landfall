@@ -1,4 +1,4 @@
-"""Week 3 DoD: a counterfactual run end-to-end against its historical baseline.
+"""Phase 3 DoD: a counterfactual run end-to-end against its historical baseline.
 
 Usage: python scripts/run_counterfactual.py <storm_key> <offset_km> <bearing_deg> [intensity_delta_kn]
 Example: python scripts/run_counterfactual.py haiyan 100 0

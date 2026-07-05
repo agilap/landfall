@@ -1,4 +1,4 @@
-# Week 4 result — narrator, groundedness verifier, E2
+# Phase 4 result — narrator, groundedness verifier, E2
 
 ## Stack deviation: OpenAI instead of Anthropic
 
@@ -62,7 +62,7 @@ reflects invented statistics.
 
 ## E3 / scenario compiler — still deferred
 
-Unchanged from Week 3: the 40 hand-labeled ground-truth configs need to come from the
+Unchanged from Phase 3: the 40 hand-labeled ground-truth configs need to come from the
 user, not be authored by the agent building the compiler being evaluated.
 
 ## Next

@@ -1,6 +1,6 @@
 """IBTrACS track ingestion for the three replay storms.
 
-Week 1-2 scope: fetch-and-cache only. Track perturbation (counterfactuals) is Week 3.
+Phase 1-2 scope: fetch-and-cache only. Track perturbation (counterfactuals) is Phase 3.
 """
 
 from pathlib import Path

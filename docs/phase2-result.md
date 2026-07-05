@@ -1,10 +1,10 @@
-# Week 2 result — three-storm replay, exposure sanity check, E1 draft
+# Phase 2 result — three-storm replay, exposure sanity check, E1 draft
 
-## What changed from Week 1
+## What changed from Phase 1
 
 Refactored the Haiyan-only pipeline into a storm-generic one (`landfall/storms.py` registry
 + generic `hazard/tracks.py`, `hazard/wind.py`, `exposure/litpop.py`,
-`impact/engine.py`). Regression-checked against Week 1's Haiyan result before trusting the
+`impact/engine.py`). Regression-checked against Phase 1's Haiyan result before trusting the
 refactor — identical output ($49,327,691.86 / 9,168,006 affected).
 
 Two IBTrACS SID guesses from initial registry entries were **wrong** and caught immediately
@@ -15,7 +15,7 @@ IBTrACS data and filtering by name rather than guessing again.
 
 ROI bounds for Rolly and Odette were set by visually inspecting each storm's track and wind
 field plot (`outputs/maps/{rolly,odette}_{track,wind}.png`) and widening until the peak
-intensity sat comfortably clear of the frame edge, same process as Haiyan's Week 1 ROI.
+intensity sat comfortably clear of the frame edge, same process as Haiyan's Phase 1 ROI.
 
 ## Simulated results (all three storms)
 
@@ -94,8 +94,8 @@ against.
   that produced-capital accounting excludes by definition, which would mean no exposure
   choice fixes this — the two figures may simply be measuring different things.
 
-## Next (Week 3)
+## Next (Phase 3)
 
 Scenario compiler (NL → validated config) and counterfactual track perturbation. The
 error-attribution work above stays open — E1's final write-up (with the `fin_mode`
-comparison) can land alongside Week 4's full narration pass rather than blocking Week 3.
+comparison) can land alongside Phase 4's full narration pass rather than blocking Phase 3.

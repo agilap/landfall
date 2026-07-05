@@ -1,7 +1,7 @@
 """LitPop exposure, clipped to a storm's ROI — produced-capital value or population count.
 
 Upgrade path to OSM/PSA exposure is deliberately not built here; PRD §5.1 gates that
-upgrade behind validation error analysis (this week's E1 table).
+upgrade behind validation error analysis (this phase's E1 table).
 """
 
 from climada.entity import Exposures, LitPop

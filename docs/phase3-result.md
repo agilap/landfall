@@ -1,4 +1,4 @@
-# Week 3 result — counterfactual mechanism working end to end
+# Phase 3 result — counterfactual mechanism working end to end
 
 ## What was built
 
@@ -13,7 +13,7 @@
   with zero perturbation. Results cache to `data/cache/scenarios/<hash>.json`, keyed on a
   SHA-256 of the canonical config — matches PRD §5.1's "every scenario run is cached to
   disk keyed on a scenario-config hash."
-- Regression-checked the refactor against the exact Week 1/2 Haiyan baseline number
+- Regression-checked the refactor against the exact Phase 1/2 Haiyan baseline number
   ($49,327,691.86 / 9,168,006) before trusting it — unchanged.
 
 ## Validation (fail loud, not plausible)
@@ -59,7 +59,7 @@ to describe it.
   would need an optimization/search step (find the offset that produces landfall nearest a
   target point) — deferred, not attempted as a shortcut.
 
-## Deliberately not started this week
+## Deliberately not started this phase
 
 **LLM scenario compiler (NL → `ScenarioConfig`) and the E3 eval set** — per PRD §6, E3's 40
 hand-labeled ground-truth configs must be labeled by the author, not the agent building the
@@ -68,9 +68,9 @@ the user rather than fabricated. The compiler itself (structured-output call to 
 Haiku-class model, validating against `ScenarioConfig`) is a self-contained follow-up once
 that dataset exists or a decision is made about how to source it.
 
-## Next (Week 4, pending the above)
+## Next (Phase 4, pending the above)
 
 Narrator + groundedness verifier, sitrep RAG with citations, E2 run. E3 and the scenario
 compiler can slot in whenever the labeled dataset question is resolved — they don't block
-Week 4's narration work, which operates on cached impact output regardless of how a
+Phase 4's narration work, which operates on cached impact output regardless of how a
 scenario config was produced (hand-written or compiled).

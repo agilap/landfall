@@ -98,15 +98,15 @@ Evaluation is the primary deliverable. Three tables:
 
 ## 7. Milestones
 
-**Week 0 (pre-work, owed):** Close out Receipts fully — demo video recorded and linked, one distribution post published. Landfall does not begin until Receipts is at 100%.
+**Phase 0 (pre-work, owed):** Close out Receipts fully — demo video recorded and linked, one distribution post published. Landfall does not begin until Receipts is at 100%.
 
-**Week 1 — First number.** CLIMADA installed and running; IBTrACS Haiyan track ingested; wind field rendered over the Visayas; first uncalibrated damage figure produced. Definition of done: one damage number for one storm, however wrong.
+**Phase 1 — First number.** CLIMADA installed and running; IBTrACS Haiyan track ingested; wind field rendered over the Visayas; first uncalibrated damage figure produced. Definition of done: one damage number for one storm, however wrong.
 
-**Week 2 — Validation (load-bearing week).** All three replays running; exposure sanity checks; sitrep damage figures extracted; E1 table drafted with first error analysis.
+**Phase 2 — Validation (load-bearing phase).** All three replays running; exposure sanity checks; sitrep damage figures extracted; E1 table drafted with first error analysis.
 
-**Week 3 — Counterfactuals.** Scenario compiler with schema validation; E3 eval set written and run; counterfactual runs working end to end ("Haiyan, 100 km north") with comparison output against the historical baseline.
+**Phase 3 — Counterfactuals.** Scenario compiler with schema validation; E3 eval set written and run; counterfactual runs working end to end ("Haiyan, 100 km north") with comparison output against the historical baseline.
 
-**Week 4 — Narration and ship.** Narrator + groundedness verifier; E2 run; sitrep RAG with citations; README with all three eval tables, limitation discussion, hazard maps as hero images; write-up published: *"I simulated three typhoons and checked my model against what actually happened. It was off by X — here's why that's the point."*
+**Phase 4 — Narration and ship.** Narrator + groundedness verifier; E2 run; sitrep RAG with citations; README with all three eval tables, limitation discussion, hazard maps as hero images; write-up published: *"I simulated three typhoons and checked my model against what actually happened. It was off by X — here's why that's the point."*
 
 Slippage policy: Mulat and job-search activities take precedence. Landfall tolerates stretching to six weeks; it does not tolerate stopping at 95%.
 
@@ -116,7 +116,7 @@ Slippage policy: Mulat and job-search activities take precedence. Landfall toler
 |---|---|---|
 | Validation error is embarrassing (>5×) | Medium | It is the finding. Attribute error across layers; upgrade exposure (OSM/PSA) only if implicated. Frame in write-up. |
 | Wind-only hazard misses flood-dominated damage (Odette especially) | High | State it prominently. Report wind-attributable share where sitreps allow; scope surge to roadmap. |
-| CLIMADA learning curve consumes Week 1 | Medium | Week 1 DoD is deliberately minimal (one number). Use CLIMADA tutorials verbatim before customizing. |
+| CLIMADA learning curve consumes Phase 1 | Medium | Phase 1 DoD is deliberately minimal (one number). Use CLIMADA tutorials verbatim before customizing. |
 | Scenario compiler accepts nonsense | Medium | Schema + range validation is deterministic; the eval includes invalid-input rejection cases. |
 | Narrator verifier false-positives on rounded/aggregated numbers | Medium | Declare rounding rules; verifier matches within declared tolerance; log all redactions for review. |
 | Scope creep toward surge/flood modeling | High (known pattern) | Non-goals section is binding. `CLAUDE.md` carries the boundary. Roadmap absorbs ambition. |
