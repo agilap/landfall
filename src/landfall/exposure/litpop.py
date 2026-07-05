@@ -1,29 +1,27 @@
-"""LitPop exposure for the Visayas ROI — Week 1 scope, produced-capital value only.
+"""LitPop exposure, clipped to a storm's ROI — produced-capital value or population count.
 
 Upgrade path to OSM/PSA exposure is deliberately not built here; PRD §5.1 gates that
-upgrade behind validation error analysis in Week 2.
+upgrade behind validation error analysis (this week's E1 table).
 """
 
 from climada.entity import Exposures, LitPop
 
-from landfall.hazard.wind import ARCSEC_150_IN_DEG, VISAYAS_BOUNDS
-
 RES_ARCSEC = 150  # matches the hazard grid resolution, per PRD §5.1
 
 
-def _clip_to_visayas(exp: Exposures, bounds=VISAYAS_BOUNDS) -> Exposures:
+def _clip_to_bounds(exp: Exposures, bounds: tuple[float, float, float, float]) -> Exposures:
     lon_min, lat_min, lon_max, lat_max = bounds
     clipped = exp.copy()
     clipped.data = clipped.gdf.cx[lon_min:lon_max, lat_min:lat_max]
     return clipped
 
 
-def visayas_asset_exposure(fin_mode: str = "pc") -> Exposures:
-    """Produced-capital ('pc') asset exposure for the Philippines, clipped to Visayas."""
+def asset_exposure(bounds: tuple[float, float, float, float], fin_mode: str = "pc") -> Exposures:
+    """Produced-capital ('pc') asset exposure for the Philippines, clipped to `bounds`."""
     exp = LitPop.from_countries("PHL", res_arcsec=RES_ARCSEC, fin_mode=fin_mode)
-    return _clip_to_visayas(exp)
+    return _clip_to_bounds(exp, bounds)
 
 
-def visayas_population_exposure() -> Exposures:
+def population_exposure(bounds: tuple[float, float, float, float]) -> Exposures:
     """Population-count exposure, same grid — used for the affected-population proxy."""
-    return visayas_asset_exposure(fin_mode="pop")
+    return asset_exposure(bounds, fin_mode="pop")
