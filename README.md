@@ -45,11 +45,15 @@ redacts any numeric claim it can't trace to cached impact output; a local RAG in
 synthesis layer on top of that retrieval, with its own groundedness check — **and a real
 limitation that check surfaced**, see below.
 
+Also built: the **NL → scenario-config compiler** (`src/landfall/llm/compiler.py`) and
+its E3 eval — with a disclosed caveat. PRD §6 says E3's ground-truth configs are
+hand-labeled by the author and not delegable; at the author's explicit direction, the
+50-case eval set was instead authored by the same coding agent that built the compiler.
+That is a circularity risk (an agent writing both sides of its own exam), so it is
+stated here rather than hidden, and the eval set is plain JSON
+(`evals/e3_dataset.json`) open to author audit.
+
 **Not built / deferred:**
-- **The NL → scenario-config compiler (and its E3 eval)** — PRD §6 requires E3's 40
-  ground-truth configs be hand-labeled by the project's author, not the agent building the
-  compiler being evaluated against them. Counterfactuals currently run from
-  directly-specified configs (`ScenarioConfig(...)`), not natural language.
 - **Tagalog narration** — English only so far; same verifier applies once added.
 - **Query rewriting and table-aware PDF extraction** for the RAG layer — see the
   groundedness-vs-attribution finding below.
@@ -134,17 +138,35 @@ derivation in `docs/phase5-result.md`.
 
 ## E3 — Scenario compiler accuracy
 
-Not run. Requires 40 hand-written scenarios with hand-labeled ground-truth configs,
-labeled by the project's author (PRD §6) — an agent-authored eval of an agent-built
-compiler would be circular.
+40 natural-language scenarios with ground-truth configs (exact match on all four schema
+fields required), plus 10 deliberately invalid scenarios that must be refused — over-limit
+offsets and intensity deltas, an unregistered storm, storm surge/rainfall requests the
+wind-only schema cannot express, an unnamed storm, and a 400° bearing that must be
+rejected rather than silently normalized. Compiler: `gpt-4o-mini` at temperature 0,
+extraction-only, with pydantic re-validating every emitted config against the same hard
+ranges as a hand-written one.
+
+| Prompt iteration | Exact-config accuracy | Rejection correctness |
+|---|---|---|
+| v1 | 30/40 = 75.0% | 10/10 = 100% |
+| v2 (fields default to 0; ranges restated; deterministic name-alias mapping) | **39/40 = 97.5%** | **10/10 = 100%** |
+
+Every v1 miss was in the safe direction — valid requests wrongly refused, never an
+invalid config accepted. The v2 residual miss is the same shape: "Typhoon Rai shifted
+150 km northeast" is refused as an unknown storm (Rai is Odette's international name)
+instead of compiled. Iteration stopped there deliberately: further prompt tuning against
+these fixed 50 cases would be overfitting the exam.
+
+**Caveat, restated:** PRD §6 requires this eval set be hand-labeled by the author; it was
+instead authored by the coding agent at the author's direction (see Status above).
 
 ## Repo layout
 
 - `src/landfall/hazard/`, `exposure/`, `impact/` — the deterministic core
 - `src/landfall/scenario.py` — counterfactual config, validation, track perturbation
-- `src/landfall/llm/` — narrator, RAG interrogator
+- `src/landfall/llm/` — scenario compiler, narrator, RAG interrogator
 - `src/landfall/verify/` — groundedness verifier
-- `evals/` — E2 groundedness eval
+- `evals/` — E2 groundedness eval; E3 compiler-accuracy eval + its 50-case dataset
 - `docs/` — phase-by-phase build log and honest results, including every bug caught
 
 Part of the Verified AI portfolio (Mulat · Receipts · **Landfall**).
