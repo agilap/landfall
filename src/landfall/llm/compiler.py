@@ -58,16 +58,19 @@ historical replay ("as it happened", "no changes") is valid with all three numer
 fields 0. Never refuse because a field is simply unmentioned.
 
 Extract the request LITERALLY. Never clamp an out-of-range value into range, never \
-normalize a bearing, never guess a number the user did not state. Respond with exactly \
-one JSON object:
+normalize a bearing, never guess a number the user did not state. Every numeric field \
+must be a single value, never a range — if the request states a RANGE for any field \
+("50 to 100 km", "between 10 and 20 knots", "50-200 km", "roughly 20 knots, give or \
+take 10"), refuse; do not resolve it by picking the low end, high end, midpoint, or any \
+other single value from the stated range. Respond with exactly one JSON object:
 - {{"config": {{...the four fields...}}}} if the request is a wind-only track/intensity \
 perturbation (or exact historical replay) of a registered storm and every value the \
-user DID state is in range.
+user DID state is a single number in range.
 - {{"refusal": "<one-sentence reason>"}} otherwise — unknown storm, no storm named, a \
 requested value out of range, a requested change left unquantified (e.g. just \
-"stronger" with no number), or anything the schema cannot express: storm surge, \
-flooding, rainfall, sea level, stalling, forward speed, casualties, or any non-wind \
-hazard."""
+"stronger" with no number) or given as a range instead of a single value, or anything \
+the schema cannot express: storm surge, flooding, rainfall, sea level, stalling, \
+forward speed, casualties, or any non-wind hazard."""
 
 
 @dataclass(frozen=True)

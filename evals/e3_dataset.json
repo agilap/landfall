@@ -1,5 +1,5 @@
 {
-  "_note": "E3 ground truth (PRD §6): 40 valid NL scenarios with hand-labeled configs + 10 deliberately invalid scenarios that must be rejected. PRD §6 says ground truth is labeled by the author and is not delegable; this set was authored by the coding agent at the author's explicit direction — that circularity caveat is disclosed in the README rather than hidden.",
+  "_note": "E3 ground truth (PRD §6): 40 valid NL scenarios with hand-labeled configs + 16 deliberately invalid scenarios that must be rejected (10 original + 6 range-phrased cases added after a real bug: 'Shift Rolly 50 to 200 km south' was silently accepted at the range's high end instead of refused). PRD §6 says ground truth is labeled by the author and is not delegable; this set was authored by the coding agent at the author's explicit direction — that circularity caveat is disclosed in the README rather than hidden.",
   "valid": [
     {"id": 1, "text": "Replay Typhoon Haiyan exactly as it happened in 2013.", "expected": {"storm_key": "haiyan", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 0.0}},
     {"id": 2, "text": "Run the historical Rolly scenario with no changes.", "expected": {"storm_key": "rolly", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 0.0}},
@@ -52,6 +52,12 @@
     {"id": 47, "text": "Move Odette 1000 km west so it misses the Philippines entirely.", "why_invalid": "track offset above the 500 km hard limit"},
     {"id": 48, "text": "Give me casualty estimates for a stronger Haiyan.", "why_invalid": "casualty estimation is a hard non-goal, and 'stronger' is unquantified"},
     {"id": 49, "text": "Shift the track of some big typhoon 100 km north.", "why_invalid": "no registered storm identified"},
-    {"id": 50, "text": "Rolly offset 100 km at bearing 400 degrees.", "why_invalid": "bearing outside [0, 360) — must be rejected, not silently normalized to 40"}
+    {"id": 50, "text": "Rolly offset 100 km at bearing 400 degrees.", "why_invalid": "bearing outside [0, 360) — must be rejected, not silently normalized to 40"},
+    {"id": 51, "text": "Shift Rolly 50 to 200 km south.", "why_invalid": "track offset given as a range — every numeric field must be a single value; a real bug caught here where the compiler silently picked the range's high end (200) instead of refusing"},
+    {"id": 52, "text": "Move Odette between 100 and 150 km west.", "why_invalid": "track offset given as a range, 'between X and Y' phrasing"},
+    {"id": 53, "text": "Increase Rolly's intensity by 10 to 20 knots.", "why_invalid": "intensity delta given as a range"},
+    {"id": 54, "text": "Weaken Haiyan by roughly 20 knots, give or take 10.", "why_invalid": "intensity delta given as an implicit range ('give or take'), not a single quantified value"},
+    {"id": 55, "text": "Shift Haiyan 50-100 km north.", "why_invalid": "track offset given as a hyphenated range"},
+    {"id": 56, "text": "Offset Odette's track somewhere in the 80 to 120 km range at bearing 90.", "why_invalid": "track offset explicitly stated as a range"}
   ]
 }
