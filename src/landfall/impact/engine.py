@@ -22,6 +22,19 @@ from landfall.storms import STORMS
 PHILIPPINES_IMPF_ID = 7  # WP2 region, Eberenz et al. 2021 — see ImpfSetTropCyclone lookup
 CACHE_DIR = Path(__file__).resolve().parents[3] / "data" / "cache" / "scenarios"
 
+# v1.1 Phase 1: RMSF replaces the CLIMADA default of TDR for the WP2 (Philippines)
+# calibration. Eberenz et al. 2021 (NHESS 21:393-415, https://doi.org/10.5194/nhess-21-393-2021)
+# calibrate v_half three ways per region; for WP2-4 specifically they report that TDR
+# ("larger weight to events with large damage values... these results indicate that
+# these events are systematically overestimated by the model in the regions WP2-4")
+# fits an anomalously flat curve (v_half=188.4 m/s) that is near-zero at any wind speed
+# a real typhoon reaches. RMSF weights every matched historical event equally
+# (v_half=84.7 m/s) instead of letting the region's few largest-damage events dominate
+# the fit — see docs/v1.1-phase1-result.md for the E1 before/after this produces,
+# including Odette (held out from this decision) flipping from underestimation to
+# overestimation under this same curve.
+IMPF_CALIBRATION_APPROACH = "RMSF"
+
 
 def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
     cache_path = CACHE_DIR / f"{scenario.scenario_hash()}.json"
@@ -34,7 +47,7 @@ def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
         tracks = perturb_track(tracks, scenario)
     wind = wind_field(tracks, storm_config.roi_bounds)
 
-    impf_set = ImpfSetTropCyclone.from_calibrated_regional_ImpfSet(calibration_approach="TDR")
+    impf_set = ImpfSetTropCyclone.from_calibrated_regional_ImpfSet(calibration_approach=IMPF_CALIBRATION_APPROACH)
 
     asset_exp = asset_exposure(storm_config.roi_bounds)
     asset_exp.gdf["impf_TC"] = PHILIPPINES_IMPF_ID
@@ -59,7 +72,7 @@ def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
         "affected_population": float(affected_population),
         "impf_id": PHILIPPINES_IMPF_ID,
         "impf_region": "WP2",
-        "calibration_approach": "TDR",
+        "calibration_approach": IMPF_CALIBRATION_APPROACH,
         "hazard_model": "H1980",
         "damage_by_municipality": by_municipality.to_dict(orient="records"),
         "affected_population_by_municipality": affected_by_municipality.to_dict(orient="records"),

@@ -34,7 +34,8 @@ each storm's regional exposure corridor:
 Phases 1–8 of the PRD (`landfall-prd.md`) are done. What's built and what isn't, honestly:
 
 **Built:** IBTrACS track ingestion for all three storms; Holland (1980) wind fields;
-LitPop exposure; WP2-calibrated impact functions (Eberenz et al. 2021); per-municipality
+LitPop exposure; WP2-calibrated impact functions (Eberenz et al. 2021, RMSF calibration
+as of v1.1 Phase 1 — see E1 below); per-municipality
 damage and affected-population breakdown (GADM administrative boundaries, spatially
 joined against impact-engine output — Odette's top municipality is Cebu City, Haiyan's is
 Tacloban City, both matching real-world reporting); a validated, hard-range-checked
@@ -87,19 +88,35 @@ landfall ask "What happened in Catanduanes?" --storm rolly   # sitrep RAG interr
 
 ## E1 — Historical validation
 
-| Storm | Simulated damage (USD) | NDRRMC-recorded damage (USD, approx.) | Error factor |
+**v1.1, Phase 1 (vulnerability curve recalibration)** replaced the WP2 (Philippines)
+impact function's `TDR` calibration with `RMSF` — both are published calibrations of the
+same Eberenz et al. 2021 curve (NHESS 21:393–415,
+https://doi.org/10.5194/nhess-21-393-2021), not an invented parameter. TDR fits an
+anomalously flat curve for WP2 by the paper's own admission (*"TDR gives larger weight to
+events with large damage values... these results indicate that these events are
+systematically overestimated by the model in the regions WP2–4"*); RMSF weights every
+matched historical event equally instead. Curve shapes compared in
+`docs/impact_curves_tdr_vs_rmsf.png`. Full derivation, including the honest Odette
+finding below, in `docs/v1.1-phase1-result.md`.
+
+| Storm | Baseline (TDR) | Fix 1: RMSF calibration | NDRRMC actual |
 |---|---|---|---|
-| Haiyan (2013) | $49.3M | ~$917M | **18.6× under** |
-| Rolly (2020) | $0.40M | ~$233M | **575× under** |
-| Odette (2021) | $184.1M | $459M–$915M | **2.5–5.0× under** |
+| Haiyan (2013) | $49.3M (18.6× under) | $775.6M (**1.18× under**) | ~$917M |
+| Rolly (2020) | $0.40M (575× under) | $7.86M (**29.6× under**) | ~$233M |
+| Odette (2021) — **held out** | $184.1M (2.5–5.0× under) | $3,532.1M (**3.9–7.7× over**) | $459M–$915M |
 
 No target error factor — this table exists to be honest, not to hit a number (PRD §6).
-Odette lands inside the PRD's own stated expectation for typical TC-model error (2–5×);
-Haiyan and Rolly do not, and that gap is understood, not hand-waved: the WP2 calibrated
-damage curve is close to zero below ~30 m/s wind speed and still only ~3.6% at 80 m/s.
-Rolly's compact wind field (Goni's real-world reputation) left most of its exposed value
-below that curve's effective start, while Odette's broader wind field pushed far more
-value into the curve's higher-damage range. Full derivation in `docs/phase2-result.md`.
+Fit on Haiyan + Rolly only; Odette was never previewed or used to choose RMSF over
+TDR/EDR. **The RMSF fix flips Odette from underestimation to overestimation** — this is
+reported as the headline result of this phase, not minimized as "2 of 3 improved." A
+curve that overestimates the one storm it wasn't tuned against by a margin comparable to
+what it fixed elsewhere has not been shown to generalize; see
+`docs/v1.1-phase1-result.md` for two candidate explanations (concentrated-vs-spread-out
+storm damage profiles; a possible second, independent error in Rolly's hazard/exposure
+layers that RMSF doesn't touch), neither investigated further in this phase by design.
+
+v1's original error-analysis narrative (before this recalibration) is preserved in
+`docs/phase2-result.md`.
 
 ## E2 — Narration groundedness
 
