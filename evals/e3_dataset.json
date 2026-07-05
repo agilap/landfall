@@ -1,5 +1,5 @@
 {
-  "_note": "E3 ground truth (PRD §6): 40 valid NL scenarios with hand-labeled configs + 16 deliberately invalid scenarios that must be rejected (10 original + 6 range-phrased cases added after a real bug: 'Shift Rolly 50 to 200 km south' was silently accepted at the range's high end instead of refused). PRD §6 says ground truth is labeled by the author and is not delegable; this set was authored by the coding agent at the author's explicit direction — that circularity caveat is disclosed in the README rather than hidden.",
+  "_note": "E3 ground truth (PRD §6): 40 valid NL scenarios with hand-labeled configs + 27 deliberately invalid scenarios that must be rejected (10 original + 6 track-offset range-phrased cases added after a real bug: 'Shift Rolly 50 to 200 km south' was silently accepted at the range's high end instead of refused + 11 further range-phrased cases covering intensity, bearing, and compound multi-field ranges, all verified for repeat-stability at temperature=0 before being added). PRD §6 says ground truth is labeled by the author and is not delegable; this set was authored by the coding agent at the author's explicit direction — that circularity caveat is disclosed in the README rather than hidden.",
   "valid": [
     {"id": 1, "text": "Replay Typhoon Haiyan exactly as it happened in 2013.", "expected": {"storm_key": "haiyan", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 0.0}},
     {"id": 2, "text": "Run the historical Rolly scenario with no changes.", "expected": {"storm_key": "rolly", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 0.0}},
@@ -58,6 +58,17 @@
     {"id": 53, "text": "Increase Rolly's intensity by 10 to 20 knots.", "why_invalid": "intensity delta given as a range"},
     {"id": 54, "text": "Weaken Haiyan by roughly 20 knots, give or take 10.", "why_invalid": "intensity delta given as an implicit range ('give or take'), not a single quantified value"},
     {"id": 55, "text": "Shift Haiyan 50-100 km north.", "why_invalid": "track offset given as a hyphenated range"},
-    {"id": 56, "text": "Offset Odette's track somewhere in the 80 to 120 km range at bearing 90.", "why_invalid": "track offset explicitly stated as a range"}
+    {"id": 56, "text": "Offset Odette's track somewhere in the 80 to 120 km range at bearing 90.", "why_invalid": "track offset explicitly stated as a range"},
+    {"id": 57, "text": "Increase Haiyan's intensity somewhere between 15 and 45 knots.", "why_invalid": "intensity delta given as a range, 'between X and Y' phrasing"},
+    {"id": 58, "text": "Weaken Odette by 20-40 knots.", "why_invalid": "intensity delta given as a hyphenated range"},
+    {"id": 59, "text": "Boost Rolly's winds by at least 20 knots, maybe up to 50.", "why_invalid": "intensity delta given as an 'at least X, maybe up to Y' range"},
+    {"id": 60, "text": "Change Haiyan's intensity by plus or minus 15 knots.", "why_invalid": "intensity delta given as a plus-or-minus range, ambiguous in direction and magnitude"},
+    {"id": 61, "text": "Rolly could be anywhere from 10 knots weaker to 10 knots stronger.", "why_invalid": "intensity delta given as a range spanning both weakening and strengthening"},
+    {"id": 62, "text": "Shift Odette's track somewhere between bearing 30 and 60 degrees, 90 km.", "why_invalid": "track bearing given as a range, offset is a single value"},
+    {"id": 63, "text": "Move Haiyan north-ish, between 0 and 45 degrees bearing, by 100 km.", "why_invalid": "track bearing given as a range ('north-ish' plus explicit degree range)"},
+    {"id": 64, "text": "Rolly's track bearing could be anywhere from 200 to 250 degrees, offset 80 km.", "why_invalid": "track bearing given as a range"},
+    {"id": 65, "text": "Push Odette in a general northeasterly direction, bearing 20-70 degrees, 90 km.", "why_invalid": "track bearing given as a hyphenated range"},
+    {"id": 66, "text": "Shift Haiyan's bearing by roughly 180 degrees, give or take 20, offset 100 km.", "why_invalid": "track bearing given as an implicit 'give or take' range"},
+    {"id": 67, "text": "Shift Rolly 50 to 100 km south and weaken it by 10 to 30 knots.", "why_invalid": "compound case: both track offset and intensity delta given as ranges in the same request"}
   ]
 }

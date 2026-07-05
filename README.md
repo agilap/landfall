@@ -54,7 +54,7 @@ limitation that check surfaced and Phase 8 partially fixed**, see below.
 Also built: the **NL → scenario-config compiler** (`src/landfall/llm/compiler.py`) and
 its E3 eval — with a disclosed caveat. PRD §6 says E3's ground-truth configs are
 hand-labeled by the author and not delegable; at the author's explicit direction, the
-eval set (now 56 cases, after adding range-phrased test cases) was instead authored by
+eval set (now 67 cases, after adding range-phrased test cases) was instead authored by
 the same coding agent that built the compiler.
 That is a circularity risk (an agent writing both sides of its own exam), so it is
 stated here rather than hidden, and the eval set is plain JSON
@@ -359,11 +359,13 @@ derivation in `docs/phase5-result.md`.
 ## E3 — Scenario compiler accuracy
 
 40 natural-language scenarios with ground-truth configs (exact match on all four schema
-fields required), plus 16 deliberately invalid scenarios that must be refused — over-limit
+fields required), plus 27 deliberately invalid scenarios that must be refused — over-limit
 offsets and intensity deltas, an unregistered storm, storm surge/rainfall requests the
 wind-only schema cannot express, an unnamed storm, a 400° bearing that must be rejected
-rather than silently normalized, and six range-phrased requests ("50 to 200 km," "between
-100 and 150 km," "give or take 10 knots"). Compiler: `gpt-4o-mini` at temperature 0,
+rather than silently normalized, and 17 range-phrased requests spanning all three
+numeric fields ("50 to 200 km," "between 15 and 45 knots," "bearing 20-70 degrees,"
+"give or take 10 knots," "plus or minus 15 knots," and a compound case with two fields
+both given as ranges in the same request). Compiler: `gpt-4o-mini` at temperature 0,
 extraction-only, with pydantic re-validating every emitted config against the same hard
 ranges as a hand-written one.
 
@@ -371,21 +373,25 @@ ranges as a hand-written one.
 |---|---|---|
 | v1 | 30/40 = 75.0% | 10/10 = 100% |
 | v2 (fields default to 0; ranges restated; deterministic name-alias mapping) | 39/40 = 97.5% | 10/10 = 100% |
-| v3 (explicit range-rejection instruction; +6 range-phrased invalid cases) | **40/40 = 100%*** | **16/16 = 100%** |
+| v3 (explicit range-rejection instruction; +6 track-offset range cases) | 40/40 = 100%* | 16/16 = 100% |
+| v3, extended (+11 more range cases: intensity, bearing, compound) | **40/40 = 100%*** | **27/27 = 100%** |
 
 Every v1 miss was in the safe direction — valid requests wrongly refused, never an
 invalid config accepted. The v3 range-rejection instruction was added after directly
 testing range-phrased inputs and finding a real bug: **"Shift Rolly 50 to 200 km south"
 was silently accepted, picking the range's high end (200) instead of refusing** — the
-prompt had no explicit instruction covering ranges at all. All six new range-phrased
-test cases (hyphenated, "between X and Y," "X to Y," "give or take") are now correctly
-refused, verified individually.
+prompt had no explicit instruction covering ranges at all. Extending the same test to
+intensity- and bearing-phrased ranges, and a compound case with two ranged fields at
+once, found no further bugs — all 11 additional cases refused correctly on first try,
+and the three trickiest ("plus or minus," a hyphenated bearing range, and the compound
+case) were each repeated 3 times to confirm the result wasn't a one-off before being
+added to the dataset.
 
 *\*The v2 residual miss ("Typhoon Rai shifted 150 km northeast," Rai being Odette's
 international name) is not durably fixed — it's genuinely non-deterministic at
 temperature=0, not just re-tested until it happened to pass. Direct isolated testing
 after the v3 prompt change: 3 of 4 repeated calls on that exact input correctly
-compiled it, 1 of 4 refused it as an unrecognized storm. Both full 56-case eval runs
+compiled it, 1 of 4 refused it as an unrecognized storm. Every full-suite eval run
 reported here scored 100%/100%, but that specific case can still fail on a given run —
 reported honestly rather than presented as a stable guarantee.*
 
@@ -396,5 +402,5 @@ reported honestly rather than presented as a stable guarantee.*
 - `src/landfall/llm/` — scenario compiler, narrator, RAG interrogator
 - `src/landfall/verify/` — groundedness verifier
 - `src/landfall/cli.py` — `landfall` console-script entry point
-- `evals/` — E2 groundedness eval; E3 compiler-accuracy eval + its 56-case dataset
+- `evals/` — E2 groundedness eval; E3 compiler-accuracy eval + its 67-case dataset
 - `docs/` — phase-by-phase build log and honest results, including every bug caught
