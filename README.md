@@ -374,6 +374,26 @@ stating a conclusion first and rationalizing it afterward. Verified 5 of 5 corre
 after the fix (up from 0 of 4 before it), with no regression across the other 13 cases.
 Reusable regression check for all of the above: `evals/rag_storm_date_cases.py`.
 
+**Why computation queries need no such fix — the verifier's guarantee boundary,
+characterized.** A natural follow-up worry: if a wrong *comparison* slips past the
+verifier, do wrong *sums, averages, and percentages* too? Testing computation-shaped
+queries ("total infrastructure damage across all of Region V," "average damage per
+Catanduanes municipality," "add up all the water-infrastructure figures") shows they
+don't — and the reason is precisely the difference from the comparison case.
+Arithmetic emits a **new number** the passages don't contain, which the mechanical
+verifier catches by construction: asked to average three figures, one draft computed
+₱606,941,680 (their sum) and ₱202,314,226.67 (its stated average — LLM arithmetic that
+doesn't even divide cleanly, a second reason not to trust it), and the verifier flagged
+both and forced a regeneration that declined; asked outright to "add up" the figures,
+another draft computed ₱565,926,680 and was likewise caught. A wrong comparison, by contrast,
+emits no new number — only a wrong conclusion drawn over numbers that are each already
+grounded — which is exactly why it slipped through and needed a prompt fix. So the
+boundary is clean and now explicit: **the verifier reliably stops fabricated *and
+computed* numbers (anything it can't trace to a passage), but not wrong *reasoning*
+over correctly-grounded ones.** The genuinely-summed grand total, when one exists as a
+line item in the source (e.g. Region V's ₱12,867,014,693.78), is correctly retrieved
+and cited rather than recomputed — grounded, not derived.
+
 The PRD's representative queries (§3) ask things like *"which municipalities in Cebu see
 the highest housing damage?"* — answerable now via a spatial join against GADM
 administrative boundaries:
