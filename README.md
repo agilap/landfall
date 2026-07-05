@@ -91,6 +91,31 @@ landfall compile "Shift Rolly 50 km south"              # NL -> ScenarioConfig
 landfall ask "What happened in Catanduanes?" --storm rolly   # sitrep RAG interrogator
 ```
 
+Damage is a point estimate plus an interquartile range (v1.2 — see below for why a
+range, not a single number). `landfall run haiyan`:
+
+```
+Total damage (USD): 695,357,863.53 point estimate (range: 49,596,773.73 - 2,891,237,057.79)
+Affected population: 9,329,251
+Top municipalities by damage:
+  Tacloban City, Leyte: $166,503,494.24
+  Ormoc City, Leyte: $76,725,557.55
+  ...
+```
+
+`landfall narrate odette --intensity-delta 20` narrates the range directly, with the
+groundedness verifier rejecting any figure the model might invent between the two
+bounds (e.g. an averaged midpoint):
+
+```
+In this counterfactual scenario based on Typhoon Odette (2021), the damage is estimated
+to be between $341,982,930 and $29,251,253,997.68. The affected population is
+approximately 9,248,109 people. The scenario reflects a change in the typhoon's track
+and intensity, which could lead to significant economic impacts.
+
+[groundedness: 4/4 final, 4/4 raw]
+```
+
 ## E1 — Historical validation (v1 baseline)
 
 | Storm | Simulated damage (USD) | NDRRMC-recorded damage (USD, approx.) | Error factor |
