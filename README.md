@@ -5,6 +5,8 @@
 
 # Landfall
 
+[![GitHub](https://img.shields.io/badge/GitHub-agilap%2Flandfall-blue?logo=github)](https://github.com/agilap/landfall)
+
 **Counterfactual typhoon damage simulation for the Philippines.**
 
 A deterministic hazard–exposure–vulnerability engine (CLIMADA) computes all damage
