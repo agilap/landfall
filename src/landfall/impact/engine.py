@@ -1,10 +1,14 @@
 """Hazard -> exposure -> impact run for any registered storm, historical or counterfactual.
 
 Every run is a ScenarioConfig (the historical baseline is just one with zero perturbation)
-and every result is cached to disk keyed on the config's hash, per PRD §5.1 — downstream
-narration can only ever reference this cached output, never a live recomputation.
+and every result is cached to disk, per PRD §5.1 — downstream narration can only ever
+reference this cached output, never a live recomputation. The on-disk cache key is
+`_cache_key()`, not `scenario.scenario_hash()` alone — see its docstring for why a bare
+scenario-field hash isn't sufficient (it doesn't invalidate when calibration or ROI bounds
+change, which has happened twice already in this project's history).
 """
 
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -75,12 +79,36 @@ IMPF_POINT_QUANTILE = 0.5  # median -- kept for backward-compatible single-numbe
 IMPF_RANGE_QUANTILES = (0.25, 0.75)  # interquartile range reported alongside the point estimate
 
 
+def _cache_key(scenario: ScenarioConfig, storm_config) -> str:
+    """`ScenarioConfig.scenario_hash()` alone is not a safe cache key: it hashes only the
+    user-facing scenario fields (storm, offset, bearing, intensity delta), not the
+    calibration approach/quantiles or ROI bounds that also determine the result -- and
+    both of those HAVE changed for real in this project's history (TDR->RMSF->EDR
+    calibration; ROI bounds are per-storm data, not code, but still mutable). Tampering
+    a cached file's calibration_approach to "TDR" and total_damage_usd to a fake 1.23,
+    then calling run() again for the identical ScenarioConfig, confirmed `run()` returned
+    the tampered value unchanged -- a stale post-recalibration cache entry would be served
+    identically, forever, with no way to detect it happened. This folds everything that
+    actually determines the output into the key, so a future calibration or ROI change
+    naturally produces a new key (old entries go quietly unreferenced) instead of silently
+    serving output computed under a methodology the current code no longer uses."""
+    fingerprint = {
+        "scenario_hash": scenario.scenario_hash(),
+        "calibration_approach": IMPF_CALIBRATION_APPROACH,
+        "calibration_point_quantile": IMPF_POINT_QUANTILE,
+        "calibration_range_quantiles": list(IMPF_RANGE_QUANTILES),
+        "roi_bounds": list(storm_config.roi_bounds),
+    }
+    canonical = json.dumps(fingerprint, sort_keys=True)
+    return hashlib.sha256(canonical.encode()).hexdigest()[:16]
+
+
 def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
-    cache_path = CACHE_DIR / f"{scenario.scenario_hash()}.json"
+    storm_config = STORMS[scenario.storm_key]
+    cache_path = CACHE_DIR / f"{_cache_key(scenario, storm_config)}.json"
     if use_cache and cache_path.exists():
         return json.loads(cache_path.read_text())
 
-    storm_config = STORMS[scenario.storm_key]
     tracks = get_track(scenario.storm_key)
     if not scenario.is_historical_baseline():
         tracks = perturb_track(tracks, scenario)

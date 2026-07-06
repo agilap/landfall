@@ -404,6 +404,31 @@ correctly, confirming the system prompt was never the security boundary here;
 `ScenarioConfig`'s pydantic validation is, and it held. Full derivation in
 `docs/v1.3-phase2-result.md`.
 
+**v1.3 Phase 3 — the scenario cache trusted a stale calibration silently.**
+`CLAUDE.md`'s own engineering rule states every run is "cached to disk keyed on a
+scenario-config hash" — but that hash (`ScenarioConfig.scenario_hash()`) covers only
+the user-facing fields (storm, offset, bearing, intensity delta), never the calibration
+approach/quantiles or ROI bounds that also determine the output, and both of those
+**have** changed for real in this project's history (calibration: TDR → RMSF → EDR
+across v1.1/v1.2). Confirmed directly, not just architecturally: hand-tampered a real
+cached result's `total_damage_usd` to a fake `1.23` and its `calibration_approach` to
+`"TDR"`, called `run()` again for the identical `ScenarioConfig` — **it returned the
+tampered value unchanged**, with no way to detect the mismatch. A stale post-
+recalibration cache entry would be served identically forever; this project has
+recalibrated twice already, and Phase 2's guard (above) required manually clearing the
+cache to test — nothing enforces that step.
+
+Fixed with `_cache_key()`: folds the calibration constants and the storm's ROI bounds
+into the cache fingerprint alongside the scenario hash, so a future calibration or ROI
+change naturally produces a different key instead of silently reusing output computed
+under a methodology the current code no longer uses. Verified the fix directly: a
+tampered file planted at the *old-style* key (scenario hash alone — what a genuinely
+stale pre-fix entry looks like) is now correctly ignored and recomputed fresh. Pinned
+with a new regression test, `tests/test_engine_cache.py` (3 cases, one real engine
+computation for setup). All four storms' baselines recompute to the exact values
+already verified this session; E3 unaffected (48/48, 36/37); E2 unaffected (336/336 =
+100% final). Full derivation in `docs/v1.3-phase3-result.md`.
+
 ## E2 — Narration groundedness
 
 ```
@@ -612,5 +637,6 @@ as a stable guarantee.*
 - `src/landfall/cli.py` — `landfall` console-script entry point
 - `evals/` — E2 groundedness eval; E3 compiler-accuracy eval + its 85-case dataset;
   RAG storm/date phrasing robustness check
-- `tests/` — unit tests for the groundedness verifier (deterministic, no API)
+- `tests/` — unit tests for the groundedness verifier (deterministic, no API) and the
+  scenario cache key (one real engine computation for setup, no API)
 - `docs/` — phase-by-phase build log and honest results, including every bug caught
