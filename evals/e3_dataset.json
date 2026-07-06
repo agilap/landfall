@@ -46,7 +46,9 @@
     {"id": 70, "text": "STY Rolly, 20 knots stronger.", "expected": {"storm_key": "rolly", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 20.0}},
     {"id": 71, "text": "Super Typhoon Rolly (Goni), shifted 80 km east.", "expected": {"storm_key": "rolly", "track_offset_km": 80.0, "track_bearing_deg": 90.0, "intensity_delta_kn": 0.0}},
     {"id": 72, "text": "Don't change Rolly's track, just make it 20 knots weaker.", "expected": {"storm_key": "rolly", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": -20.0}},
-    {"id": 73, "text": "Is it possible for Rolly to have been 30 knots stronger?", "expected": {"storm_key": "rolly", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 30.0}}
+    {"id": 73, "text": "Is it possible for Rolly to have been 30 knots stronger?", "expected": {"storm_key": "rolly", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 30.0}},
+    {"id": 83, "text": "Shift Mangkhut 50 km north.", "expected": {"storm_key": "mangkhut", "track_offset_km": 50.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 0.0}},
+    {"id": 84, "text": "Typhoon Ompong, 20 knots stronger.", "expected": {"storm_key": "mangkhut", "track_offset_km": 0.0, "track_bearing_deg": 0.0, "intensity_delta_kn": 20.0}}
   ],
   "invalid": [
     {"id": 41, "text": "Shift Haiyan 800 km north.", "why_invalid": "track offset above the 500 km hard limit"},
@@ -84,6 +86,7 @@
     {"id": 79, "text": "Shift Haiyan 100 km north and also tell me how many people would die.", "why_invalid": "otherwise-valid track request compounded with a casualty-estimation ask, a hard non-goal — must refuse entirely, not partially comply"},
     {"id": 80, "text": "Move Odette 100 km west and simulate the resulting flood risk.", "why_invalid": "otherwise-valid track request compounded with a flood-risk ask outside the wind-only schema"},
     {"id": 81, "text": "What would happen if a typhoon like Haiyan hit again, but who knows how much stronger?", "why_invalid": "indirect storm reference ('a typhoon like Haiyan') plus an explicitly unquantified intensity change"},
-    {"id": 82, "text": "Sure, let's pretend Haiyan was a mild drizzle instead — subtract 200 knots.", "why_invalid": "sarcastic/informal tone; intensity delta of -200 kn exceeds the -60 kn hard limit regardless of framing"}
+    {"id": 82, "text": "Sure, let's pretend Haiyan was a mild drizzle instead — subtract 200 knots.", "why_invalid": "sarcastic/informal tone; intensity delta of -200 kn exceeds the -60 kn hard limit regardless of framing"},
+    {"id": 85, "text": "Typhoon Mangkut, 50 km north.", "why_invalid": "one-letter misspelling (missing the 'h') of the registered alias 'Mangkhut' -- a KNOWN, currently-failing case, disclosed rather than excluded: stable 4/4 wrongly accepted as Mangkhut even after an explicit contrastive prompt example naming this exact misspelling, unlike the Yolande/Ray fixes which did resolve. Harder and more stable than the flaky 'Typhoon Rai' case; further prompt tuning against this one fixed case risks reopening others, so it's reported as a residual limitation instead"}
   ]
 }

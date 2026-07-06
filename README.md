@@ -10,8 +10,9 @@
 **Counterfactual typhoon damage simulation for the Philippines.**
 
 A deterministic hazard–exposure–vulnerability engine (CLIMADA) computes all damage
-figures for three historical Philippine typhoons — Haiyan (2013), Rolly (2020), and
-Odette (2021) — and for counterfactual scenarios (track offset, bearing, intensity delta).
+figures for four historical Philippine typhoons — Haiyan (2013), Rolly (2020),
+Odette (2021), and Mangkhut (2018) — and for counterfactual scenarios (track offset,
+bearing, intensity delta).
 An LLM layer narrates cached engine output as a plain-language briefing; **every numeric
 claim in generated briefings is mechanically verified against the impact engine's cached
 output before it reaches the user, with ungrounded claims regenerated or redacted.** A
@@ -31,9 +32,10 @@ each storm's regional exposure corridor:
 
 ## Status
 
-Phases 1–8 of the PRD (`landfall-prd.md`) are done. What's built and what isn't, honestly:
+Phases 1–8 of the PRD (`landfall-prd.md`) are done; v1.3 added a 4th storm — see below.
+What's built and what isn't, honestly:
 
-**Built:** IBTrACS track ingestion for all three storms; Holland (1980) wind fields;
+**Built:** IBTrACS track ingestion for all four storms; Holland (1980) wind fields;
 LitPop exposure nationally, with a hybrid OSM-buildings + PSA-census layer for
 Catanduanes/Albay/Camarines Sur (v1.1 Phase 3 — see E1 below); WP2-calibrated impact
 functions (Eberenz et al. 2021, EDR calibration with an interquartile uncertainty range
@@ -54,7 +56,7 @@ limitation that check surfaced and Phase 8 partially fixed**, see below.
 Also built: the **NL → scenario-config compiler** (`src/landfall/llm/compiler.py`) and
 its E3 eval — with a disclosed caveat. PRD §6 says E3's ground-truth configs are
 hand-labeled by the author and not delegable; at the author's explicit direction, the
-eval set (now 82 cases, after adding range-phrased, storm-name, and refusal-phrasing
+eval set (now 85 cases, after adding range-phrased, storm-name, and refusal-phrasing
 test cases) was instead authored by
 the same coding agent that built the compiler.
 That is a circularity risk (an agent writing both sides of its own exam), so it is
@@ -75,11 +77,13 @@ stated here rather than hidden, and the eval set is plain JSON
   project's purposes.
 
 See `docs/phase1-plan.md` through `docs/phase8-result.md` (v1), `docs/v1.1-phase1-result.md`
-through `docs/v1.1-phase5-result.md` (v1.1's underestimation fix), and
+through `docs/v1.1-phase5-result.md` (v1.1's underestimation fix),
 `docs/v1.2-phase1-result.md` through `docs/v1.2-phase2-result.md` (v1.2's
-calibration-uncertainty fix) for the session-by-session build log, including three
-real bugs caught before they reached a shipped number (a wrong IBTrACS storm ID, a
-stale post-redaction groundedness report, and a wasted GPU-torch install), each
+calibration-uncertainty fix), and `docs/v1.3-phase1-result.md` (v1.3's 4th storm) for
+the session-by-session build log, including real bugs caught before they reached a
+shipped number (a wrong IBTrACS storm ID, a stale post-redaction groundedness report, a
+wasted GPU-torch install, and a hardcoded per-storm year dict that crashed on the 4th
+storm), each
 described alongside how it was caught.
 
 ## Usage
@@ -300,6 +304,75 @@ to $23,530,739,646.49, 4/4 grounded) and a counterfactual (Rolly +100km/+20kn: c
 labeled as a counterfactual, range stated correctly, 4/4 grounded). Per-municipality
 breakdown remains point-estimate only. Full derivation in `docs/v1.2-phase2-result.md`.
 
+## v1.3 — a 4th historical storm (Mangkhut/Ompong, 2018), and what adding one broke
+
+PRD §2's original v1 non-goal ("no nationwide coverage — only regions affected by the
+three replay storms") was a deliberate boundary. Adding a 4th storm was explicit author
+direction, not organic scope creep — same verification discipline, one storm at a time.
+
+**Two candidates checked before picking one.** Mangkhut/Ompong (2018, Northern Luzon)
+and Bopha/Pablo (2012, Mindanao→Visayas) were both fetched and verified via IBTrACS
+before choosing — an initial guess at both storms' SIDs was wrong and had to be
+corrected by searching IBTrACS by name instead of guessing the ID pattern. Bopha's real
+PH-transit track substantially overlaps **both** Haiyan's and Odette's existing ROIs,
+reopening the multi-storm overlap complexity from v1.1 Phase 3; Mangkhut's Northern
+Luzon corridor overlaps none of the other three. Sourced the same way as the original
+three: IBTrACS SID `2018250N12170` (verified against the fetched track's own name),
+PH-local name "Ompong" (confirmed via two independent sources, not recalled from
+memory), ROI bounds derived from the actual PH-transit segment's coordinates, and the
+sitrep (NDRRMC Update SitRep No. 50) found on ReliefWeb — `ndrrmc.gov.ph` blocks
+automated requests, same as before.
+
+**E1 ground truth**: the sitrep's own "COST OF DAMAGES" table gives a combined
+Infrastructure + Agriculture total of ₱33,692,891,286.73, converted at the World Bank's
+2018 annual-average rate (₱52.6614/USD, fetched directly — not reused from Rolly's 2020
+rate) to **$639,802,058.47**.
+
+| Storm | Point estimate | Interquartile range | NDRRMC actual | Error factor | Bracketed? |
+|---|---|---|---|---|---|
+| Mangkhut (2018) | $125,983,187.57 | $7,589,941.04 – $931,567,868.90 | $639,802,058.47 | **5.08× under** | **✓** |
+
+The actual figure lands inside the interquartile range — a real out-of-sample check of
+v1.2's range-calibration finding, on a storm it had never seen, not just a fourth data
+point restating what three storms already showed. 5.08× under sits in the same rough
+band as the other three storms' final error factors, consistent with v1.1 Phase 5's
+finding that no single calibration fits all of them precisely. Geographic sanity check:
+top-damage municipality is Laoag City, Ilocos Norte — sitting almost exactly on the
+track's real exit path, independently consistent with real-world reporting.
+
+**A wind-field sanity check that could have looked like a bug but wasn't.** Itogon,
+Benguet — where a rain-triggered landslide killed ~100 people, the storm's single
+deadliest incident — showed **0 m/s** simulated wind at the nearest centroid. Checked
+before trusting it: a full north-south transect shows a smooth, continuous field (0 kn
+below 16.83°N, ramping through the ~17.5 m/s threshold, peaking near Baggao's landfall
+latitude, decaying smoothly north), not a cliff or ROI-boundary artifact. Itogon's
+near-zero simulated wind is a genuine model output — a clean, independent illustration
+of the wind-only blind spot, since the deadliest incident here was rain/geohazard-
+driven, the same category of gap already flagged for Rolly's flood share.
+
+**A second real compiler bug, found the same way as the first.** Testing the new
+storm's name handling found "Typhoon Mangkut" (missing the "h") silently accepted as
+Mangkhut, stable across repeats. An explicit contrastive prompt example — the same fix
+that resolved "Yolande" and "Ray" — did **not** resolve this one; still 4/4 wrongly
+accepted after the fix. Harder and more stable than the flaky "Typhoon Rai" case.
+Given the earlier oscillation risk documented in E3's own history (fixing one alias
+broke another, repeatedly), further tuning against this single case wasn't attempted —
+disclosed as a known-failing case in `evals/e3_dataset.json` (id 85) instead of excluded
+to protect the accuracy number. Full suite with it included: 48/48 exact-config (100%),
+36/37 rejection (97.3%) — no regressions on any previously-fixed case.
+
+**A real bug found by adding a 4th storm at all: duplicated, drifting state.**
+`landfall narrate mangkhut` crashed outright — `cli.py` had a hardcoded
+`{"haiyan": 2013, "rolly": 2020, "odette": 2021}` year lookup with no entry for the new
+storm. The identical hardcoded dict was independently duplicated in
+`evals/e2_groundedness.py` (twice). Fixed at the root: added `year` to `StormConfig`
+itself (verified against each storm's actual fetched track timestamps, including
+double-checking the original three rather than assuming they were already right), and
+every call site now reads `STORMS[key].year` — nothing hardcodes "three" (or "four")
+anywhere anymore, so a 5th storm can't silently break the same way.
+
+Full derivation in `docs/v1.3-phase1-result.md`.
+
 ## E2 — Narration groundedness
 
 ```
@@ -332,6 +405,12 @@ qualifies. A bare un-prefixed "49.3M" is left deliberately un-parsed, since "m" 
 disambiguated from metres here. Pinned by the project's first unit-test file,
 `tests/test_groundedness.py` (11 cases, no API). E2 was re-run afterward: raw 95.5%,
 final still 100.0%, no regression.
+
+**v1.3 re-run, now four storms.** `evals/e2_groundedness.py` iterates the `STORMS`
+registry directly, so adding Mangkhut scaled it automatically — 84 briefings (up from
+63), no code change needed beyond the year-lookup fix described in the v1.3 section
+above. Result: **336/360 = 93.3% raw, 336/336 = 100.0% final** — the same ratio as the
+three-storm run, holding exactly under a fourth, previously-unseen storm.
 
 ## RAG answer synthesis — groundedness is not the same as correct attribution
 
@@ -428,12 +507,12 @@ derivation in `docs/phase5-result.md`.
 
 ## E3 — Scenario compiler accuracy
 
-46 natural-language scenarios with ground-truth configs (exact match on all four schema
-fields required), plus 36 deliberately invalid scenarios that must be refused —
+48 natural-language scenarios with ground-truth configs (exact match on all four schema
+fields required), plus 37 deliberately invalid scenarios that must be refused —
 over-limit offsets and intensity deltas, an unregistered storm, storm surge/rainfall
 requests the wind-only schema cannot express, an unnamed storm, a 400° bearing that
 must be rejected rather than silently normalized, 17 range-phrased requests spanning
-all three numeric fields, 4 storm-name-error cases, and 5 tricky-refusal-phrasing
+all three numeric fields, 5 storm-name-error cases, and 5 tricky-refusal-phrasing
 cases (rhetorical questions, compound valid+out-of-scope requests, indirect storm
 references, sarcastic tone). Compiler: `gpt-4o-mini` at temperature 0, extraction-only,
 with pydantic re-validating every emitted config against the same hard ranges as a
@@ -445,7 +524,8 @@ hand-written one.
 | v2 (fields default to 0; ranges restated; deterministic name-alias mapping) | 39/40 = 97.5% | 10/10 = 100% |
 | v3 (explicit range-rejection instruction; +6 track-offset range cases) | 40/40 = 100%* | 16/16 = 100% |
 | v3, extended (+11 more range cases: intensity, bearing, compound) | 40/40 = 100%* | 27/27 = 100% |
-| v4 (exact storm-name matching + category-prefix stripping; +6 valid, +9 invalid cases) | **46/46 = 100%*** | **36/36 = 100%** |
+| v4 (exact storm-name matching + category-prefix stripping; +6 valid, +9 invalid cases) | 46/46 = 100%* | 36/36 = 100% |
+| v5 (4th storm added; +2 valid, +1 known-failing invalid case) | **48/48 = 100%*** | **36/37 = 97.3%** |
 
 Every v1 miss was in the safe direction — valid requests wrongly refused, never an
 invalid config accepted. The v3 range-rejection instruction was added after directly
@@ -474,7 +554,17 @@ before comparing the remaining name — fixed that without reopening any of the 
 three. The final prompt was verified with two full consolidated passes (18 cases each,
 0 mismatches) before any of it was added to the dataset.
 
-*\*Neither the v3 nor v4 100% figures are stable guarantees. The v2 residual miss
+**v5, from adding a 4th storm (v1.3): the same fuzzy-matching bug recurred, and this
+time it didn't fully resolve.** "Typhoon Mangkut" (missing the "h") was silently
+accepted as Mangkhut, stable across repeats. The same contrastive-example fix that
+resolved Yolande and Ray was added, but this one **remained wrong 4/4 calls after the
+fix** — harder and more stable than the flaky Rai case. Given the oscillation already
+seen twice in this section (each fix trading one broken case for another), further
+tuning against this single case wasn't attempted. Disclosed as a known-failing case in
+the dataset (id 85) rather than excluded to keep the accuracy number clean — hence
+36/37, not 37/37, on this row.
+
+*\*Neither the v3, v4, nor v5 100% exact-config figures are stable guarantees. The v2 residual miss
 ("Typhoon Rai shifted 150 km northeast") is genuinely non-deterministic at
 temperature=0: direct isolated testing found 3 of 4 repeated calls compiled it
 correctly, 1 of 4 refused it as an unrecognized storm. Every full-suite eval run
@@ -489,7 +579,7 @@ as a stable guarantee.*
 - `src/landfall/llm/` — scenario compiler, narrator, RAG interrogator
 - `src/landfall/verify/` — groundedness verifier
 - `src/landfall/cli.py` — `landfall` console-script entry point
-- `evals/` — E2 groundedness eval; E3 compiler-accuracy eval + its 82-case dataset;
+- `evals/` — E2 groundedness eval; E3 compiler-accuracy eval + its 85-case dataset;
   RAG storm/date phrasing robustness check
 - `tests/` — unit tests for the groundedness verifier (deterministic, no API)
 - `docs/` — phase-by-phase build log and honest results, including every bug caught

@@ -23,7 +23,7 @@ load_dotenv()
 
 MODEL = "gpt-4o-mini"
 
-# PH-local <-> international names for the three registered storms. The compiler should
+# PH-local <-> international names for the four registered storms. The compiler should
 # resolve either name to the registry key; anything else is an unregistered storm.
 STORM_ALIASES = {
     "haiyan": "haiyan",
@@ -32,28 +32,32 @@ STORM_ALIASES = {
     "goni": "rolly",
     "odette": "odette",
     "rai": "odette",
+    "mangkhut": "mangkhut",
+    "ompong": "mangkhut",
 }
 
 SYSTEM_PROMPT = f"""You compile natural-language typhoon counterfactual requests into a \
-strict JSON config for a wind-only damage simulation. Exactly six storm-name strings \
+strict JSON config for a wind-only damage simulation. Exactly eight storm-name strings \
 are recognized, case-insensitive: "haiyan", "yolanda" (both map to key "haiyan"); \
-"rolly", "goni" (both map to key "rolly"); "odette", "rai" (both map to key "odette"). \
+"rolly", "goni" (both map to key "rolly"); "odette", "rai" (both map to key "odette"); \
+"mangkhut", "ompong" (both map to key "mangkhut"). \
 First strip any storm-category prefix or title the request attaches to the name — \
 "Typhoon", "Super Typhoon", "Tropical Storm", "TD", "TS", "STY", "TY" and similar are \
 not part of the name (e.g. "STY Rolly" and "Typhoon Rolly" both name "Rolly"). Then \
-compare what remains against these six strings character-by-character, ignoring only \
-case. If it is identical to one of the six, that is a fully valid match — \
-"yolanda", "goni", and "rai" are just as valid as the primary names, never a reason to \
-refuse. If it differs from all six by even a single letter, it is a DIFFERENT, \
-unregistered name, no matter how similar it sounds or how confident you are about what \
-the user probably meant — refuse. Do not use real-world knowledge of what these storms \
-are also called; go strictly off the six strings above. For example: "rai" itself must \
-be accepted, but "ray" is a one-letter difference from "rai" and must be refused; \
-"yolanda" itself must be accepted, but "yolande" is a one-letter difference and must be \
-refused.
+compare what remains against these eight strings character-by-character, ignoring only \
+case. If it is identical to one of the eight, that is a fully valid match — \
+"yolanda", "goni", "rai", and "ompong" are just as valid as the primary names, never a \
+reason to refuse. If it differs from all eight by even a single letter, it is a \
+DIFFERENT, unregistered name, no matter how similar it sounds or how confident you are \
+about what the user probably meant — refuse. Do not use real-world knowledge of what \
+these storms are also called; go strictly off the eight strings above. For example: \
+"rai" itself must be accepted, but "ray" is a one-letter difference from "rai" and must \
+be refused; "yolanda" itself must be accepted, but "yolande" is a one-letter difference \
+and must be refused; "mangkhut" itself must be accepted, but "mangkut" is missing the \
+"h" (a one-letter difference) and must be refused.
 
 Config fields:
-- storm_key: one of "haiyan", "rolly", "odette"
+- storm_key: one of "haiyan", "rolly", "odette", "mangkhut"
 - track_offset_km: how far the whole track is shifted, in km (0 if unchanged)
 - track_bearing_deg: compass bearing of the shift (0=north, 90=east, 180=south, \
 270=west; northeast=45, southeast=135, southwest=225, northwest=315)

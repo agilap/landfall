@@ -48,7 +48,7 @@ def cmd_run(args: argparse.Namespace) -> None:
 def cmd_narrate(args: argparse.Namespace) -> None:
     scenario = _scenario_from_args(args)
     result = run_baseline(args.storm) if scenario.is_historical_baseline() else run(scenario)
-    year = {"haiyan": 2013, "rolly": 2020, "odette": 2021}[args.storm]
+    year = STORMS[args.storm].year
     if scenario.is_historical_baseline():
         description = f"Historical replay of Typhoon {args.storm.title()} ({year})."
     else:

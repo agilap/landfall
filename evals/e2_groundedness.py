@@ -1,9 +1,12 @@
 """E2 — Narration groundedness (PRD §6).
 
 Generates N >= 50 briefings across a mix of historical-baseline and counterfactual
-scenarios for all three replay storms, then reports the percentage of numeric claims
-traceable to cached impact-engine output — both raw (no verifier) and after the
-verifier's regenerate/redact pass. The gap between those two rows is the thesis.
+scenarios for every registered storm (iterates `STORMS`, so this automatically scales
+from 63 briefings at three storms to 84 at four, per-storm year sourced from
+`StormConfig.year` rather than a hardcoded dict here), then reports the percentage of
+numeric claims traceable to cached impact-engine output — both raw (no verifier) and
+after the verifier's regenerate/redact pass. The gap between those two rows is the
+thesis.
 
 Requires OPENAI_API_KEY. Run from the `landfall` conda env: python evals/e2_groundedness.py
 """
@@ -27,7 +30,7 @@ GENERATIONS_PER_SCENARIO = 3
 
 
 def _describe(storm_key: str, variant: dict) -> str:
-    year = {"haiyan": 2013, "rolly": 2020, "odette": 2021}[storm_key]
+    year = STORMS[storm_key].year
     if not variant:
         return f"Historical replay of Typhoon {storm_key.title()} ({year})."
     parts = [f"Counterfactual based on Typhoon {storm_key.title()} ({year}):"]
@@ -44,8 +47,6 @@ def main():
     final_grounded = final_total = 0
     rows = []
 
-    years = {"haiyan": 2013, "rolly": 2020, "odette": 2021}
-
     for storm_key in STORMS:
         for variant in SCENARIO_VARIANTS:
             config = ScenarioConfig(storm_key=storm_key, **variant)
@@ -59,7 +60,7 @@ def main():
                     damage_range["low"],
                     damage_range["high"],
                     result["affected_population"],
-                    permitted_values=[years[storm_key]],
+                    permitted_values=[STORMS[storm_key].year],
                 )
                 raw_grounded += raw_report.grounded_claims
                 raw_total += raw_report.total_claims

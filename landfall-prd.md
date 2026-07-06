@@ -24,7 +24,7 @@ Landfall demonstrates the alternative: a deterministic hazard–exposure–vulne
 
 ### Goals
 
-1. Replay three historical Philippine typhoons (Haiyan 2013, Rolly 2020, Odette 2021) through a wind-hazard damage model and validate simulated damage against recorded NDRRMC figures, reporting the error factor honestly.
+1. Replay three historical Philippine typhoons (Haiyan 2013, Rolly 2020, Odette 2021) through a wind-hazard damage model and validate simulated damage against recorded NDRRMC figures, reporting the error factor honestly. **v1.3 update**: a 4th storm (Mangkhut/Ompong, 2018) was added by explicit author direction, same verification discipline, one storm at a time — see `docs/v1.3-phase1-result.md`. This is a deliberate, authorized extension of the original v1 scope, not organic scope creep; the boundary below is restated accordingly, not silently dropped.
 2. Support counterfactual scenarios (track shift, intensity change, alternate landfall point) specified in natural language and compiled to validated simulation configs by an LLM.
 3. Generate per-locality plain-language impact briefings (English and Tagalog) in which 100% of numeric claims are traceable to impact-engine output, enforced by an automated verifier.
 4. Publish two evaluation tables (validation error, narration groundedness) and an honest write-up of model limitations.
@@ -33,7 +33,7 @@ Landfall demonstrates the alternative: a deterministic hazard–exposure–vulne
 
 - Flood, storm surge, or rainfall modeling. Wind hazard only.
 - Real-time or operational forecasting of any kind.
-- Nationwide coverage. Regions of interest are limited to areas affected by the three replay storms.
+- Nationwide coverage. Regions of interest are limited to areas affected by the replay storms (three in v1, a 4th — Mangkhut/Ompong, Northern Luzon — added in v1.3 by explicit author direction, still one region at a time, not a drift toward nationwide).
 - Custom fragility-curve research. Published/calibrated impact functions only.
 - Web deployment. v1 is a local tool with notebook-grade outputs and a CLI/simple interface; deployment is a post-validation decision.
 - Casualty modeling. Damage and affected-population estimates only. Mortality estimation carries ethical weight beyond a portfolio project's scope.
