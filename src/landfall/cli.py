@@ -5,7 +5,7 @@ rules: this is argparse dispatch to functions that already exist elsewhere.
 
 import argparse
 
-from landfall.impact.engine import run, run_baseline
+from landfall.impact.engine import ROICoverageError, run, run_baseline
 from landfall.llm.compiler import compile_scenario
 from landfall.llm.rag_answer import answer_verified
 from landfall.scenario import ScenarioConfig
@@ -41,13 +41,21 @@ def _print_result(result: dict) -> None:
 
 def cmd_run(args: argparse.Namespace) -> None:
     scenario = _scenario_from_args(args)
-    result = run_baseline(args.storm) if scenario.is_historical_baseline() else run(scenario)
+    try:
+        result = run_baseline(args.storm) if scenario.is_historical_baseline() else run(scenario)
+    except ROICoverageError as e:
+        print(f"Refused: {e}")
+        return
     _print_result(result)
 
 
 def cmd_narrate(args: argparse.Namespace) -> None:
     scenario = _scenario_from_args(args)
-    result = run_baseline(args.storm) if scenario.is_historical_baseline() else run(scenario)
+    try:
+        result = run_baseline(args.storm) if scenario.is_historical_baseline() else run(scenario)
+    except ROICoverageError as e:
+        print(f"Refused: {e}")
+        return
     year = STORMS[args.storm].year
     if scenario.is_historical_baseline():
         description = f"Historical replay of Typhoon {args.storm.title()} ({year})."

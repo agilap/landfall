@@ -26,6 +26,32 @@ from landfall.storms import STORMS
 PHILIPPINES_IMPF_ID = 7  # WP2 region, Eberenz et al. 2021 — see ImpfSetTropCyclone lookup
 CACHE_DIR = Path(__file__).resolve().parents[3] / "data" / "cache" / "scenarios"
 
+
+class ROICoverageError(ValueError):
+    """Raised when a perturbed track leaves the storm's fixed ROI grid entirely (wind
+    intensity is 0 everywhere in it), found by directly sweeping track_offset_km for all
+    four storms (see docs/v1.3-phase2-result.md). `roi_bounds` is a static box per storm
+    (landfall/storms.py) sized to the *historical* track — it is never re-derived for a
+    counterfactual. A large enough offset can push the storm's core (or all of it, for
+    Rolly's notably small 3.5°x3° box, at just 150km — 30% of the compiler's own 500km
+    max) outside that box, and the engine would otherwise silently return $0 damage and
+    0 affected population: a number that looks exactly like a legitimate cached result
+    (passes the groundedness verifier fine, since 0 *is* what got cached) but actually
+    means "the grid never looked at where the storm went," not "this counterfactual
+    causes no damage." Failing loud here instead of downstream is PRD §4.2's principle,
+    applied to the physics layer rather than just the compiler's input schema."""
+
+
+def _check_roi_coverage(wind, storm_key: str, storm_config, scenario: ScenarioConfig) -> None:
+    if wind.intensity.max() == 0:
+        raise ROICoverageError(
+            f"This counterfactual (offset {scenario.track_offset_km:.0f} km at bearing "
+            f"{scenario.track_bearing_deg:.0f}°) moves {storm_key.title()}'s track entirely "
+            f"outside its fixed region of interest {storm_config.roi_bounds} — no wind "
+            f"anywhere in the simulated grid. This is a coverage gap, not a genuine "
+            f"zero-damage result: try a smaller offset or a different bearing."
+        )
+
 # v1.1 Phase 1: RMSF replaced the CLIMADA default of TDR for the WP2 (Philippines)
 # calibration -- see docs/v1.1-phase1-result.md. v1.1 Phase 5 then found that no single
 # v_half can fit Haiyan/Rolly/Odette simultaneously: their pre-existing TDR-era deficits
@@ -59,6 +85,7 @@ def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
     if not scenario.is_historical_baseline():
         tracks = perturb_track(tracks, scenario)
     wind = wind_field(tracks, storm_config.roi_bounds)
+    _check_roi_coverage(wind, scenario.storm_key, storm_config, scenario)
 
     impf_set = ImpfSetTropCyclone.from_calibrated_regional_ImpfSet(
         calibration_approach=IMPF_CALIBRATION_APPROACH, q=IMPF_POINT_QUANTILE

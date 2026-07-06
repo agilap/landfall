@@ -373,6 +373,37 @@ anywhere anymore, so a 5th storm can't silently break the same way.
 
 Full derivation in `docs/v1.3-phase1-result.md`.
 
+**v1.3 Phase 2 — a real "fail loud, not plausible" violation in the physics layer
+itself, not just the compiler's input schema.** Pushing `track_offset_km` toward the
+compiler's own stated max (500 km) surfaced a suspicious pair of numbers: Mangkhut
+shifted 500 km south returned $0.00 damage but 137,355 affected population. Traced to
+the actual computation, not assumed: `wind_field()`'s centroid grid is built from each
+storm's **static, registry-fixed ROI box**, sized once to the historical track and
+never re-derived for a counterfactual. A large enough offset pushes the perturbed
+track's core outside that box, and confirmed directly at the wind-field level for
+Rolly (`track_offset_km=300, bearing=0`): `wind.intensity.max() == 0.0` across the
+*entire* grid — a hard coverage cliff, not a smooth decay. A sweep across all four
+storms found this varies drastically by ROI box size — **Rolly's box is smallest and
+hits exactly $0 at just 150 km, only 30% of the compiler's 500 km max** (Mangkhut 300
+km/60%, Haiyan and Odette 400 km/80%). A perfectly reasonable request — "shift Rolly's
+track 200 km north" — is well inside the schema's valid range and returns a confident-
+looking, groundedness-verifier-clean $0 that actually means "the grid never covered
+where this storm went," not "this shift causes no damage."
+
+Fixed with `ROICoverageError`: `run()` now checks immediately after computing the wind
+field (before the expensive exposure/impact calc) and refuses with a clear message
+instead of silently returning zeros, if wind intensity is zero everywhere in the ROI
+grid. The check is deliberately narrow — it only fires on a *complete* absence of wind,
+not "below some damage threshold" — so it doesn't trip on legitimate low-damage
+counterfactuals with mild-but-present wind; verified against all four storms' baselines
+and a modest in-bounds counterfactual (Rolly +50km@90°, $34.2M) computing normally, and
+confirmed no scenario in E2's fixed variant set trips it (re-run: 336/336 = 100% final,
+no exceptions). Compiler-side testing in the same round (prompt-injection-style and
+degenerate input) found no bugs — every attempt was refused or partially compiled
+correctly, confirming the system prompt was never the security boundary here;
+`ScenarioConfig`'s pydantic validation is, and it held. Full derivation in
+`docs/v1.3-phase2-result.md`.
+
 ## E2 — Narration groundedness
 
 ```
