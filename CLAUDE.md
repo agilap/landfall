@@ -42,6 +42,23 @@ Research/preparedness demonstration only — disclaimer stays at line one of the
 Counterfactuals are labeled hypothetical in all outputs. Tagalog output gets the same
 groundedness verification as English.
 
+## Landfall Viz (companion project, see landfall-viz-prd.md)
+
+The "no web deployment in v1" non-goal above applies to *Landfall itself* (the CLI/
+engine/narrator/RAG). It does not block the separate, explicitly-scoped visualization
+companion described in `landfall-viz-prd.md` — that PRD's own §2 draws this boundary
+deliberately, not as scope creep. Working rules for that project specifically:
+
+- One phase at a time — do not start a phase before the prior one's exit criterion is
+  met and confirmed.
+- Design before code — for each phase, present the design and wait for explicit go-ahead
+  before implementing.
+- No new numbers — the viz renders committed scenario caches only; it never computes.
+  If a view needs data the engine doesn't emit, the engine changes first (in this repo,
+  with its own correctness check), then the viz consumes it.
+- Every rendered value must trace to a committed cache and a config hash — provenance
+  visible in the UI, not just assumed.
+
 ## Layout
 
 - `src/landfall/hazard/` — IBTrACS ingestion, track perturbation, CLIMADA TropCyclone wind fields
