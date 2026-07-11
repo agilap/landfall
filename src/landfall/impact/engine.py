@@ -22,7 +22,7 @@ from climada.entity.impact_funcs.trop_cyclone import ImpfSetTropCyclone
 # Bicol) and what this doesn't resolve (uneven OSM mapping completeness by province).
 from landfall.exposure.hybrid import asset_exposure, population_exposure
 from landfall.hazard.tracks import get_track
-from landfall.hazard.wind import wind_field
+from landfall.hazard.wind import WIND_TIMESTEP_H, wind_field
 from landfall.impact.municipality import affected_population_by_municipality, damage_by_municipality
 from landfall.scenario import ScenarioConfig, perturb_track
 from landfall.storms import STORMS
@@ -98,6 +98,11 @@ def _cache_key(scenario: ScenarioConfig, storm_config) -> str:
         "calibration_point_quantile": IMPF_POINT_QUANTILE,
         "calibration_range_quantiles": list(IMPF_RANGE_QUANTILES),
         "roi_bounds": list(storm_config.roi_bounds),
+        # v1.4: the track-resampling step changes the per-cell wind max (see wind.py), so it
+        # determines the output and must invalidate the key — otherwise the pre-v1.4 caches
+        # keep their keys but hold stale (native-cadence) damage numbers, exactly the
+        # methodology-drift failure this key's docstring warns about.
+        "wind_timestep_h": WIND_TIMESTEP_H,
     }
     canonical = json.dumps(fingerprint, sort_keys=True)
     return hashlib.sha256(canonical.encode()).hexdigest()[:16]
@@ -165,6 +170,7 @@ def run(scenario: ScenarioConfig, use_cache: bool = True) -> dict:
         "calibration_point_quantile": IMPF_POINT_QUANTILE,
         "calibration_range_quantiles": list(IMPF_RANGE_QUANTILES),
         "hazard_model": "H1980",
+        "wind_timestep_h": WIND_TIMESTEP_H,
         "damage_by_municipality": by_municipality.to_dict(orient="records"),
         "affected_population_by_municipality": affected_by_municipality.to_dict(orient="records"),
     }

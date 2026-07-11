@@ -1,2309 +1,1534 @@
 {
-  "total_damage_usd": 695357863.5284556,
+  "total_damage_usd": 917620255.5312443,
   "total_damage_usd_range": {
-    "low": 49596773.73363352,
-    "high": 2891237057.7933693
+    "low": 67332313.63788693,
+    "high": 3657494239.3509154
   },
-  "affected_population": 9329250.92951477,
+  "affected_population": 9358833.331982575,
   "damage_by_municipality": [
     {
       "province": "Leyte",
       "municipality": "Tacloban City",
-      "damage_usd": 166503494.23827475
+      "damage_usd": 207850461.40683952
     },
     {
       "province": "Leyte",
       "municipality": "Ormoc City",
-      "damage_usd": 76725557.55135162
+      "damage_usd": 95428610.20102005
     },
     {
       "province": "Leyte",
       "municipality": "Santa Fe",
-      "damage_usd": 73743328.00980866
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Palo",
-      "damage_usd": 29629565.078394677
+      "damage_usd": 76480523.57325992
     },
     {
       "province": "Capiz",
       "municipality": "Roxas City",
-      "damage_usd": 18345399.46293892
+      "damage_usd": 58045665.95210066
     },
     {
       "province": "Leyte",
-      "municipality": "Tanauan",
-      "damage_usd": 18219248.070989795
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Kananga",
-      "damage_usd": 12334756.535924984
+      "municipality": "Palo",
+      "damage_usd": 31510574.05481649
     },
     {
       "province": "Aklan",
       "municipality": "Kalibo",
-      "damage_usd": 11122296.086645976
+      "damage_usd": 25799999.606651835
     },
     {
       "province": "Leyte",
-      "municipality": "Tolosa",
-      "damage_usd": 4163717.5097359
+      "municipality": "Tanauan",
+      "damage_usd": 19355067.134023815
     },
     {
       "province": "Leyte",
-      "municipality": "Alangalang",
-      "damage_usd": 4104632.4094581297
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Carigara",
-      "damage_usd": 3159680.3462650487
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Cadiz City",
-      "damage_usd": 2379995.716361052
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Baybay City",
-      "damage_usd": 2169595.4540810487
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Dulag",
-      "damage_usd": 2085900.4922192835
+      "municipality": "Kananga",
+      "damage_usd": 12223883.091321567
     },
     {
       "province": "Cebu",
       "municipality": "Bogo City",
-      "damage_usd": 1670814.2197984904
+      "damage_usd": 5299597.638611009
     },
     {
       "province": "Leyte",
-      "municipality": "Jaro",
-      "damage_usd": 1512123.1526045376
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Sagay City",
-      "damage_usd": 1458078.8414752001
+      "municipality": "Tolosa",
+      "damage_usd": 4630665.124628647
     },
     {
       "province": "Leyte",
-      "municipality": "Barugo",
-      "damage_usd": 1432968.3971883205
+      "municipality": "Alangalang",
+      "damage_usd": 4482917.660013423
     },
     {
-      "province": "Aklan",
-      "municipality": "Banga",
-      "damage_usd": 1358561.8190027545
+      "province": "Leyte",
+      "municipality": "Carigara",
+      "damage_usd": 3398329.7368419315
     },
     {
       "province": "Aklan",
       "municipality": "Numancia",
-      "damage_usd": 1347892.1444643326
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Abuyog",
-      "damage_usd": 1318902.6995890765
-    },
-    {
-      "province": "Leyte",
-      "municipality": "San Miguel",
-      "damage_usd": 1206407.8426563907
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Babatngon",
-      "damage_usd": 1198462.1678531724
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Capoocan",
-      "damage_usd": 1080417.3643921926
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Isabel",
-      "damage_usd": 882926.7259129665
-    },
-    {
-      "province": "Samar",
-      "municipality": "Catbalogan City",
-      "damage_usd": 797916.9146781475
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Victorias City",
-      "damage_usd": 765631.5156606953
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Pastrana",
-      "damage_usd": 738119.5240413733
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Medellin",
-      "damage_usd": 736500.4246070137
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Bacolod City",
-      "damage_usd": 716068.4890250465
-    },
-    {
-      "province": "Samar",
-      "municipality": "Basey",
-      "damage_usd": 652533.7933373778
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Panitan",
-      "damage_usd": 577553.8572279715
-    },
-    {
-      "province": "Aklan",
-      "municipality": "New Washington",
-      "damage_usd": 563473.1514728233
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Merida",
-      "damage_usd": 551572.3155225358
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Escalante City",
-      "damage_usd": 547234.456551909
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Batan",
-      "damage_usd": 523441.01641818765
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Javier",
-      "damage_usd": 418598.93241971056
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Passi City",
-      "damage_usd": 415932.3923068694
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Leyte",
-      "damage_usd": 389151.7059027614
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Guiuan",
-      "damage_usd": 382430.4055927256
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Bantayan",
-      "damage_usd": 371507.8241226447
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Altavas",
-      "damage_usd": 368244.2199117831
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Malinao",
-      "damage_usd": 350705.7741276352
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Mandaue City",
-      "damage_usd": 350039.7085028451
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Julita",
-      "damage_usd": 332496.5848438303
-    },
-    {
-      "province": "Samar",
-      "municipality": "Santa Rita",
-      "damage_usd": 318828.39866931876
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Borongan City",
-      "damage_usd": 295345.1930241333
-    },
-    {
-      "province": "Cebu",
-      "municipality": "San Remigio",
-      "damage_usd": 257444.0972755836
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Villaba",
-      "damage_usd": 253917.17678574126
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Mayorga",
-      "damage_usd": 240819.53348815846
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Daanbantayan",
-      "damage_usd": 240486.66671492328
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Quinapondan",
-      "damage_usd": 236572.63515099662
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Dao",
-      "damage_usd": 228733.74657301823
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Sapi-An",
-      "damage_usd": 227015.7634865603
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Salcedo",
-      "damage_usd": 226182.5971213273
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Palompon",
-      "damage_usd": 224074.24820602476
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Madridejos",
-      "damage_usd": 221859.0802176889
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Panay",
-      "damage_usd": 219372.58490511813
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Matag-Ob",
-      "damage_usd": 217044.47448263728
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Lezo",
-      "damage_usd": 214672.61349909642
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Liloan",
-      "damage_usd": 211374.28186916182
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Ivisan",
-      "damage_usd": 210403.2075655847
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Pontevedra",
-      "damage_usd": 209560.00433566404
+      "damage_usd": 3368607.893471584
     },
     {
       "province": "Cebu",
       "municipality": "Cebu City",
-      "damage_usd": 202722.9529528263
+      "damage_usd": 3130197.5533101954
     },
     {
       "province": "Aklan",
-      "municipality": "Balete",
-      "damage_usd": 195417.31753783638
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Sigma",
-      "damage_usd": 184881.16363629856
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Sogod",
-      "damage_usd": 179507.9733197941
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Tabogon",
-      "damage_usd": 164882.69974075357
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Tabango",
-      "damage_usd": 163750.48465163392
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Danao City",
-      "damage_usd": 154940.16686777526
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Malay",
-      "damage_usd": 152681.19802069935
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Lapu-Lapu City",
-      "damage_usd": 146200.41501039139
-    },
-    {
-      "province": "Leyte",
-      "municipality": "San Isidro",
-      "damage_usd": 143540.99291846252
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Batad",
-      "damage_usd": 134359.29531864042
-    },
-    {
-      "province": "Samar",
-      "municipality": "Calbiga",
-      "damage_usd": 130930.90058434376
+      "municipality": "Banga",
+      "damage_usd": 3017650.7631017407
     },
     {
       "province": "Negros Occidental",
-      "municipality": "Silay City",
-      "damage_usd": 125912.41287212257
-    },
-    {
-      "province": "Samar",
-      "municipality": "Villareal",
-      "damage_usd": 122188.45883152727
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Talisay City",
-      "damage_usd": 116841.18266660483
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Mahaplag",
-      "damage_usd": 106883.72515356478
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Balasan",
-      "damage_usd": 105892.09715600536
+      "municipality": "Cadiz City",
+      "damage_usd": 2636078.685454996
     },
     {
       "province": "Cebu",
-      "municipality": "Santa Fe",
-      "damage_usd": 99706.64864692531
-    },
-    {
-      "province": "Samar",
-      "municipality": "Daram",
-      "damage_usd": 96520.27915062773
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Llorente",
-      "damage_usd": 95341.08135451959
-    },
-    {
-      "province": "Capiz",
-      "municipality": "President Roxas",
-      "damage_usd": 91597.66264510766
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Macarthur",
-      "damage_usd": 89566.96577435732
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Mambusao",
-      "damage_usd": 85470.9075054701
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Libacao",
-      "damage_usd": 84877.24158688891
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Giporlos",
-      "damage_usd": 83807.29085179174
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Consolacion",
-      "damage_usd": 83434.94202066447
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Carmen",
-      "damage_usd": 80411.69001995723
-    },
-    {
-      "province": "Cebu",
-      "municipality": "San Francisco",
-      "damage_usd": 80020.81834769514
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Dumalag",
-      "damage_usd": 73137.71976532681
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "General Macarthur",
-      "damage_usd": 73067.49040280312
-    },
-    {
-      "province": "Biliran",
-      "municipality": "Naval",
-      "damage_usd": 70663.52656863112
-    },
-    {
-      "province": "Leyte",
-      "municipality": "La Paz",
-      "damage_usd": 69216.42995030776
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Concepcion",
-      "damage_usd": 67763.66847772738
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Sara",
-      "damage_usd": 67007.31853941512
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Ma-Ayon",
-      "damage_usd": 66646.72485618186
-    },
-    {
-      "province": "Samar",
-      "municipality": "Marabut",
-      "damage_usd": 58542.60425545275
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "San Carlos City",
-      "damage_usd": 58330.59115340866
-    },
-    {
-      "province": "Samar",
-      "municipality": "Pinabacdao",
-      "damage_usd": 57478.43083817896
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Silago",
-      "damage_usd": 57421.40934977506
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Madalag",
-      "damage_usd": 56966.292892367885
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Lambunao",
-      "damage_usd": 56739.21699774879
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Enrique B. Magalona",
-      "damage_usd": 51420.64622502972
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Manapla",
-      "damage_usd": 50711.00802778525
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Dumarao",
-      "damage_usd": 48739.982155685495
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Lawaan",
-      "damage_usd": 46796.135488582106
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Makato",
-      "damage_usd": 44299.76820441398
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Duenas",
-      "damage_usd": 44291.14697430611
-    },
-    {
-      "province": "Biliran",
-      "municipality": "Cabucgayan",
-      "damage_usd": 43387.040620055624
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Hernani",
-      "damage_usd": 43105.04233449208
-    },
-    {
-      "province": "Biliran",
-      "municipality": "Caibiran",
-      "damage_usd": 39934.89146609623
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Calubian",
-      "damage_usd": 39849.24487382692
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Tangalan",
-      "damage_usd": 39835.0389605737
-    },
-    {
-      "province": "Biliran",
-      "municipality": "Culaba",
-      "damage_usd": 39513.53514426929
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Poro",
-      "damage_usd": 38191.812242383334
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "San Dionisio",
-      "damage_usd": 37523.34583572435
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Borbon",
-      "damage_usd": 35630.589016696526
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Pilar",
-      "damage_usd": 35621.062231784264
-    },
-    {
-      "province": "Samar",
-      "municipality": "Jiabong",
-      "damage_usd": 34753.74360741462
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Jamindan",
-      "damage_usd": 33964.802398950545
-    },
-    {
-      "province": "Samar",
-      "municipality": "Paranas",
-      "damage_usd": 32906.578738840384
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Cuartero",
-      "damage_usd": 32481.05238669253
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Calinog",
-      "damage_usd": 31108.37389576994
-    },
-    {
-      "province": "Biliran",
-      "municipality": "Biliran",
-      "damage_usd": 30933.330474297763
-    },
-    {
-      "province": "Antique",
-      "municipality": "Libertad",
-      "damage_usd": 30439.146762168286
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Inopacan",
-      "damage_usd": 28981.023469418782
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Balangkayan",
-      "damage_usd": 27615.882763370282
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Maydolong",
-      "damage_usd": 27379.687724849216
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Tudela",
-      "damage_usd": 27317.517695196115
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Buruanga",
-      "damage_usd": 26661.247868680446
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Bato",
-      "damage_usd": 25985.11851178374
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Balangiga",
-      "damage_usd": 25674.836409261246
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Placer",
-      "damage_usd": 24333.400122056064
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Dingle",
-      "damage_usd": 24312.704757180192
-    },
-    {
-      "province": "Antique",
-      "municipality": "Pandan",
-      "damage_usd": 23510.34801201348
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Hilongos",
-      "damage_usd": 23249.013883536034
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Santa Barbara",
-      "damage_usd": 22228.91367269325
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Carles",
-      "damage_usd": 21550.353052521757
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Toledo City",
-      "damage_usd": 21212.25919652695
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Calatrava",
-      "damage_usd": 21191.317890153943
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Dagami",
-      "damage_usd": 20146.68685097271
-    },
-    {
-      "province": "Biliran",
-      "municipality": "Almeria",
-      "damage_usd": 19697.562711650527
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Toboso",
-      "damage_usd": 19032.246248533025
-    },
-    {
-      "province": "Dinagat Islands",
-      "municipality": "Loreto",
-      "damage_usd": 18876.395242434704
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Cawayan",
-      "damage_usd": 18826.64763121578
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Bontoc",
-      "damage_usd": 18001.830471618196
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Hinunangan",
-      "damage_usd": 17557.227279958694
-    },
-    {
-      "province": "Capiz",
-      "municipality": "Tapaz",
-      "damage_usd": 15873.5757200089
-    },
-    {
-      "province": "Samar",
-      "municipality": "San Sebastian",
-      "damage_usd": 15791.990785873295
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Ajuy",
-      "damage_usd": 15761.137343153328
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Ibajay",
-      "damage_usd": 15415.119320012893
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Tabuelan",
-      "damage_usd": 15109.055877237377
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "San Enrique",
-      "damage_usd": 14512.908002882108
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Murcia",
-      "damage_usd": 13908.203121252807
-    },
-    {
-      "province": "Samar",
-      "municipality": "Hinabangan",
-      "damage_usd": 13889.814079998263
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Tuburan",
-      "damage_usd": 13765.62080851824
-    },
-    {
-      "province": "Samar",
-      "municipality": "Talalora",
-      "damage_usd": 13694.694664835213
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Pototan",
-      "damage_usd": 12921.125311896703
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Badiangan",
-      "damage_usd": 11666.567058630288
-    },
-    {
-      "province": "Leyte",
-      "municipality": "Hindang",
-      "damage_usd": 11235.920751501311
-    },
-    {
-      "province": "Aklan",
-      "municipality": "Nabas",
-      "damage_usd": 11022.614088711365
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Janiuay",
-      "damage_usd": 10971.866644561978
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Barotac Viejo",
-      "damage_usd": 10654.133196751654
-    },
-    {
-      "province": "Samar",
-      "municipality": "Motiong",
-      "damage_usd": 10458.235508504527
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Lemery",
-      "damage_usd": 9804.314493704922
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Compostela",
-      "damage_usd": 9755.780080083341
+      "municipality": "Medellin",
+      "damage_usd": 2504412.631440755
     },
     {
       "province": "Leyte",
       "municipality": "Burauen",
-      "damage_usd": 9302.52663087448
-    },
-    {
-      "province": "Dinagat Islands",
-      "municipality": "Tubajon",
-      "damage_usd": 8577.80186318392
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Balamban",
-      "damage_usd": 7921.005002786088
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Bingawan",
-      "damage_usd": 7546.139295880099
-    },
-    {
-      "province": "Samar",
-      "municipality": "Calbayog City",
-      "damage_usd": 7063.917333229581
-    },
-    {
-      "province": "Romblon",
-      "municipality": "Odiongan",
-      "damage_usd": 6949.007809653616
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Asturias",
-      "damage_usd": 6854.330281979274
-    },
-    {
-      "province": "Antique",
-      "municipality": "Culasi",
-      "damage_usd": 6652.200988149712
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Esperanza",
-      "damage_usd": 6463.836519918108
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Sogod",
-      "damage_usd": 5972.805874665186
-    },
-    {
-      "province": "Dinagat Islands",
-      "municipality": "Libjo",
-      "damage_usd": 5675.098252295602
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Cataingan",
-      "damage_usd": 5521.140471169869
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Maasin",
-      "damage_usd": 5191.17255170604
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Cabatuan",
-      "damage_usd": 4928.64155189383
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "San Rafael",
-      "damage_usd": 4763.526262698641
+      "damage_usd": 2363799.079077477
     },
     {
       "province": "Leyte",
-      "municipality": "Matalom",
-      "damage_usd": 4616.685614795779
-    },
-    {
-      "province": "Samar",
-      "municipality": "San Jorge",
-      "damage_usd": 4480.737432193206
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Maasin City",
-      "damage_usd": 4412.404744116055
-    },
-    {
-      "province": "Romblon",
-      "municipality": "Looc",
-      "damage_usd": 4243.510478910655
-    },
-    {
-      "province": "Antique",
-      "municipality": "Barbaza",
-      "damage_usd": 4045.975065315874
-    },
-    {
-      "province": "Antique",
-      "municipality": "Tibiao",
-      "damage_usd": 3906.6559715190783
-    },
-    {
-      "province": "Antique",
-      "municipality": "Sebaste",
-      "damage_usd": 3906.4638806842645
-    },
-    {
-      "province": "Dinagat Islands",
-      "municipality": "Cagdianao",
-      "damage_usd": 3890.7334508212375
-    },
-    {
-      "province": "Samar",
-      "municipality": "Tarangnan",
-      "damage_usd": 3757.2558111391686
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Zarraga",
-      "damage_usd": 3711.5962320574363
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Talibon",
-      "damage_usd": 3354.7756916792437
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Pio V. Corpuz",
-      "damage_usd": 3221.5008989949256
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Saint Bernard",
-      "damage_usd": 2981.268301831339
-    },
-    {
-      "province": "Dinagat Islands",
-      "municipality": "Basilisa",
-      "damage_usd": 2692.4642218577687
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Barotac Nuevo",
-      "damage_usd": 2646.860485421091
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Tomas Oppus",
-      "damage_usd": 2367.503099176509
-    },
-    {
-      "province": "Samar",
-      "municipality": "Gandara",
-      "damage_usd": 2335.761674548777
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Dimasalang",
-      "damage_usd": 2327.6769571257296
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Hinundayan",
-      "damage_usd": 2311.34979473547
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "San Julian",
-      "damage_usd": 2266.3813918102974
-    },
-    {
-      "province": "Biliran",
-      "municipality": "Kawayan",
-      "damage_usd": 1938.105681876352
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Libagon",
-      "damage_usd": 1858.4606230198774
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Banate",
-      "damage_usd": 1829.0483980294825
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Balud",
-      "damage_usd": 1753.6886094374076
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Catmon",
-      "damage_usd": 1622.5523702296996
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Anilao",
-      "damage_usd": 1578.600050102855
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Taft",
-      "damage_usd": 1413.6363431647292
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Milagros",
-      "damage_usd": 1413.4602268396825
-    },
-    {
-      "province": "Romblon",
-      "municipality": "Ferrol",
-      "damage_usd": 1394.6958196082542
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Uson",
-      "damage_usd": 1384.1225559026814
-    },
-    {
-      "province": "Oriental Mindoro",
-      "municipality": "Roxas",
-      "damage_usd": 1356.4450405746845
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Leganes",
-      "damage_usd": 1310.1397341684115
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Malitbog",
-      "damage_usd": 1255.3047867910577
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Dumangas",
-      "damage_usd": 1239.2915282672077
-    },
-    {
-      "province": "Romblon",
-      "municipality": "Santa Fe",
-      "damage_usd": 1200.6782295736543
-    },
-    {
-      "province": "Dinagat Islands",
-      "municipality": "San Jose",
-      "damage_usd": 1180.1901037352632
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Masbate City",
-      "damage_usd": 1138.0877959615889
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Palanas",
-      "damage_usd": 1104.8095204953422
-    },
-    {
-      "province": "Samar",
-      "municipality": "Santa Margarita",
-      "damage_usd": 1045.3843258794082
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Burgos",
-      "damage_usd": 985.7100076301717
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Anahawan",
-      "damage_usd": 972.6460971571285
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Bago City",
-      "damage_usd": 947.0286422157808
-    },
-    {
-      "province": "Antique",
-      "municipality": "Laua-An",
-      "damage_usd": 906.779910796537
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Mobo",
-      "damage_usd": 862.0269570945217
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "San Isidro",
-      "damage_usd": 856.8450829367538
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Salvador Benedicto",
-      "damage_usd": 835.191143488441
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "New Lucena",
-      "damage_usd": 764.251241896985
-    },
-    {
-      "province": "Samar",
-      "municipality": "Pagsanghan",
-      "damage_usd": 763.1488141833458
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "San Miguel",
-      "damage_usd": 748.27194011886
-    },
-    {
-      "province": "Antique",
-      "municipality": "Bugasong",
-      "damage_usd": 702.3721716972628
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Can-Avid",
-      "damage_usd": 650.9071047836461
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Alimodian",
-      "damage_usd": 614.2424707186418
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Sulat",
-      "damage_usd": 590.794081829617
-    },
-    {
-      "province": "Samar",
-      "municipality": "San Jose de Buan",
-      "damage_usd": 575.3068803187717
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Dolores",
-      "damage_usd": 566.2799455847952
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Minglanilla",
-      "damage_usd": 562.7227630070917
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Mandaon",
-      "damage_usd": 493.5870137074764
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Mina",
-      "damage_usd": 481.7173862209038
-    },
-    {
-      "province": "Antique",
-      "municipality": "Valderrama",
-      "damage_usd": 463.01915240888377
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Ubay",
-      "damage_usd": 412.2485470817669
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Liloan",
-      "damage_usd": 394.7603846673797
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Canlaon City",
-      "damage_usd": 361.19365733591223
-    },
-    {
-      "province": "Oriental Mindoro",
-      "municipality": "Bongabong",
-      "damage_usd": 286.52447392331845
-    },
-    {
-      "province": "Romblon",
-      "municipality": "San Andres",
-      "damage_usd": 259.1714573512405
+      "municipality": "Baybay City",
+      "damage_usd": 2251245.155620211
     },
     {
       "province": "Leyte",
-      "municipality": "Albuera",
-      "damage_usd": 237.48109052279864
+      "municipality": "Jaro",
+      "damage_usd": 2194130.4273041454
     },
     {
-      "province": "Bohol",
-      "municipality": "Bien Unido",
-      "damage_usd": 236.8972127064798
+      "province": "Leyte",
+      "municipality": "Dulag",
+      "damage_usd": 2148639.634243193
     },
     {
-      "province": "Surigao del Norte",
-      "municipality": "Pilar",
-      "damage_usd": 213.63270688055474
+      "province": "Capiz",
+      "municipality": "Panitan",
+      "damage_usd": 1852909.0263798726
     },
     {
-      "province": "Iloilo",
-      "municipality": "Leon",
-      "damage_usd": 210.6845123799632
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Oras",
-      "damage_usd": 209.40907938455564
-    },
-    {
-      "province": "Romblon",
-      "municipality": "Alcantara",
-      "damage_usd": 205.77800116277206
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Macrohon",
-      "damage_usd": 194.72796647774177
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Pres. Carlos P. Garcia",
-      "damage_usd": 180.5722265376479
-    },
-    {
-      "province": "Antique",
-      "municipality": "San Remigio",
-      "damage_usd": 162.90545357771742
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Del Carmen",
-      "damage_usd": 160.7854393939082
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "San Juan",
-      "damage_usd": 150.0721946900291
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Vallehermoso",
-      "damage_usd": 134.10761791636457
-    },
-    {
-      "province": "Samar",
-      "municipality": "Matuguinao",
-      "damage_usd": 121.13602111499253
-    },
-    {
-      "province": "Romblon",
-      "municipality": "Santa Maria",
-      "damage_usd": 112.69958281087025
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Silvino Lobos",
-      "damage_usd": 107.42551083742663
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Maslog",
-      "damage_usd": 104.22552274650904
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "San Francisco",
-      "damage_usd": 96.30375409016172
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Padre Burgos",
-      "damage_usd": 95.7805279698645
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Las Navas",
-      "damage_usd": 72.0347733620648
-    },
-    {
-      "province": "Romblon",
-      "municipality": "San Agustin",
-      "damage_usd": 71.46247640191501
-    },
-    {
-      "province": "Samar",
-      "municipality": "Tagapul-An",
-      "damage_usd": 60.80529756622542
-    },
-    {
-      "province": "Antique",
-      "municipality": "Patnongon",
-      "damage_usd": 39.059469514262226
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Trinidad",
-      "damage_usd": 38.02288074413211
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Lope de Vega",
-      "damage_usd": 31.954063199782933
+      "province": "Negros Occidental",
+      "municipality": "Victorias City",
+      "damage_usd": 1838143.9452199878
     },
     {
       "province": "Cebu",
-      "municipality": "Pinamungahan",
-      "damage_usd": 30.359303768557265
+      "municipality": "Danao City",
+      "damage_usd": 1681163.101879533
     },
     {
-      "province": "Surigao del Norte",
-      "municipality": "San Benito",
-      "damage_usd": 24.455218621599837
+      "province": "Cebu",
+      "municipality": "Mandaue City",
+      "damage_usd": 1672278.0188113863
     },
     {
-      "province": "Romblon",
-      "municipality": "Calatrava",
-      "damage_usd": 23.149405802333618
+      "province": "Capiz",
+      "municipality": "President Roxas",
+      "damage_usd": 1651335.5286553367
     },
     {
-      "province": "Surigao del Norte",
-      "municipality": "Dapa",
-      "damage_usd": 21.86877909663569
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "General Luna",
-      "damage_usd": 21.355648959595293
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "San Ricardo",
-      "damage_usd": 18.96357280831139
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Baleno",
-      "damage_usd": 11.057719615437678
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Batuan",
-      "damage_usd": 6.239366567269824
-    },
-    {
-      "province": "Southern Leyte",
-      "municipality": "Pintuyan",
-      "damage_usd": 5.0904427038410995
-    },
-    {
-      "province": "Romblon",
-      "municipality": "Romblon",
-      "damage_usd": 4.169522716401083
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Arteche",
-      "damage_usd": 3.9206331485146197
-    },
-    {
-      "province": "Eastern Samar",
-      "municipality": "Jipapad",
-      "damage_usd": 2.76101693239943
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Mondragon",
-      "damage_usd": 1.6879722498963394
-    },
-    {
-      "province": "Romblon",
-      "municipality": "Cajidiocan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Romblon",
-      "municipality": "Concepcion",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Antique",
-      "municipality": "Belison",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "San Roque",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Antique",
-      "municipality": "Hamtic",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Victoria",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "San Jose",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Valencia",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Zamboanguita",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Allen",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Moises Padilla",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
+      "province": "Capiz",
       "municipality": "Pontevedra",
-      "damage_usd": 0.0
+      "damage_usd": 1524970.3533121555
     },
     {
       "province": "Negros Occidental",
-      "municipality": "San Enrique",
-      "damage_usd": 0.0
+      "municipality": "Sagay City",
+      "damage_usd": 1516426.2205538629
     },
     {
-      "province": "Negros Occidental",
-      "municipality": "Sipalay City",
-      "damage_usd": 0.0
+      "province": "Leyte",
+      "municipality": "Abuyog",
+      "damage_usd": 1511603.9640365532
     },
     {
-      "province": "Negros Occidental",
-      "municipality": "Valladolid",
-      "damage_usd": 0.0
+      "province": "Leyte",
+      "municipality": "Pastrana",
+      "damage_usd": 1497727.5366188325
     },
     {
-      "province": "Negros Oriental",
-      "municipality": "Amlan",
-      "damage_usd": 0.0
+      "province": "Cebu",
+      "municipality": "Lapu-Lapu City",
+      "damage_usd": 1466701.053997389
     },
     {
-      "province": "Negros Oriental",
-      "municipality": "Ayungon",
-      "damage_usd": 0.0
+      "province": "Leyte",
+      "municipality": "Barugo",
+      "damage_usd": 1430034.8938296984
     },
     {
-      "province": "Northern Samar",
-      "municipality": "Gamay",
-      "damage_usd": 0.0
+      "province": "Eastern Samar",
+      "municipality": "Borongan City",
+      "damage_usd": 1427897.6177254252
     },
     {
-      "province": "Negros Oriental",
-      "municipality": "Bais City",
-      "damage_usd": 0.0
+      "province": "Aklan",
+      "municipality": "Malinao",
+      "damage_usd": 1359446.0589796668
     },
     {
-      "province": "Negros Oriental",
-      "municipality": "Basay",
-      "damage_usd": 0.0
+      "province": "Leyte",
+      "municipality": "Capoocan",
+      "damage_usd": 1316896.2363263124
     },
     {
-      "province": "Negros Oriental",
-      "municipality": "Bayawan City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Bindoy",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Dauin",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Dumaguete City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Balilihan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Batuan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Bilar",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Buenavista",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Candoni",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Bacong",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Bobon",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Capul",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Catarman",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Catubig",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Laoang",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Lapinig",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Lavezares",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Mapanas",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Palapag",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Pambujan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "Rosario",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Tayasan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Guihulngan City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Jimalalud",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "La Libertad",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Mabinay",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Manjuyod",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Pamplona",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "San Jose",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Santa Catalina",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Siaton",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Sibulan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Tanjay City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Northern Samar",
-      "municipality": "San Isidro",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Mainit Lake",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Nasipit",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Remedios T. Romualdez",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Santiago",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Tubay",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Bayugan City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Bunawan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Esperanza",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Dipolog City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Calape",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Gigaquit",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Mainit",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Mainit Lake",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Malimono",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Placer",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Sison",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Socorro",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Surigao City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Tagana-An",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Tubod",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Butuan City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Cagwait",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Cantilan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Carmen",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Carrascal",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Cortes",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Hinatuan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Lanuza",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Lianga",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Lingig",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Magallanes",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Marihatag",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "San Agustin",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
+      "province": "Leyte",
       "municipality": "San Miguel",
-      "damage_usd": 0.0
+      "damage_usd": 1205566.1200119061
     },
     {
-      "province": "Surigao del Sur",
-      "municipality": "Tagbina",
-      "damage_usd": 0.0
+      "province": "Leyte",
+      "municipality": "Babatngon",
+      "damage_usd": 1202938.0730849053
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Godod",
-      "damage_usd": 0.0
+      "province": "Cebu",
+      "municipality": "Liloan",
+      "damage_usd": 1157240.1702406455
     },
     {
-      "province": "Surigao del Sur",
-      "municipality": "Tandag City",
-      "damage_usd": 0.0
+      "province": "Negros Occidental",
+      "municipality": "Bacolod City",
+      "damage_usd": 1074410.0437203425
     },
     {
-      "province": "Agusan del Norte",
+      "province": "Iloilo",
+      "municipality": "Passi City",
+      "damage_usd": 1074376.4283783515
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Panay",
+      "damage_usd": 1071721.2772504874
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Batad",
+      "damage_usd": 1015083.4602653777
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Balasan",
+      "damage_usd": 994216.388389411
+    },
+    {
+      "province": "Samar",
+      "municipality": "Basey",
+      "damage_usd": 983405.0210310704
+    },
+    {
+      "province": "Cebu",
       "municipality": "Carmen",
-      "damage_usd": 0.0
+      "damage_usd": 952571.8754895936
     },
     {
-      "province": "Agusan del Norte",
-      "municipality": "Jabonga",
-      "damage_usd": 0.0
+      "province": "Eastern Samar",
+      "municipality": "Quinapondan",
+      "damage_usd": 943504.6250129782
     },
     {
-      "province": "Agusan del Norte",
-      "municipality": "Kitcharao",
-      "damage_usd": 0.0
+      "province": "Aklan",
+      "municipality": "Lezo",
+      "damage_usd": 913103.7370787351
     },
     {
-      "province": "Agusan del Norte",
-      "municipality": "Las Nieves",
-      "damage_usd": 0.0
+      "province": "Cebu",
+      "municipality": "Daanbantayan",
+      "damage_usd": 886814.6250070115
     },
     {
-      "province": "Surigao del Sur",
-      "municipality": "Madrid",
-      "damage_usd": 0.0
+      "province": "Samar",
+      "municipality": "Catbalogan City",
+      "damage_usd": 884801.2199547908
     },
     {
-      "province": "Sorsogon",
-      "municipality": "Casiguran",
-      "damage_usd": 0.0
+      "province": "Aklan",
+      "municipality": "New Washington",
+      "damage_usd": 872628.8987809957
     },
     {
-      "province": "Sorsogon",
-      "municipality": "Castilla",
-      "damage_usd": 0.0
+      "province": "Leyte",
+      "municipality": "Leyte",
+      "damage_usd": 847741.0959391318
     },
     {
-      "province": "Sorsogon",
-      "municipality": "Donsol",
-      "damage_usd": 0.0
+      "province": "Leyte",
+      "municipality": "Isabel",
+      "damage_usd": 845454.5044033994
     },
     {
-      "province": "Sorsogon",
-      "municipality": "Gubat",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Irosin",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Juban",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Magallanes",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Matnog",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Sorsogon",
+      "province": "Capiz",
       "municipality": "Pilar",
-      "damage_usd": 0.0
+      "damage_usd": 699101.0305094578
     },
     {
-      "province": "Surigao del Sur",
-      "municipality": "Barobo",
-      "damage_usd": 0.0
+      "province": "Aklan",
+      "municipality": "Batan",
+      "damage_usd": 685478.1033680919
     },
     {
-      "province": "Albay",
-      "municipality": "Legazpi City",
-      "damage_usd": 0.0
+      "province": "Leyte",
+      "municipality": "San Isidro",
+      "damage_usd": 674168.5426983363
     },
     {
-      "province": "Albay",
-      "municipality": "Pio Duran",
-      "damage_usd": 0.0
+      "province": "Aklan",
+      "municipality": "Malay",
+      "damage_usd": 634872.30103309
     },
     {
-      "province": "Antique",
-      "municipality": "Anini-Y",
-      "damage_usd": 0.0
+      "province": "Cebu",
+      "municipality": "Tabogon",
+      "damage_usd": 631065.0902505898
     },
     {
-      "province": "Siquijor",
-      "municipality": "Enrique Villanueva",
-      "damage_usd": 0.0
+      "province": "Leyte",
+      "municipality": "Tabango",
+      "damage_usd": 621718.9810134186
     },
     {
-      "province": "Siquijor",
-      "municipality": "Larena",
-      "damage_usd": 0.0
+      "province": "Cebu",
+      "municipality": "Bantayan",
+      "damage_usd": 604360.9561950268
     },
     {
-      "province": "Siquijor",
-      "municipality": "Lazi",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Antique",
-      "municipality": "Sibalom",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Antique",
-      "municipality": "Tobias Fornier",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Romblon",
-      "municipality": "Magdiwang",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Romblon",
-      "municipality": "San Fernando",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Santa Magdalena",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Bayabas",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Santa Josefa",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Sibagat",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Talacogon",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Trento",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Veruela",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Alegria",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Bacuag",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Norte",
-      "municipality": "Claver",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Sorsogon City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Bulusan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Loreto",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Prosperidad",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Rosario",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "San Francisco",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "San Luis",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Siquijor",
-      "municipality": "Maria",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Siquijor",
-      "municipality": "San Juan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Siquijor",
-      "municipality": "Siquijor",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Barcelona",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Bulan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "La Paz",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Kolambugan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Linamon",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Magsaysay",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Maigo",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Matungao",
-      "damage_usd": 0.0
+      "province": "Cebu",
+      "municipality": "San Remigio",
+      "damage_usd": 588031.4320111283
     },
     {
       "province": "Iloilo",
-      "municipality": "Guimbal",
-      "damage_usd": 0.0
+      "municipality": "Sara",
+      "damage_usd": 582702.3327439509
     },
     {
-      "province": "Iloilo",
-      "municipality": "Igbaras",
-      "damage_usd": 0.0
+      "province": "Negros Occidental",
+      "municipality": "Escalante City",
+      "damage_usd": 577601.5372191684
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Dagami",
+      "damage_usd": 565803.8288238926
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Merida",
+      "damage_usd": 524603.2110583906
+    },
+    {
+      "province": "Antique",
+      "municipality": "Pandan",
+      "damage_usd": 512039.98104592634
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Javier",
+      "damage_usd": 508242.44863842946
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Silay City",
+      "damage_usd": 464723.9284178245
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Villaba",
+      "damage_usd": 448591.7811925785
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Llorente",
+      "damage_usd": 447257.5141793731
+    },
+    {
+      "province": "Aklan",
+      "municipality": "Altavas",
+      "damage_usd": 439353.8781899327
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Julita",
+      "damage_usd": 437459.44577171723
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Giporlos",
+      "damage_usd": 437242.8717370359
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Salcedo",
+      "damage_usd": 431850.12605313957
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Guiuan",
+      "damage_usd": 410914.6604348746
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Talisay City",
+      "damage_usd": 401443.2323722038
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Consolacion",
+      "damage_usd": 398601.6904731413
     },
     {
       "province": "Iloilo",
       "municipality": "Iloilo City",
-      "damage_usd": 0.0
+      "damage_usd": 385667.5620512232
+    },
+    {
+      "province": "Samar",
+      "municipality": "Santa Rita",
+      "damage_usd": 375758.2419846278
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Dao",
+      "damage_usd": 344163.6850075991
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Sogod",
+      "damage_usd": 339904.6922543771
+    },
+    {
+      "province": "Aklan",
+      "municipality": "Makato",
+      "damage_usd": 325570.96089070244
+    },
+    {
+      "province": "Aklan",
+      "municipality": "Ibajay",
+      "damage_usd": 313963.5417970382
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Ivisan",
+      "damage_usd": 311807.8446654051
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "General Macarthur",
+      "damage_usd": 308564.98526692466
+    },
+    {
+      "province": "Aklan",
+      "municipality": "Tangalan",
+      "damage_usd": 299972.2281084583
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Palompon",
+      "damage_usd": 292797.03145931475
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Sigma",
+      "damage_usd": 287685.5075666201
+    },
+    {
+      "province": "Leyte",
+      "municipality": "La Paz",
+      "damage_usd": 269034.93399748905
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Madridejos",
+      "damage_usd": 265048.85889175755
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Sapi-An",
+      "damage_usd": 259380.63432469495
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Mayorga",
+      "damage_usd": 246410.28868539922
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Ma-Ayon",
+      "damage_usd": 226381.58182578784
     },
     {
       "province": "Iloilo",
-      "municipality": "Miagao",
-      "damage_usd": 0.0
+      "municipality": "San Dionisio",
+      "damage_usd": 225178.03903956513
+    },
+    {
+      "province": "Biliran",
+      "municipality": "Naval",
+      "damage_usd": 221101.74949149982
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Balangiga",
+      "damage_usd": 220969.09787353183
+    },
+    {
+      "province": "Samar",
+      "municipality": "Marabut",
+      "damage_usd": 213385.08167954686
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Matag-Ob",
+      "damage_usd": 212872.56360513
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Borbon",
+      "damage_usd": 212306.59505654327
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Silago",
+      "damage_usd": 205697.12390537243
     },
     {
       "province": "Iloilo",
-      "municipality": "Oton",
-      "damage_usd": 0.0
+      "municipality": "Concepcion",
+      "damage_usd": 197992.1539956521
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Santa Fe",
+      "damage_usd": 194731.71782449505
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Lawaan",
+      "damage_usd": 193803.55796462903
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Carles",
+      "damage_usd": 190709.74904395174
+    },
+    {
+      "province": "Aklan",
+      "municipality": "Balete",
+      "damage_usd": 190019.20628895852
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Jamindan",
+      "damage_usd": 187897.3387203245
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Calubian",
+      "damage_usd": 185474.21346449322
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Mahaplag",
+      "damage_usd": 152500.90651303285
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Balangkayan",
+      "damage_usd": 149738.61099715505
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Mambusao",
+      "damage_usd": 146968.91522729272
+    },
+    {
+      "province": "Antique",
+      "municipality": "Libertad",
+      "damage_usd": 146385.78256233543
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Albuera",
+      "damage_usd": 145171.91417215898
+    },
+    {
+      "province": "Samar",
+      "municipality": "Calbiga",
+      "damage_usd": 144336.67054128597
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Maydolong",
+      "damage_usd": 143207.493294699
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Talisay City",
+      "damage_usd": 142138.46380461892
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Enrique B. Magalona",
+      "damage_usd": 140974.7131867421
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Dumalag",
+      "damage_usd": 140802.91750905025
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Dumarao",
+      "damage_usd": 139028.85226058814
+    },
+    {
+      "province": "Samar",
+      "municipality": "Villareal",
+      "damage_usd": 127304.7468627694
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Duenas",
+      "damage_usd": 126964.69276246493
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Lemery",
+      "damage_usd": 110233.6798680663
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Hernani",
+      "damage_usd": 109627.80755723332
+    },
+    {
+      "province": "Cebu",
+      "municipality": "San Francisco",
+      "damage_usd": 109405.98849621121
     },
     {
       "province": "Iloilo",
       "municipality": "Pavia",
-      "damage_usd": 0.0
+      "damage_usd": 105937.49865065496
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Balingasag",
-      "damage_usd": 0.0
+      "province": "Cebu",
+      "municipality": "Compostela",
+      "damage_usd": 104019.25137597695
     },
     {
-      "province": "Camiguin",
-      "municipality": "Guinsiliban",
-      "damage_usd": 0.0
+      "province": "Samar",
+      "municipality": "Daram",
+      "damage_usd": 101542.58458876252
     },
     {
-      "province": "Camiguin",
-      "municipality": "Mahinog",
-      "damage_usd": 0.0
+      "province": "Iloilo",
+      "municipality": "Barotac Viejo",
+      "damage_usd": 97585.03803504167
     },
     {
-      "province": "Camiguin",
-      "municipality": "Mambajao",
-      "damage_usd": 0.0
+      "province": "Negros Occidental",
+      "municipality": "Manapla",
+      "damage_usd": 95868.89932222593
     },
     {
-      "province": "Camiguin",
-      "municipality": "Sagay",
-      "damage_usd": 0.0
+      "province": "Iloilo",
+      "municipality": "Lambunao",
+      "damage_usd": 93010.16140914946
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Hinunangan",
+      "damage_usd": 92336.16276867302
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Macarthur",
+      "damage_usd": 91231.68102102863
+    },
+    {
+      "province": "Aklan",
+      "municipality": "Libacao",
+      "damage_usd": 90175.04494449351
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Dingle",
+      "damage_usd": 85716.30089652975
+    },
+    {
+      "province": "Aklan",
+      "municipality": "Buruanga",
+      "damage_usd": 85033.80511940112
+    },
+    {
+      "province": "Aklan",
+      "municipality": "Nabas",
+      "damage_usd": 83462.69197434763
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Ajuy",
+      "damage_usd": 80692.49351970665
+    },
+    {
+      "province": "Biliran",
+      "municipality": "Almeria",
+      "damage_usd": 79836.32349231139
+    },
+    {
+      "province": "Biliran",
+      "municipality": "Culaba",
+      "damage_usd": 79565.15248403492
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Pototan",
+      "damage_usd": 76734.54910393471
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Cuartero",
+      "damage_usd": 73500.53499301308
+    },
+    {
+      "province": "Biliran",
+      "municipality": "Caibiran",
+      "damage_usd": 73350.07643663797
+    },
+    {
+      "province": "Aklan",
+      "municipality": "Madalag",
+      "damage_usd": 71741.70130224316
+    },
+    {
+      "province": "Biliran",
+      "municipality": "Biliran",
+      "damage_usd": 68802.09438186232
+    },
+    {
+      "province": "Capiz",
+      "municipality": "Tapaz",
+      "damage_usd": 68252.36346000936
+    },
+    {
+      "province": "Samar",
+      "municipality": "Pinabacdao",
+      "damage_usd": 66795.5188904213
+    },
+    {
+      "province": "Biliran",
+      "municipality": "Cabucgayan",
+      "damage_usd": 64074.15847075643
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Santa Barbara",
+      "damage_usd": 63171.8519042562
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Calinog",
+      "damage_usd": 60250.83823248398
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Toledo City",
+      "damage_usd": 59040.26517314609
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "San Carlos City",
+      "damage_usd": 58384.81154341911
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "San Enrique",
+      "damage_usd": 49702.90857942881
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Tuburan",
+      "damage_usd": 48204.371242617555
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Naga City",
+      "damage_usd": 47572.51274890428
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Sogod",
+      "damage_usd": 46443.632902262776
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Poro",
+      "damage_usd": 45808.60677811013
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Tabuelan",
+      "damage_usd": 43274.70437111627
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Placer",
+      "damage_usd": 39566.62710455276
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "San Rafael",
+      "damage_usd": 38860.25535943781
+    },
+    {
+      "province": "Samar",
+      "municipality": "Jiabong",
+      "damage_usd": 38843.075342657576
+    },
+    {
+      "province": "Samar",
+      "municipality": "Paranas",
+      "damage_usd": 37551.118972293225
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Balamban",
+      "damage_usd": 36097.956335430616
+    },
+    {
+      "province": "Antique",
+      "municipality": "Sebaste",
+      "damage_usd": 33665.5783714443
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Inopacan",
+      "damage_usd": 30534.02508642376
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Bato",
+      "damage_usd": 29624.418961694686
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Leganes",
+      "damage_usd": 27968.800502959573
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Banate",
+      "damage_usd": 27931.283936769447
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Tudela",
+      "damage_usd": 26124.168925332542
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Hilongos",
+      "damage_usd": 25351.61648652813
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Barotac Nuevo",
+      "damage_usd": 24655.337332073374
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Bontoc",
+      "damage_usd": 24156.65173386722
+    },
+    {
+      "province": "Antique",
+      "municipality": "Culasi",
+      "damage_usd": 23904.38314713716
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Badiangan",
+      "damage_usd": 23303.480682928577
+    },
+    {
+      "province": "Dinagat Islands",
+      "municipality": "Loreto",
+      "damage_usd": 22966.517341698207
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Calatrava",
+      "damage_usd": 22171.10483112392
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Janiuay",
+      "damage_usd": 21458.80848100746
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Asturias",
+      "damage_usd": 20826.966797944013
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Cawayan",
+      "damage_usd": 20289.5926376716
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Toboso",
+      "damage_usd": 19834.75276149999
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Bingawan",
+      "damage_usd": 19778.177271657463
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Esperanza",
+      "damage_usd": 19726.02044194739
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Zarraga",
+      "damage_usd": 19565.07869160811
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Anilao",
+      "damage_usd": 18654.776596121876
+    },
+    {
+      "province": "Samar",
+      "municipality": "Hinabangan",
+      "damage_usd": 18589.453824859065
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Murcia",
+      "damage_usd": 18230.943285252037
+    },
+    {
+      "province": "Antique",
+      "municipality": "Barbaza",
+      "damage_usd": 18003.155163388343
+    },
+    {
+      "province": "Antique",
+      "municipality": "Tibiao",
+      "damage_usd": 17968.94516552158
+    },
+    {
+      "province": "Samar",
+      "municipality": "San Sebastian",
+      "damage_usd": 16763.18224902601
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Hinundayan",
+      "damage_usd": 16496.637495817908
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Catmon",
+      "damage_usd": 15403.685470182416
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Minglanilla",
+      "damage_usd": 15068.60931305755
+    },
+    {
+      "province": "Samar",
+      "municipality": "Talalora",
+      "damage_usd": 13974.388833072739
+    },
+    {
+      "province": "Samar",
+      "municipality": "Calbayog City",
+      "damage_usd": 13351.516984400485
+    },
+    {
+      "province": "Samar",
+      "municipality": "Motiong",
+      "damage_usd": 11757.473266080207
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Hindang",
+      "damage_usd": 11745.204932576758
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Saint Bernard",
+      "damage_usd": 11703.945372854601
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Dumangas",
+      "damage_usd": 11118.342381310747
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Cataingan",
+      "damage_usd": 10998.930930859377
+    },
+    {
+      "province": "Dinagat Islands",
+      "municipality": "Tubajon",
+      "damage_usd": 10603.723015179616
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "San Miguel",
+      "damage_usd": 9505.366844912802
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Maasin",
+      "damage_usd": 9150.484708093276
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Pio V. Corpuz",
+      "damage_usd": 8820.222484890903
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Odiongan",
+      "damage_usd": 8318.960782201711
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Cabatuan",
+      "damage_usd": 8002.5325413262435
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "San Julian",
+      "damage_usd": 7488.515372836934
+    },
+    {
+      "province": "Dinagat Islands",
+      "municipality": "Libjo",
+      "damage_usd": 7152.4799736429395
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Oton",
+      "damage_usd": 6550.4197454530495
+    },
+    {
+      "province": "Biliran",
+      "municipality": "Kawayan",
+      "damage_usd": 6477.273565412566
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Maasin City",
+      "damage_usd": 6322.651806328282
+    },
+    {
+      "province": "Leyte",
+      "municipality": "Matalom",
+      "damage_usd": 5803.312754581179
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Anahawan",
+      "damage_usd": 5441.263251223892
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Looc",
+      "damage_usd": 5329.582750553396
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Libagon",
+      "damage_usd": 5312.726207239834
+    },
+    {
+      "province": "Samar",
+      "municipality": "San Jorge",
+      "damage_usd": 5279.185070705228
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Talibon",
+      "damage_usd": 5064.184860849339
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Taft",
+      "damage_usd": 4422.33286183846
+    },
+    {
+      "province": "Samar",
+      "municipality": "Tarangnan",
+      "damage_usd": 4391.30141398725
+    },
+    {
+      "province": "Dinagat Islands",
+      "municipality": "Cagdianao",
+      "damage_usd": 4192.223706760943
+    },
+    {
+      "province": "Antique",
+      "municipality": "Laua-An",
+      "damage_usd": 4119.978309138142
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Tomas Oppus",
+      "damage_usd": 3846.8055643004045
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Balud",
+      "damage_usd": 3552.0864771214224
+    },
+    {
+      "province": "Dinagat Islands",
+      "municipality": "Basilisa",
+      "damage_usd": 3336.344719957189
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Bago City",
+      "damage_usd": 3260.0962693467145
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Malitbog",
+      "damage_usd": 3146.725252593639
+    },
+    {
+      "province": "Samar",
+      "municipality": "Gandara",
+      "damage_usd": 2984.04893435794
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Dimasalang",
+      "damage_usd": 2943.0763248750677
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "New Lucena",
+      "damage_usd": 2804.05030086213
+    },
+    {
+      "province": "Antique",
+      "municipality": "Bugasong",
+      "damage_usd": 2420.8187148922175
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "San Isidro",
+      "damage_usd": 2275.0017899113236
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Santa Fe",
+      "damage_usd": 1995.7037362312785
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Liloan",
+      "damage_usd": 1933.7227158607468
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Burgos",
+      "damage_usd": 1912.6750679365564
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Sulat",
+      "damage_usd": 1860.6213447329499
+    },
+    {
+      "province": "Oriental Mindoro",
+      "municipality": "Roxas",
+      "damage_usd": 1818.5822365963031
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Palanas",
+      "damage_usd": 1775.3126714433804
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Mina",
+      "damage_usd": 1763.5463856860129
+    },
+    {
+      "province": "Samar",
+      "municipality": "Santa Margarita",
+      "damage_usd": 1632.3078539357432
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Uson",
+      "damage_usd": 1529.3769140735367
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Alimodian",
+      "damage_usd": 1484.980757486313
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Ferrol",
+      "damage_usd": 1385.1578199537482
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Milagros",
+      "damage_usd": 1317.237397494776
+    },
+    {
+      "province": "Dinagat Islands",
+      "municipality": "San Jose",
+      "damage_usd": 1272.8341371703434
     },
     {
       "province": "Guimaras",
       "municipality": "Buenavista",
-      "damage_usd": 0.0
+      "damage_usd": 1221.813423995018
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Can-Avid",
+      "damage_usd": 1194.3956480144248
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Dolores",
+      "damage_usd": 1180.014109248089
+    },
+    {
+      "province": "Samar",
+      "municipality": "Pagsanghan",
+      "damage_usd": 1015.1829081158996
+    },
+    {
+      "province": "Antique",
+      "municipality": "Valderrama",
+      "damage_usd": 943.3105634656004
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "San Juan",
+      "damage_usd": 859.3547712469707
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Salvador Benedicto",
+      "damage_usd": 849.5934771759669
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Mobo",
+      "damage_usd": 807.0845683444605
+    },
+    {
+      "province": "Samar",
+      "municipality": "San Jose de Buan",
+      "damage_usd": 772.7293575404832
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Masbate City",
+      "damage_usd": 757.6776181394896
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Oras",
+      "damage_usd": 726.7824321215322
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Pinamungahan",
+      "damage_usd": 638.7792142538402
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Ubay",
+      "damage_usd": 609.9705246684721
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Pilar",
+      "damage_usd": 568.0386251624417
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "San Francisco",
+      "damage_usd": 557.5027275653636
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Mandaon",
+      "damage_usd": 556.2678060108225
+    },
+    {
+      "province": "Samar",
+      "municipality": "Tagapul-An",
+      "damage_usd": 465.9827508630136
+    },
+    {
+      "province": "Antique",
+      "municipality": "San Remigio",
+      "damage_usd": 452.71233443658866
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Leon",
+      "damage_usd": 410.31993774065376
+    },
+    {
+      "province": "Oriental Mindoro",
+      "municipality": "Bongabong",
+      "damage_usd": 390.31361552995645
+    },
+    {
+      "province": "Antique",
+      "municipality": "Patnongon",
+      "damage_usd": 377.2889635803076
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Macrohon",
+      "damage_usd": 362.6306439412555
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Canlaon City",
+      "damage_usd": 330.13448709833585
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Alcantara",
+      "damage_usd": 295.3275382808345
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Bien Unido",
+      "damage_usd": 273.1652654359916
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Del Carmen",
+      "damage_usd": 267.6558171138081
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Padre Burgos",
+      "damage_usd": 261.3014049361128
+    },
+    {
+      "province": "Romblon",
+      "municipality": "San Andres",
+      "damage_usd": 237.8801210024228
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Pres. Carlos P. Garcia",
+      "damage_usd": 187.64115259278483
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Silvino Lobos",
+      "damage_usd": 174.1108976086243
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Las Navas",
+      "damage_usd": 169.12376077707364
+    },
+    {
+      "province": "Samar",
+      "municipality": "Matuguinao",
+      "damage_usd": 150.7901185642304
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "General Luna",
+      "damage_usd": 148.20138555390494
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Lope de Vega",
+      "damage_usd": 142.18532600527226
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Maslog",
+      "damage_usd": 141.09490416048942
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Dapa",
+      "damage_usd": 134.45978361828054
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Vallehermoso",
+      "damage_usd": 126.00071710565278
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Santa Maria",
+      "damage_usd": 122.27275599700734
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "San Ricardo",
+      "damage_usd": 96.64825033254779
     },
     {
       "province": "Guimaras",
       "municipality": "Jordan",
-      "damage_usd": 0.0
+      "damage_usd": 87.12487891813296
     },
     {
-      "province": "Guimaras",
-      "municipality": "Nueva Valencia",
-      "damage_usd": 0.0
+      "province": "Antique",
+      "municipality": "Belison",
+      "damage_usd": 82.65070773839469
     },
     {
-      "province": "Guimaras",
-      "municipality": "San Lorenzo",
-      "damage_usd": 0.0
+      "province": "Surigao del Norte",
+      "municipality": "San Benito",
+      "damage_usd": 81.88670090723716
     },
     {
-      "province": "Guimaras",
-      "municipality": "Sibunag",
-      "damage_usd": 0.0
+      "province": "Bohol",
+      "municipality": "Trinidad",
+      "damage_usd": 78.38124077206855
     },
     {
-      "province": "Cebu",
-      "municipality": "Dalaguete",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Dumanjug",
-      "damage_usd": 0.0
+      "province": "Romblon",
+      "municipality": "San Agustin",
+      "damage_usd": 73.74969671070482
     },
     {
       "province": "Eastern Samar",
       "municipality": "San Policarpo",
-      "damage_usd": 0.0
+      "damage_usd": 69.47269092134061
+    },
+    {
+      "province": "Guimaras",
+      "municipality": "San Lorenzo",
+      "damage_usd": 58.26544396312514
+    },
+    {
+      "province": "Southern Leyte",
+      "municipality": "Pintuyan",
+      "damage_usd": 48.577619409046505
+    },
+    {
+      "province": "Romblon",
+      "municipality": "San Fernando",
+      "damage_usd": 48.22651664994033
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Tigbauan",
+      "damage_usd": 42.33006453506373
     },
     {
       "province": "Bohol",
-      "municipality": "Loay",
-      "damage_usd": 0.0
+      "municipality": "Jetafe",
+      "damage_usd": 28.921277444603927
     },
     {
-      "province": "Bohol",
-      "municipality": "Loboc",
-      "damage_usd": 0.0
+      "province": "Iloilo",
+      "municipality": "Tubungan",
+      "damage_usd": 18.334985196796723
     },
     {
-      "province": "Bohol",
-      "municipality": "Loon",
-      "damage_usd": 0.0
+      "province": "Eastern Samar",
+      "municipality": "Jipapad",
+      "damage_usd": 17.973965953006296
     },
     {
-      "province": "Lanao del Norte",
-      "municipality": "Munai",
-      "damage_usd": 0.0
+      "province": "Romblon",
+      "municipality": "Romblon",
+      "damage_usd": 15.64383349090694
     },
     {
-      "province": "Lanao del Norte",
-      "municipality": "Pantao Ragat",
-      "damage_usd": 0.0
+      "province": "Northern Samar",
+      "municipality": "San Isidro",
+      "damage_usd": 15.163399607666797
     },
     {
-      "province": "Lanao del Norte",
-      "municipality": "Pantar",
-      "damage_usd": 0.0
+      "province": "Romblon",
+      "municipality": "Calatrava",
+      "damage_usd": 13.31536670589222
     },
     {
-      "province": "Lanao del Norte",
-      "municipality": "Poona Piagapo",
-      "damage_usd": 0.0
+      "province": "Eastern Samar",
+      "municipality": "Arteche",
+      "damage_usd": 13.02956355842846
     },
     {
-      "province": "Bohol",
-      "municipality": "Tubigon",
-      "damage_usd": 0.0
+      "province": "Masbate",
+      "municipality": "Batuan",
+      "damage_usd": 7.813113481134951
     },
     {
-      "province": "Bohol",
-      "municipality": "Valencia",
-      "damage_usd": 0.0
+      "province": "Northern Samar",
+      "municipality": "Bobon",
+      "damage_usd": 7.089692573107074
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Mondragon",
+      "damage_usd": 6.765950538217847
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Baleno",
+      "damage_usd": 3.4805288613862997
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Igbaras",
+      "damage_usd": 1.0369635843551699
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Socorro",
+      "damage_usd": 0.4917772247698883
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Victoria",
+      "damage_usd": 0.1004122981458837
+    },
+    {
+      "province": "Antique",
+      "municipality": "Sibalom",
+      "damage_usd": 0.04033293653782294
     },
     {
       "province": "Bukidnon",
-      "municipality": "Baungon",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Cabanglasan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Kauswagan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Lantapan",
+      "municipality": "Malaybalay City",
       "damage_usd": 0.0
     },
     {
@@ -2313,52 +1538,7 @@
     },
     {
       "province": "Bukidnon",
-      "municipality": "Malaybalay City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Malitbog",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Manolo Fortich",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "San Joaquin",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Tigbauan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Iloilo",
-      "municipality": "Tubungan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Bacolod",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Baloi",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Baroy",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Iligan City",
+      "municipality": "Lantapan",
       "damage_usd": 0.0
     },
     {
@@ -2367,163 +1547,98 @@
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Pinan",
+      "province": "Bukidnon",
+      "municipality": "Cabanglasan",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Polanco",
+      "province": "Bukidnon",
+      "municipality": "Baungon",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Pres. Manuel A. Roxas",
+      "province": "Bohol",
+      "municipality": "Valencia",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Rizal",
+      "province": "Bohol",
+      "municipality": "Tubigon",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Salug",
+      "province": "Antique",
+      "municipality": "Anini-Y",
       "damage_usd": 0.0
     },
     {
-      "province": "Cebu",
-      "municipality": "Moalboal",
+      "province": "Albay",
+      "municipality": "Pio Duran",
       "damage_usd": 0.0
     },
     {
-      "province": "Surigao del Sur",
-      "municipality": "Bislig City",
+      "province": "Albay",
+      "municipality": "Legazpi City",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Bacungan",
+      "province": "Romblon",
+      "municipality": "Concepcion",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Dapitan City",
+      "province": "Bukidnon",
+      "municipality": "Malitbog",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Sergio Osmena Sr.",
+      "province": "Sorsogon",
+      "municipality": "Barcelona",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Siayan",
+      "province": "Siquijor",
+      "municipality": "Siquijor",
       "damage_usd": 0.0
     },
     {
-      "province": "Cebu",
-      "municipality": "Ginatilan",
+      "province": "Siquijor",
+      "municipality": "San Juan",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Sindangan",
+      "province": "Siquijor",
+      "municipality": "Maria",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Tampilisan",
+      "province": "Siquijor",
+      "municipality": "Lazi",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Sur",
-      "municipality": "Dumingag",
+      "province": "Siquijor",
+      "municipality": "Larena",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Sur",
-      "municipality": "Josefina",
+      "province": "Siquijor",
+      "municipality": "Enrique Villanueva",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Sur",
-      "municipality": "Mahayag",
+      "province": "Romblon",
+      "municipality": "Magdiwang",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Sur",
-      "municipality": "Midsalip",
+      "province": "Guimaras",
+      "municipality": "Nueva Valencia",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Sur",
-      "municipality": "Molave",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Zamboanga del Sur",
-      "municipality": "Ramon Magsaysay",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Zamboanga del Sur",
-      "municipality": "Sominot",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Tago",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Buenavista",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Zamboanga del Sur",
-      "municipality": "Tambulig",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Sibutad",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Malabuyoc",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Alcoy",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Alegria",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Aloguinsan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Argao",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Badian",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Barili",
+      "province": "Camiguin",
+      "municipality": "Guinsiliban",
       "damage_usd": 0.0
     },
     {
@@ -2533,67 +1648,287 @@
     },
     {
       "province": "Cebu",
-      "municipality": "Naga City",
+      "municipality": "Barili",
       "damage_usd": 0.0
     },
     {
       "province": "Cebu",
-      "municipality": "Oslob",
+      "municipality": "Badian",
       "damage_usd": 0.0
     },
     {
       "province": "Cebu",
-      "municipality": "Ronda",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Mutia",
+      "municipality": "Argao",
       "damage_usd": 0.0
     },
     {
       "province": "Cebu",
-      "municipality": "San Fernando",
+      "municipality": "Aloguinsan",
       "damage_usd": 0.0
     },
     {
-      "province": "Cebu",
-      "municipality": "Sibonga",
+      "province": "Guimaras",
+      "municipality": "Sibunag",
       "damage_usd": 0.0
     },
     {
-      "province": "Cebu",
-      "municipality": "Talisay City",
+      "province": "Camiguin",
+      "municipality": "Sagay",
       "damage_usd": 0.0
     },
     {
-      "province": "Cebu",
-      "municipality": "Carcar",
+      "province": "Camiguin",
+      "municipality": "Mambajao",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Gutalac",
+      "province": "Camiguin",
+      "municipality": "Mahinog",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Jose Dalman",
+      "province": "Negros Oriental",
+      "municipality": "Siaton",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Kalawit",
+      "province": "Negros Oriental",
+      "municipality": "Santa Catalina",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Katipunan",
+      "province": "Negros Oriental",
+      "municipality": "San Jose",
       "damage_usd": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
+      "province": "Negros Oriental",
+      "municipality": "Pamplona",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Manjuyod",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Mabinay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
       "municipality": "La Libertad",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Jimalalud",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "San Jose",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Dumaguete City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Dauin",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Bindoy",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Bayawan City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Basay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Bais City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Bacong",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Ayungon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Amlan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Guihulngan City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Cajidiocan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "San Roque",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Bulan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Rosario",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Pambujan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Palapag",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Mapanas",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Lavezares",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Lapinig",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Sibulan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Gamay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Catubig",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Catarman",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Capul",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Allen",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Zamboanguita",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Valencia",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Tayasan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Tanjay City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Laoang",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Josefina",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Dumingag",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Tampilisan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Sindangan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Sibutad",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Carrascal",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Carmen",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Cantilan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Cagwait",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Casiguran",
       "damage_usd": 0.0
     },
     {
@@ -2603,12 +1938,302 @@
     },
     {
       "province": "Zamboanga del Norte",
-      "municipality": "Liloy",
+      "municipality": "La Libertad",
       "damage_usd": 0.0
     },
     {
       "province": "Zamboanga del Norte",
-      "municipality": "Manukan",
+      "municipality": "Katipunan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Kalawit",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Jose Dalman",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Gutalac",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Godod",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Dipolog City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Malimono",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Bislig City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Tago",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Tagbina",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "San Miguel",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "San Agustin",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Marihatag",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Madrid",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Lingig",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Lianga",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Lanuza",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Mahayag",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Cortes",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Esperanza",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Bunawan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Bayugan City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Tubay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Tambulig",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Sominot",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Ramon Magsaysay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Molave",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Midsalip",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Hinatuan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Ronda",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Oslob",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Moalboal",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Malabuyoc",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Ginatilan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Dumanjug",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Dalaguete",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Carcar",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Sorsogon City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Mainit Lake",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Pilar",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Matnog",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Magallanes",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Juban",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Irosin",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Gubat",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Donsol",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Castilla",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Valladolid",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Bulusan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Santa Magdalena",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Mainit",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Gigaquit",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Claver",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Bacuag",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Alegria",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Veruela",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Trento",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Talacogon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Sibagat",
       "damage_usd": 0.0
     },
     {
@@ -2617,223 +2242,58 @@
       "damage_usd": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Balingoan",
+      "province": "Agusan del Sur",
+      "municipality": "San Luis",
       "damage_usd": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Cagayan de Oro City",
+      "province": "Agusan del Sur",
+      "municipality": "San Francisco",
       "damage_usd": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Claveria",
+      "province": "Agusan del Sur",
+      "municipality": "Rosario",
       "damage_usd": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "El Salvador City",
+      "province": "Agusan del Sur",
+      "municipality": "Prosperidad",
       "damage_usd": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Gingoog City",
+      "province": "Agusan del Sur",
+      "municipality": "Loreto",
       "damage_usd": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Gitagum",
+      "province": "Agusan del Sur",
+      "municipality": "La Paz",
       "damage_usd": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Initao",
+      "province": "Cebu",
+      "municipality": "Alegria",
       "damage_usd": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Jasaan",
+      "province": "Cebu",
+      "municipality": "Alcoy",
       "damage_usd": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Kinoguitan",
+      "province": "Cebu",
+      "municipality": "Sibonga",
       "damage_usd": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Lagonglong",
+      "province": "Cebu",
+      "municipality": "San Fernando",
       "damage_usd": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Laguindingan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Lila",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Magsaysay",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Manticao",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Aloran",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Baliangao",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Bonifacio",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Calamba",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Clarin",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Concepcion",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Don Victoriano Chiongbian",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Jimenez",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Lopez Jaena",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Libertad",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Cauayan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Himamaylan City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Hinigaran",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Hinoba-An",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Ilog",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Isabela",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Kabankalan City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "La Carlota City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "La Castellana",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Medina",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Naawan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Cabadbaran City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Salay",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Sugbongcogon",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Tagoloan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Talisayan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Villanueva",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Binalbagan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Albuquerque",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Alicia",
+      "province": "Agusan del Sur",
+      "municipality": "Santa Josefa",
       "damage_usd": 0.0
     },
     {
@@ -2843,252 +2303,12 @@
     },
     {
       "province": "Bohol",
-      "municipality": "Antequera",
+      "municipality": "Alicia",
       "damage_usd": 0.0
     },
     {
       "province": "Bohol",
-      "municipality": "Baclayon",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Alubijid",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Opol",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Maribojoc",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Panglao",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Pilar",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Sagbayan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "San Isidro",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "San Miguel",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Sevilla",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Sierra Bullones",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Sikatuna",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Candijay",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Carmen",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Oroquieta City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Clarin",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Sumilao",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Talakag",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Valencia City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Camiguin",
-      "municipality": "Catarman",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Tagoloan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Tangcal",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Sur",
-      "municipality": "Bubong",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Sur",
-      "municipality": "Kapai",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Sur",
-      "municipality": "Marawi City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Sur",
-      "municipality": "Saguiaran",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Lanao del Sur",
-      "municipality": "Tagoloan II",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Catigbian",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Ozamis City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Panaon",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Plaridel",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Sapang Dalaga",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Tangub City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Tudela",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Claveria",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Masbate",
-      "municipality": "Monreal",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Masbate",
-      "municipality": "San Fernando",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Masbate",
-      "municipality": "San Jacinto",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Masbate",
-      "municipality": "San Pascual",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Mabini",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Cortes",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Dagohoy",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Danao",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Dauis",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Dimiao",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Duero",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Garcia Hernandez",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Guindulman",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Inabanga",
+      "municipality": "Albuquerque",
       "damage_usd": 0.0
     },
     {
@@ -3098,7 +2318,142 @@
     },
     {
       "province": "Bohol",
-      "municipality": "Jetafe",
+      "municipality": "Inabanga",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Guindulman",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Garcia Hernandez",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Duero",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Dimiao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Miagao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Danao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Dagohoy",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Cortes",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Corella",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Clarin",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Catigbian",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Carmen",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Candijay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Sur",
+      "municipality": "Tagoloan II",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Dauis",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Panglao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Maribojoc",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Mabini",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Loon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Loboc",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Loay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Lila",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Poona Piagapo",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Pantar",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Antequera",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Munai",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Matungao",
       "damage_usd": 0.0
     },
     {
@@ -3108,7 +2463,652 @@
     },
     {
       "province": "Bohol",
-      "municipality": "Corella",
+      "municipality": "Calape",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Buenavista",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Bilar",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Batuan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Balilihan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Baclayon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Pantao Ragat",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Rizal",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Pres. Manuel A. Roxas",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Polanco",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Pinan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Mutia",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Manukan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Buenavista",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Tandag City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Liloy",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Sur",
+      "municipality": "Saguiaran",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Remedios T. Romualdez",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Nasipit",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Mainit Lake",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Magallanes",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Las Nieves",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Kitcharao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Jabonga",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Carmen",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Cabadbaran City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Santiago",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Sur",
+      "municipality": "Marawi City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Sur",
+      "municipality": "Kapai",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Sur",
+      "municipality": "Bubong",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Tangcal",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Tagoloan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Sikatuna",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Sierra Bullones",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Sevilla",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "San Miguel",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Salug",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Sergio Osmena Sr.",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Dapitan City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Bacungan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Bayabas",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Barobo",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Tubod",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Tagana-An",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Surigao City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Sison",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Surigao del Norte",
+      "municipality": "Placer",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Siayan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Kolambugan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Kauswagan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Iligan City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Baroy",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Baloi",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Bacolod",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "San Joaquin",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Hinoba-An",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Hinigaran",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Pilar",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Cauayan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Candoni",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Binalbagan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Villanueva",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Talisayan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Tagoloan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Sugbongcogon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Salay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Opol",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Himamaylan City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Sipalay City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "San Enrique",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Pontevedra",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Butuan City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Iloilo",
+      "municipality": "Guimbal",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camiguin",
+      "municipality": "Catarman",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bukidnon",
+      "municipality": "Valencia City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bukidnon",
+      "municipality": "Talakag",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bukidnon",
+      "municipality": "Sumilao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Linamon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Antique",
+      "municipality": "Tobias Fornier",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Antique",
+      "municipality": "Hamtic",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Moises Padilla",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "La Castellana",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "La Carlota City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Kabankalan City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Isabela",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Ilog",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Maigo",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Magsaysay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bukidnon",
+      "municipality": "Manolo Fortich",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Panaon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Ozamis City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Oroquieta City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Lopez Jaena",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Jimenez",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Don Victoriano Chiongbian",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Concepcion",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Clarin",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Calamba",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Naawan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Baliangao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Aloran",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "San Pascual",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "San Jacinto",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "San Fernando",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Monreal",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Claveria",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "San Isidro",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Sagbayan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Bonifacio",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Medina",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Manticao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Magsaysay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Libertad",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Laguindingan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Lagonglong",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Kinoguitan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Jasaan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Initao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Plaridel",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Gingoog City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "El Salvador City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Claveria",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Cagayan de Oro City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Balingoan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Balingasag",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Alubijid",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Tudela",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Tangub City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Sapang Dalaga",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Gitagum",
       "damage_usd": 0.0
     }
   ],
@@ -3186,7 +3186,7 @@
     {
       "province": "Albay",
       "municipality": "Legazpi City",
-      "affected_population": 73094.77558149863
+      "affected_population": 89198.66568000152
     },
     {
       "province": "Negros Occidental",
@@ -3224,9 +3224,9 @@
       "affected_population": 46364.06397852966
     },
     {
-      "province": "Albay",
-      "municipality": "Pio Duran",
-      "affected_population": 41682.0
+      "province": "Sorsogon",
+      "municipality": "Sorsogon City",
+      "affected_population": 46175.00639890614
     },
     {
       "province": "Negros Occidental",
@@ -3374,6 +3374,11 @@
       "affected_population": 6674.681016881254
     },
     {
+      "province": "Bohol",
+      "municipality": "Dauis",
+      "affected_population": 6640.4700267785265
+    },
+    {
       "province": "Negros Occidental",
       "municipality": "Valladolid",
       "affected_population": 6549.972859282615
@@ -3399,6 +3404,11 @@
       "affected_population": 5726.474496114771
     },
     {
+      "province": "Bohol",
+      "municipality": "Corella",
+      "affected_population": 5651.1730041608935
+    },
+    {
       "province": "Leyte",
       "municipality": "Baybay City",
       "affected_population": 5550.367849998662
@@ -3407,6 +3417,11 @@
       "province": "Negros Occidental",
       "municipality": "Enrique B. Magalona",
       "affected_population": 5315.031711680592
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Baclayon",
+      "affected_population": 5171.535580802493
     },
     {
       "province": "Samar",
@@ -3744,6 +3759,11 @@
       "affected_population": 1309.4898346896932
     },
     {
+      "province": "Bohol",
+      "municipality": "Panglao",
+      "affected_population": 1300.1139224549913
+    },
+    {
       "province": "Masbate",
       "municipality": "San Jacinto",
       "affected_population": 1273.4884824198712
@@ -3797,11 +3817,6 @@
       "province": "Cebu",
       "municipality": "Asturias",
       "affected_population": 1094.2255694627142
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Pilar",
-      "affected_population": 1084.5770971702386
     },
     {
       "province": "Cebu",
@@ -3859,6 +3874,11 @@
       "affected_population": 971.1990793082557
     },
     {
+      "province": "Sorsogon",
+      "municipality": "Pilar",
+      "affected_population": 967.5634219647827
+    },
+    {
       "province": "Northern Samar",
       "municipality": "Mondragon",
       "affected_population": 965.6967340062243
@@ -3914,6 +3934,11 @@
       "affected_population": 866.2061108887283
     },
     {
+      "province": "Sorsogon",
+      "municipality": "Castilla",
+      "affected_population": 846.5971110629866
+    },
+    {
       "province": "Northern Samar",
       "municipality": "San Jose",
       "affected_population": 842.1849796943079
@@ -3962,11 +3987,6 @@
       "province": "Leyte",
       "municipality": "Bato",
       "affected_population": 760.0035776332832
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Castilla",
-      "affected_population": 755.4122371415261
     },
     {
       "province": "Capiz",
@@ -4089,11 +4109,6 @@
       "affected_population": 644.4875345147751
     },
     {
-      "province": "Sorsogon",
-      "municipality": "Sorsogon City",
-      "affected_population": 634.428929187764
-    },
-    {
       "province": "Southern Leyte",
       "municipality": "Silago",
       "affected_population": 629.283598855689
@@ -4142,6 +4157,11 @@
       "province": "Negros Occidental",
       "municipality": "Moises Padilla",
       "affected_population": 575.7899030623412
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Gubat",
+      "affected_population": 574.4343860492685
     },
     {
       "province": "Antique",
@@ -4222,11 +4242,6 @@
       "province": "Leyte",
       "municipality": "Hilongos",
       "affected_population": 451.16761865317613
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Gubat",
-      "affected_population": 447.3573553241854
     },
     {
       "province": "Antique",
@@ -4462,11 +4477,6 @@
       "province": "Bohol",
       "municipality": "Pilar",
       "affected_population": 336.5296801904211
-    },
-    {
-      "province": "Sorsogon",
-      "municipality": "Donsol",
-      "affected_population": 328.4102020980473
     },
     {
       "province": "Cebu",
@@ -4829,6 +4839,11 @@
       "affected_population": 179.16234790195074
     },
     {
+      "province": "Bohol",
+      "municipality": "Loboc",
+      "affected_population": 177.70626843960554
+    },
+    {
       "province": "Surigao del Norte",
       "municipality": "Pilar",
       "affected_population": 175.94467827318192
@@ -4877,6 +4892,11 @@
       "province": "Southern Leyte",
       "municipality": "Saint Bernard",
       "affected_population": 168.49795934146908
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Kitcharao",
+      "affected_population": 168.45088986551067
     },
     {
       "province": "Aklan",
@@ -4954,11 +4974,6 @@
       "affected_population": 150.69685053618736
     },
     {
-      "province": "Agusan del Norte",
-      "municipality": "Kitcharao",
-      "affected_population": 150.2939128973856
-    },
-    {
       "province": "Antique",
       "municipality": "Belison",
       "affected_population": 149.01775178933718
@@ -4972,6 +4987,11 @@
       "province": "Eastern Samar",
       "municipality": "San Julian",
       "affected_population": 147.57688773372934
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Donsol",
+      "affected_population": 146.67952372296796
     },
     {
       "province": "Sorsogon",
@@ -5089,6 +5109,11 @@
       "affected_population": 102.41360429864056
     },
     {
+      "province": "Bohol",
+      "municipality": "Loay",
+      "affected_population": 101.79921494558864
+    },
+    {
       "province": "Biliran",
       "municipality": "Cabucgayan",
       "affected_population": 101.59687674749912
@@ -5147,6 +5172,11 @@
       "province": "Southern Leyte",
       "municipality": "Padre Burgos",
       "affected_population": 80.88593804564695
+    },
+    {
+      "province": "Bohol",
+      "municipality": "Albuquerque",
+      "affected_population": 79.79291521988607
     },
     {
       "province": "Southern Leyte",
@@ -5209,11 +5239,6 @@
       "affected_population": 61.14802979070889
     },
     {
-      "province": "Bohol",
-      "municipality": "Loboc",
-      "affected_population": 60.6980564275798
-    },
-    {
       "province": "Northern Samar",
       "municipality": "Capul",
       "affected_population": 58.86312242949151
@@ -5232,6 +5257,11 @@
       "province": "Romblon",
       "municipality": "Concepcion",
       "affected_population": 49.993834834771135
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Jabonga",
+      "affected_population": 45.91472743426646
     },
     {
       "province": "Samar",
@@ -5259,11 +5289,6 @@
       "affected_population": 22.576219175904797
     },
     {
-      "province": "Agusan del Norte",
-      "municipality": "Jabonga",
-      "affected_population": 21.46326510155074
-    },
-    {
       "province": "Surigao del Norte",
       "municipality": "San Benito",
       "affected_population": 13.026846774787485
@@ -5274,73 +5299,118 @@
       "affected_population": 2.1188228894378502
     },
     {
-      "province": "Agusan del Sur",
-      "municipality": "Bayugan City",
+      "province": "Misamis Oriental",
+      "municipality": "Sugbongcogon",
       "affected_population": 0.0
     },
     {
-      "province": "Agusan del Sur",
-      "municipality": "Esperanza",
+      "province": "Misamis Oriental",
+      "municipality": "Libertad",
       "affected_population": 0.0
     },
     {
-      "province": "Agusan del Sur",
-      "municipality": "Bunawan",
+      "province": "Misamis Oriental",
+      "municipality": "Magsaysay",
       "affected_population": 0.0
     },
     {
-      "province": "Surigao del Sur",
-      "municipality": "Marihatag",
+      "province": "Misamis Oriental",
+      "municipality": "Manticao",
       "affected_population": 0.0
     },
     {
-      "province": "Surigao del Sur",
-      "municipality": "Madrid",
+      "province": "Misamis Oriental",
+      "municipality": "Medina",
       "affected_population": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Bacungan",
+      "province": "Misamis Oriental",
+      "municipality": "Naawan",
       "affected_population": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Dapitan City",
+      "province": "Misamis Oriental",
+      "municipality": "Opol",
       "affected_population": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Sergio Osmena Sr.",
+      "province": "Misamis Oriental",
+      "municipality": "Salay",
       "affected_population": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Siayan",
+      "province": "Misamis Oriental",
+      "municipality": "Alubijid",
       "affected_population": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Sibutad",
+      "province": "Misamis Oriental",
+      "municipality": "Balingasag",
       "affected_population": 0.0
     },
     {
-      "province": "Zamboanga del Norte",
-      "municipality": "Sindangan",
+      "province": "Misamis Occidental",
+      "municipality": "Tudela",
       "affected_population": 0.0
     },
     {
-      "province": "Surigao del Sur",
-      "municipality": "Tago",
+      "province": "Negros Oriental",
+      "municipality": "Bais City",
       "affected_population": 0.0
     },
     {
-      "province": "Surigao del Sur",
-      "municipality": "San Agustin",
+      "province": "Negros Oriental",
+      "municipality": "Bacong",
       "affected_population": 0.0
     },
     {
-      "province": "Zamboanga del Sur",
-      "municipality": "Dumingag",
+      "province": "Negros Oriental",
+      "municipality": "Amlan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "San Pascual",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Laguindingan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Gitagum",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Tagoloan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Talisayan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Villanueva",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Lagonglong",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Kinoguitan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Cauayan",
       "affected_population": 0.0
     },
     {
@@ -5355,62 +5425,32 @@
     },
     {
       "province": "Surigao del Sur",
-      "municipality": "Lingig",
+      "municipality": "Cortes",
       "affected_population": 0.0
     },
     {
       "province": "Surigao del Sur",
-      "municipality": "San Miguel",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Tagbina",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Bais City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Sipalay City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Villanueva",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Albuquerque",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Baclayon",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Basay",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Bayawan City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Dauin",
+      "municipality": "Hinatuan",
       "affected_population": 0.0
     },
     {
       "province": "Zamboanga del Norte",
-      "municipality": "Tampilisan",
+      "municipality": "Bacungan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Carmen",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Esperanza",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Gutalac",
       "affected_population": 0.0
     },
     {
@@ -5419,133 +5459,13 @@
       "affected_population": 0.0
     },
     {
-      "province": "Negros Oriental",
-      "municipality": "Mabinay",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Dumaguete City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "San Jose",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Manjuyod",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Siaton",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Sibulan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Tanjay City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Pamplona",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Valencia",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Zamboanguita",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Gitagum",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Initao",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Jasaan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Kinoguitan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Lagonglong",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Santa Catalina",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Laguindingan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Libertad",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Manticao",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Occidental",
-      "municipality": "Cauayan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Amlan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Negros Oriental",
-      "municipality": "Bacong",
+      "province": "Agusan del Sur",
+      "municipality": "Bayugan City",
       "affected_population": 0.0
     },
     {
       "province": "Agusan del Norte",
-      "municipality": "Cabadbaran City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Butuan City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Magallanes",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Norte",
-      "municipality": "Nasipit",
+      "municipality": "Tubay",
       "affected_population": 0.0
     },
     {
@@ -5560,12 +5480,27 @@
     },
     {
       "province": "Agusan del Norte",
-      "municipality": "Tubay",
+      "municipality": "Nasipit",
       "affected_population": 0.0
     },
     {
       "province": "Agusan del Norte",
-      "municipality": "Carmen",
+      "municipality": "Magallanes",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Bunawan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Godod",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Tambulig",
       "affected_population": 0.0
     },
     {
@@ -5574,23 +5509,113 @@
       "affected_population": 0.0
     },
     {
+      "province": "Misamis Occidental",
+      "municipality": "Sapang Dalaga",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Tangub City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Dipolog City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Tago",
+      "affected_population": 0.0
+    },
+    {
       "province": "Agusan del Norte",
       "municipality": "Buenavista",
       "affected_population": 0.0
     },
     {
-      "province": "Misamis Occidental",
-      "municipality": "Panaon",
+      "province": "Agusan del Norte",
+      "municipality": "Butuan City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Marihatag",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Madrid",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Lingig",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Lianga",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Lanuza",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Tagbina",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "San Miguel",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "San Agustin",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Tanjay City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Valencia",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Zamboanguita",
       "affected_population": 0.0
     },
     {
       "province": "Misamis Occidental",
-      "municipality": "Ozamis City",
+      "municipality": "Aloran",
       "affected_population": 0.0
     },
     {
-      "province": "Misamis Occidental",
-      "municipality": "Oroquieta City",
+      "province": "Lanao del Sur",
+      "municipality": "Saguiaran",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Lanao del Sur",
+      "municipality": "Tagoloan II",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Kauswagan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Iligan City",
       "affected_population": 0.0
     },
     {
@@ -5604,58 +5629,18 @@
       "affected_population": 0.0
     },
     {
-      "province": "Misamis Oriental",
-      "municipality": "Talisayan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Tagoloan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Sugbongcogon",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Medina",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Salay",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Opol",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Naawan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Magsaysay",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "El Salvador City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Claveria",
+      "province": "Misamis Occidental",
+      "municipality": "Don Victoriano Chiongbian",
       "affected_population": 0.0
     },
     {
       "province": "Misamis Occidental",
-      "municipality": "Plaridel",
+      "municipality": "Concepcion",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Occidental",
+      "municipality": "Clarin",
       "affected_population": 0.0
     },
     {
@@ -5675,102 +5660,117 @@
     },
     {
       "province": "Misamis Occidental",
-      "municipality": "Aloran",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Corella",
+      "municipality": "Oroquieta City",
       "affected_population": 0.0
     },
     {
       "province": "Misamis Occidental",
-      "municipality": "Don Victoriano Chiongbian",
+      "municipality": "Ozamis City",
       "affected_population": 0.0
     },
     {
       "province": "Misamis Occidental",
-      "municipality": "Concepcion",
+      "municipality": "Panaon",
       "affected_population": 0.0
     },
     {
       "province": "Misamis Occidental",
-      "municipality": "Clarin",
+      "municipality": "Plaridel",
       "affected_population": 0.0
     },
     {
-      "province": "Bohol",
-      "municipality": "Dauis",
+      "province": "Negros Oriental",
+      "municipality": "Basay",
       "affected_population": 0.0
     },
     {
-      "province": "Lanao del Sur",
-      "municipality": "Kapai",
+      "province": "Negros Oriental",
+      "municipality": "Bayawan City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Occidental",
+      "municipality": "Sipalay City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Sibulan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Siaton",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Santa Catalina",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "San Jose",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Pamplona",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Manjuyod",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Mabinay",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Dumaguete City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Negros Oriental",
+      "municipality": "Dauin",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Initao",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Jasaan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Balingoan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Cagayan de Oro City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "Claveria",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Misamis Oriental",
+      "municipality": "El Salvador City",
       "affected_population": 0.0
     },
     {
       "province": "Misamis Oriental",
       "municipality": "Gingoog City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Masbate",
-      "municipality": "San Pascual",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Alubijid",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Sapang Dalaga",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Tangub City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Occidental",
-      "municipality": "Tudela",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Tangcal",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Tagoloan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Bohol",
-      "municipality": "Panglao",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Lanao del Sur",
-      "municipality": "Bubong",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Baroy",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Iligan City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Lanao del Norte",
-      "municipality": "Bacolod",
       "affected_population": 0.0
     },
     {
@@ -5780,7 +5780,7 @@
     },
     {
       "province": "Lanao del Norte",
-      "municipality": "Linamon",
+      "municipality": "Maigo",
       "affected_population": 0.0
     },
     {
@@ -5790,7 +5790,62 @@
     },
     {
       "province": "Lanao del Norte",
-      "municipality": "Maigo",
+      "municipality": "Linamon",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Kolambugan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Pantar",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Pantao Ragat",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Pio Duran",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Baroy",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camiguin",
+      "municipality": "Sagay",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Bukidnon",
+      "municipality": "Sumilao",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Bukidnon",
+      "municipality": "Talakag",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Bukidnon",
+      "municipality": "Valencia City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camiguin",
+      "municipality": "Catarman",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Lanao del Norte",
+      "municipality": "Bacolod",
       "affected_population": 0.0
     },
     {
@@ -5804,18 +5859,18 @@
       "affected_population": 0.0
     },
     {
-      "province": "Lanao del Norte",
-      "municipality": "Pantao Ragat",
+      "province": "Lanao del Sur",
+      "municipality": "Bubong",
       "affected_population": 0.0
     },
     {
       "province": "Lanao del Norte",
-      "municipality": "Kauswagan",
+      "municipality": "Tangcal",
       "affected_population": 0.0
     },
     {
       "province": "Lanao del Norte",
-      "municipality": "Kolambugan",
+      "municipality": "Tagoloan",
       "affected_population": 0.0
     },
     {
@@ -5824,18 +5879,33 @@
       "affected_population": 0.0
     },
     {
-      "province": "Lanao del Norte",
-      "municipality": "Pantar",
+      "province": "Bukidnon",
+      "municipality": "Manolo Fortich",
       "affected_population": 0.0
     },
     {
-      "province": "Bohol",
-      "municipality": "Loay",
+      "province": "Bukidnon",
+      "municipality": "Malitbog",
       "affected_population": 0.0
     },
     {
-      "province": "Siquijor",
-      "municipality": "Enrique Villanueva",
+      "province": "Lanao del Sur",
+      "municipality": "Marawi City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Lanao del Sur",
+      "municipality": "Kapai",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Jose Dalman",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Kalawit",
       "affected_population": 0.0
     },
     {
@@ -5864,43 +5934,18 @@
       "affected_population": 0.0
     },
     {
-      "province": "Bukidnon",
-      "municipality": "Sumilao",
+      "province": "Cebu",
+      "municipality": "Malabuyoc",
       "affected_population": 0.0
     },
     {
-      "province": "Lanao del Sur",
-      "municipality": "Saguiaran",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Lanao del Sur",
-      "municipality": "Marawi City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Lanao del Sur",
-      "municipality": "Tagoloan II",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Balingasag",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Balingoan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Misamis Oriental",
-      "municipality": "Cagayan de Oro City",
+      "province": "Camiguin",
+      "municipality": "Guinsiliban",
       "affected_population": 0.0
     },
     {
       "province": "Bukidnon",
-      "municipality": "Impasug-Ong",
+      "municipality": "Baungon",
       "affected_population": 0.0
     },
     {
@@ -5910,22 +5955,7 @@
     },
     {
       "province": "Bukidnon",
-      "municipality": "Baungon",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Camiguin",
-      "municipality": "Catarman",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Valencia City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Talakag",
+      "municipality": "Impasug-Ong",
       "affected_population": 0.0
     },
     {
@@ -5939,8 +5969,8 @@
       "affected_population": 0.0
     },
     {
-      "province": "Camiguin",
-      "municipality": "Mambajao",
+      "province": "Bukidnon",
+      "municipality": "Malaybalay City",
       "affected_population": 0.0
     },
     {
@@ -5949,38 +5979,8 @@
       "affected_population": 0.0
     },
     {
-      "province": "Cebu",
-      "municipality": "Samboan",
-      "affected_population": 0.0
-    },
-    {
       "province": "Camiguin",
-      "municipality": "Sagay",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Manolo Fortich",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Camiguin",
-      "municipality": "Guinsiliban",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Malaybalay City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Bukidnon",
-      "municipality": "Malitbog",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Cebu",
-      "municipality": "Oslob",
+      "municipality": "Mambajao",
       "affected_population": 0.0
     },
     {
@@ -5990,162 +5990,12 @@
     },
     {
       "province": "Cebu",
-      "municipality": "Malabuyoc",
+      "municipality": "Samboan",
       "affected_population": 0.0
     },
     {
       "province": "Cebu",
-      "municipality": "Ginatilan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Barobo",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Bayabas",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Bislig City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Cagwait",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Cantilan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "La Paz",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Loreto",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Prosperidad",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Dipolog City",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Godod",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Gutalac",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Jose Dalman",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Kalawit",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Katipunan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "La Libertad",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Labason",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Liloy",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Manukan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Mutia",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Pinan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Polanco",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Pres. Manuel A. Roxas",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Rizal",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Norte",
-      "municipality": "Salug",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Rosario",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "San Francisco",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "San Luis",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Santa Josefa",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Sibagat",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Agusan del Sur",
-      "municipality": "Talacogon",
+      "municipality": "Oslob",
       "affected_population": 0.0
     },
     {
@@ -6155,52 +6005,147 @@
     },
     {
       "province": "Agusan del Sur",
+      "municipality": "Talacogon",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Sibagat",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Siquijor",
+      "municipality": "Enrique Villanueva",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "San Luis",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "San Francisco",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Rosario",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Prosperidad",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Loreto",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "La Paz",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Cantilan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
+      "municipality": "Santa Josefa",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Cagwait",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Surigao del Sur",
+      "municipality": "Bislig City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Sur",
       "municipality": "Veruela",
       "affected_population": 0.0
     },
     {
       "province": "Surigao del Sur",
-      "municipality": "Carmen",
+      "municipality": "Bayabas",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Salug",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Rizal",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Pres. Manuel A. Roxas",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Cebu",
+      "municipality": "Ginatilan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Pinan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Mutia",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Manukan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Liloy",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Labason",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "La Libertad",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Katipunan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Polanco",
       "affected_population": 0.0
     },
     {
       "province": "Surigao del Sur",
-      "municipality": "Cortes",
+      "municipality": "Barobo",
       "affected_population": 0.0
     },
     {
-      "province": "Surigao del Sur",
-      "municipality": "Hinatuan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Lanuza",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Surigao del Sur",
-      "municipality": "Lianga",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Sur",
-      "municipality": "Josefina",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Sur",
-      "municipality": "Mahayag",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Sur",
-      "municipality": "Midsalip",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Zamboanga del Sur",
-      "municipality": "Molave",
+      "province": "Agusan del Norte",
+      "municipality": "Cabadbaran City",
       "affected_population": 0.0
     },
     {
@@ -6215,7 +6160,62 @@
     },
     {
       "province": "Zamboanga del Sur",
-      "municipality": "Tambulig",
+      "municipality": "Midsalip",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Mahayag",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Josefina",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Molave",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Sur",
+      "municipality": "Dumingag",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Tampilisan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Sibutad",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Sindangan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Siayan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Sergio Osmena Sr.",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Zamboanga del Norte",
+      "municipality": "Dapitan City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Agusan del Norte",
+      "municipality": "Carmen",
       "affected_population": 0.0
     }
   ]

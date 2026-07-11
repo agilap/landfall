@@ -107,6 +107,9 @@ def _write_meta(bundle_dir: Path, scenario: ScenarioConfig, storm_config, cache:
         "calibration_point_quantile": cache["calibration_point_quantile"],
         "calibration_range_quantiles": cache["calibration_range_quantiles"],
         "hazard_model": cache["hazard_model"],
+        # v1.4: the track-resampling step the wind grid was computed at, so the bundle
+        # self-documents which hazard methodology produced it (see wind.py WIND_TIMESTEP_H).
+        "wind_timestep_h": cache["wind_timestep_h"],
         "units": {
             "damage": "USD",
             # Verified empirically against `TropCyclone.units` (CLIMADA's H1980 max-sustained-wind

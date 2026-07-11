@@ -1,669 +1,669 @@
 {
-  "total_damage_usd": 125983187.57270841,
+  "total_damage_usd": 197279587.28339115,
   "total_damage_usd_range": {
-    "low": 7589941.037602424,
-    "high": 931567868.8984584
+    "low": 12126654.296782449,
+    "high": 1344962528.1226172
   },
-  "affected_population": 743891.1460262139,
+  "affected_population": 766144.3869251024,
   "damage_by_municipality": [
     {
       "province": "Ilocos Norte",
       "municipality": "Laoag City",
-      "damage_usd": 89835799.22904213
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "San Nicolas",
-      "damage_usd": 5750570.881222839
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Batac City",
-      "damage_usd": 3574464.3844454414
+      "damage_usd": 111590913.58177617
     },
     {
       "province": "Cagayan",
       "municipality": "Tuguegarao City",
-      "damage_usd": 2292670.9637545724
+      "damage_usd": 17855774.747591104
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Batac City",
+      "damage_usd": 10753190.55201491
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "San Nicolas",
+      "damage_usd": 8492606.833202783
     },
     {
       "province": "Ilocos Norte",
       "municipality": "Vintar",
-      "damage_usd": 2247319.2317203633
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Bacarra",
-      "damage_usd": 2070760.9174870113
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Sarrat",
-      "damage_usd": 1706694.5553086626
+      "damage_usd": 3100460.569904797
     },
     {
       "province": "Ilocos Sur",
       "municipality": "Vigan City",
-      "damage_usd": 1324840.0147707849
+      "damage_usd": 2887980.745271185
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Bacarra",
+      "damage_usd": 2774059.067028518
     },
     {
       "province": "Ilocos Norte",
       "municipality": "Paoay",
-      "damage_usd": 1147484.3870362048
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Bantay",
-      "damage_usd": 843663.8262060718
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Cabugao",
-      "damage_usd": 730712.9593938703
+      "damage_usd": 2447453.561417849
     },
     {
       "province": "Cagayan",
       "municipality": "Aparri",
-      "damage_usd": 599365.0609079876
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Baggao",
-      "damage_usd": 504939.55419200036
+      "damage_usd": 2433581.2442842256
     },
     {
       "province": "Ilocos Norte",
-      "municipality": "Dingras",
-      "damage_usd": 490376.9258621655
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Ballesteros",
-      "damage_usd": 482161.43116502627
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Lasam",
-      "damage_usd": 473038.09305560135
+      "municipality": "Sarrat",
+      "damage_usd": 2302333.74546274
     },
     {
       "province": "Cagayan",
       "municipality": "Solana",
-      "damage_usd": 466210.9695547633
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Allacapan",
-      "damage_usd": 442088.72466009506
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Santa Ana",
-      "damage_usd": 438166.7687689409
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Tuao",
-      "damage_usd": 410182.4745391407
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Gonzaga",
-      "damage_usd": 404322.1346715756
-    },
-    {
-      "province": "Apayao",
-      "municipality": "Luna",
-      "damage_usd": 371237.34941897966
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Gattaran",
-      "damage_usd": 363682.8817361308
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Piddig",
-      "damage_usd": 361156.52021068364
+      "damage_usd": 2118351.6374992346
     },
     {
       "province": "Ilocos Sur",
-      "municipality": "Santo Domingo",
-      "damage_usd": 319645.0849908617
+      "municipality": "Cabugao",
+      "damage_usd": 1808456.2060965134
     },
     {
-      "province": "Apayao",
-      "municipality": "Flora",
-      "damage_usd": 251302.6689204998
-    },
-    {
-      "province": "Apayao",
-      "municipality": "Pudtol",
-      "damage_usd": 244814.41766217104
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Lal-Lo",
-      "damage_usd": 213613.7095276647
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Pasuquin",
-      "damage_usd": 208870.83812380646
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Abulug",
-      "damage_usd": 207589.27710642616
+      "province": "Ilocos Sur",
+      "municipality": "Bantay",
+      "damage_usd": 1695240.8918007417
     },
     {
       "province": "Cagayan",
       "municipality": "Pe\u00f1ablanca",
-      "damage_usd": 206933.4378031317
+      "damage_usd": 1474845.1441315606
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Gattaran",
+      "damage_usd": 1207972.7260002417
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Baggao",
+      "damage_usd": 1098049.242482113
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Lal-Lo",
+      "damage_usd": 1086596.265219255
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Allacapan",
+      "damage_usd": 978048.5730148529
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Gonzaga",
+      "damage_usd": 933010.9542058617
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Ballesteros",
+      "damage_usd": 866301.7387567029
     },
     {
       "province": "Ilocos Norte",
-      "municipality": "Badoc",
-      "damage_usd": 194230.9317388475
+      "municipality": "Piddig",
+      "damage_usd": 819887.0126922481
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Lasam",
+      "damage_usd": 784840.2577483451
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Dingras",
+      "damage_usd": 784655.3914451792
     },
     {
       "province": "Ilocos Sur",
       "municipality": "Sinait",
-      "damage_usd": 187791.40275662573
+      "damage_usd": 705817.7918289726
     },
     {
       "province": "Ilocos Sur",
-      "municipality": "San Vicente",
-      "damage_usd": 174974.91814928164
+      "municipality": "Santo Domingo",
+      "damage_usd": 628777.9715697326
     },
     {
       "province": "Cagayan",
-      "municipality": "Alcala",
-      "damage_usd": 172259.90964973439
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Magsingal",
-      "damage_usd": 165232.25405211336
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Santo Ni\u00f1o",
-      "damage_usd": 151672.47495930654
-    },
-    {
-      "province": "Apayao",
-      "municipality": "Kabugao",
-      "damage_usd": 148282.1411056404
-    },
-    {
-      "province": "Kalinga",
-      "municipality": "Tabuk City",
-      "damage_usd": 145448.522009433
+      "municipality": "Santa Ana",
+      "damage_usd": 602440.9772326101
     },
     {
       "province": "Ilocos Norte",
-      "municipality": "Marcos",
-      "damage_usd": 136890.43252980977
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "San Juan",
-      "damage_usd": 132731.57221362134
-    },
-    {
-      "province": "Apayao",
-      "municipality": "Santa Marcela",
-      "damage_usd": 123891.36562088013
+      "municipality": "Badoc",
+      "damage_usd": 573004.3443160816
     },
     {
       "province": "Cagayan",
-      "municipality": "Piat",
-      "damage_usd": 114963.00033523436
-    },
-    {
-      "province": "Apayao",
-      "municipality": "Calanasan",
-      "damage_usd": 108540.20531298383
-    },
-    {
-      "province": "Abra",
-      "municipality": "Bangued",
-      "damage_usd": 103856.76295205732
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Solsona",
-      "damage_usd": 100302.62964083462
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Amulung",
-      "damage_usd": 98961.49013656664
-    },
-    {
-      "province": "Apayao",
-      "municipality": "Conner",
-      "damage_usd": 97152.17182726515
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Pamplona",
-      "damage_usd": 90128.07287808319
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Rizal",
-      "damage_usd": 89868.30077198526
+      "municipality": "Tuao",
+      "damage_usd": 557973.206661233
     },
     {
       "province": "Cagayan",
       "municipality": "Santa Teresita",
-      "damage_usd": 85341.7569336204
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Banna",
-      "damage_usd": 76296.24085581805
+      "damage_usd": 499654.6347501399
     },
     {
       "province": "Cagayan",
-      "municipality": "Camalaniugan",
-      "damage_usd": 57560.40569188117
+      "municipality": "Alcala",
+      "damage_usd": 479988.88785587135
     },
     {
-      "province": "Kalinga",
-      "municipality": "Pinukpuk",
-      "damage_usd": 57522.87889025622
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Currimao",
-      "damage_usd": 56989.622854820394
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Sanchez-Mira",
-      "damage_usd": 56708.163753829496
-    },
-    {
-      "province": "Abra",
-      "municipality": "Tayum",
-      "damage_usd": 56705.23864041669
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Nueva Era",
-      "damage_usd": 53618.08277668808
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Pinili",
-      "damage_usd": 42948.61251539257
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Burgos",
-      "damage_usd": 38004.5395209727
+      "province": "Apayao",
+      "municipality": "Luna",
+      "damage_usd": 412840.26619827584
     },
     {
       "province": "Cagayan",
       "municipality": "Buguey",
-      "damage_usd": 31032.23157794189
+      "damage_usd": 407558.69398516987
     },
     {
       "province": "Cagayan",
-      "municipality": "Enrile",
-      "damage_usd": 29572.70631540277
+      "municipality": "Camalaniugan",
+      "damage_usd": 395502.88103566424
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Amulung",
+      "damage_usd": 363881.8435737897
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "San Vicente",
+      "damage_usd": 361986.8948129435
+    },
+    {
+      "province": "Apayao",
+      "municipality": "Flora",
+      "damage_usd": 361373.14854816004
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Magsingal",
+      "damage_usd": 338898.4842445124
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Banna",
+      "damage_usd": 282266.8832397408
+    },
+    {
+      "province": "Apayao",
+      "municipality": "Pudtol",
+      "damage_usd": 272111.45426849596
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Abulug",
+      "damage_usd": 270510.0206038464
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Pasuquin",
+      "damage_usd": 263813.4373212999
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Solsona",
+      "damage_usd": 263021.51304091426
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "San Juan",
+      "damage_usd": 255981.17330259987
+    },
+    {
+      "province": "Apayao",
+      "municipality": "Kabugao",
+      "damage_usd": 238763.0279760455
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Santo Ni\u00f1o",
+      "damage_usd": 230368.34911731898
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Marcos",
+      "damage_usd": 229151.94516256254
+    },
+    {
+      "province": "Abra",
+      "municipality": "Bangued",
+      "damage_usd": 224498.51373273737
+    },
+    {
+      "province": "Kalinga",
+      "municipality": "Tabuk City",
+      "damage_usd": 207587.77354384592
+    },
+    {
+      "province": "Apayao",
+      "municipality": "Calanasan",
+      "damage_usd": 195383.23840360634
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Rizal",
+      "damage_usd": 171156.5034435723
+    },
+    {
+      "province": "Apayao",
+      "municipality": "Santa Marcela",
+      "damage_usd": 164950.11682939756
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Piat",
+      "damage_usd": 164258.68328184064
+    },
+    {
+      "province": "Apayao",
+      "municipality": "Conner",
+      "damage_usd": 161665.7393369031
     },
     {
       "province": "Cagayan",
       "municipality": "Iguig",
-      "damage_usd": 22548.58189813912
+      "damage_usd": 156964.28338195724
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Currimao",
+      "damage_usd": 150756.4345811588
     },
     {
       "province": "Cagayan",
-      "municipality": "Claveria",
-      "damage_usd": 20036.0089134577
+      "municipality": "Enrile",
+      "damage_usd": 141686.42299680374
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Pinili",
+      "damage_usd": 133007.5738798039
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Nueva Era",
+      "damage_usd": 127399.93126660737
     },
     {
       "province": "Abra",
-      "municipality": "La Paz",
-      "damage_usd": 12961.438107040038
+      "municipality": "Tayum",
+      "damage_usd": 123956.50055228393
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Pamplona",
+      "damage_usd": 100824.86955234449
+    },
+    {
+      "province": "Kalinga",
+      "municipality": "Pinukpuk",
+      "damage_usd": 68111.39085766018
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Sanchez-Mira",
+      "damage_usd": 55855.259838035156
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Burgos",
+      "damage_usd": 39563.57668465282
     },
     {
       "province": "Abra",
       "municipality": "San Juan",
-      "damage_usd": 12742.977114963147
-    },
-    {
-      "province": "Abra",
-      "municipality": "Tineg",
-      "damage_usd": 12399.025748252448
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Narvacan",
-      "damage_usd": 10328.699530650798
-    },
-    {
-      "province": "Abra",
-      "municipality": "Pidigan",
-      "damage_usd": 9648.122844696658
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Santa",
-      "damage_usd": 9624.36629455273
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Caoayan",
-      "damage_usd": 7693.261611099202
-    },
-    {
-      "province": "Abra",
-      "municipality": "Dolores",
-      "damage_usd": 6371.996517549123
-    },
-    {
-      "province": "Kalinga",
-      "municipality": "Balbalan",
-      "damage_usd": 6200.8178053811
-    },
-    {
-      "province": "Kalinga",
-      "municipality": "Rizal",
-      "damage_usd": 6027.449777242543
-    },
-    {
-      "province": "Abra",
-      "municipality": "Lagayan",
-      "damage_usd": 5849.870897526885
-    },
-    {
-      "province": "Abra",
-      "municipality": "Pe\u00f1arrubia",
-      "damage_usd": 5470.2248721584765
-    },
-    {
-      "province": "Abra",
-      "municipality": "Danglas",
-      "damage_usd": 4351.951024642069
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Santa Praxedes",
-      "damage_usd": 4257.060248628408
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Carasi",
-      "damage_usd": 4256.274195772547
-    },
-    {
-      "province": "Abra",
-      "municipality": "Malibcong",
-      "damage_usd": 3964.50896557868
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Bangui",
-      "damage_usd": 3808.250333962551
-    },
-    {
-      "province": "Abra",
-      "municipality": "Lagangilang",
-      "damage_usd": 3684.1737246350967
-    },
-    {
-      "province": "Abra",
-      "municipality": "Lacub",
-      "damage_usd": 3521.3524782662384
-    },
-    {
-      "province": "Abra",
-      "municipality": "Bucay",
-      "damage_usd": 3327.2425061146346
-    },
-    {
-      "province": "Isabela",
-      "municipality": "San Pablo",
-      "damage_usd": 3189.2246070385436
+      "damage_usd": 38961.17434950534
     },
     {
       "province": "Isabela",
       "municipality": "Cabagan",
-      "damage_usd": 2994.7295841658015
-    },
-    {
-      "province": "Ilocos Norte",
-      "municipality": "Pagudpud",
-      "damage_usd": 2881.2282909543956
+      "damage_usd": 30890.027989229748
     },
     {
       "province": "Abra",
-      "municipality": "Langiden",
-      "damage_usd": 2547.6611052207145
+      "municipality": "La Paz",
+      "damage_usd": 28877.647776090114
+    },
+    {
+      "province": "Abra",
+      "municipality": "Tineg",
+      "damage_usd": 26715.21682497046
+    },
+    {
+      "province": "Abra",
+      "municipality": "Pidigan",
+      "damage_usd": 22710.183111559625
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Narvacan",
+      "damage_usd": 22392.381886005725
+    },
+    {
+      "province": "Abra",
+      "municipality": "Dolores",
+      "damage_usd": 21802.034318052672
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Claveria",
+      "damage_usd": 21584.496833165213
     },
     {
       "province": "Ilocos Norte",
-      "municipality": "Adams",
-      "damage_usd": 2208.9302179831025
+      "municipality": "Carasi",
+      "damage_usd": 20683.754666662728
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Santa",
+      "damage_usd": 17406.389291324936
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Caoayan",
+      "damage_usd": 17031.550181928793
+    },
+    {
+      "province": "Abra",
+      "municipality": "Lagangilang",
+      "damage_usd": 15079.436661742833
+    },
+    {
+      "province": "Isabela",
+      "municipality": "Santa Maria",
+      "damage_usd": 13747.662290086011
+    },
+    {
+      "province": "Abra",
+      "municipality": "Pe\u00f1arrubia",
+      "damage_usd": 13700.24963256115
+    },
+    {
+      "province": "Abra",
+      "municipality": "Bucay",
+      "damage_usd": 13182.077781849148
+    },
+    {
+      "province": "Isabela",
+      "municipality": "San Pablo",
+      "damage_usd": 12491.072312000879
+    },
+    {
+      "province": "Kalinga",
+      "municipality": "Rizal",
+      "damage_usd": 12466.840454305398
+    },
+    {
+      "province": "Abra",
+      "municipality": "Lagayan",
+      "damage_usd": 12362.053943422463
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Bangui",
+      "damage_usd": 11435.35720861193
+    },
+    {
+      "province": "Abra",
+      "municipality": "Danglas",
+      "damage_usd": 8530.910460683865
     },
     {
       "province": "Abra",
       "municipality": "Licuan-Baay",
-      "damage_usd": 2131.1428286195164
+      "damage_usd": 8222.071761480767
     },
     {
-      "province": "Ilocos Sur",
-      "municipality": "Santa Maria",
-      "damage_usd": 1922.6199303260703
+      "province": "Ilocos Norte",
+      "municipality": "Pagudpud",
+      "damage_usd": 7352.936500776677
+    },
+    {
+      "province": "Abra",
+      "municipality": "Lacub",
+      "damage_usd": 7295.557321780127
+    },
+    {
+      "province": "Abra",
+      "municipality": "Malibcong",
+      "damage_usd": 6967.48204631601
+    },
+    {
+      "province": "Kalinga",
+      "municipality": "Balbalan",
+      "damage_usd": 6756.729046183229
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Santa Praxedes",
+      "damage_usd": 6328.292920920107
+    },
+    {
+      "province": "Ilocos Norte",
+      "municipality": "Adams",
+      "damage_usd": 6079.073869179997
     },
     {
       "province": "Ilocos Norte",
       "municipality": "Dumalneg",
-      "damage_usd": 1579.7023678668877
-    },
-    {
-      "province": "Abra",
-      "municipality": "San Quintin",
-      "damage_usd": 1477.6468428568492
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Santa Maria",
-      "damage_usd": 1317.186709140697
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Nagbukel",
-      "damage_usd": 756.8361327250581
+      "damage_usd": 5862.682389587253
     },
     {
       "province": "Isabela",
       "municipality": "Santo Tomas",
-      "damage_usd": 582.2019034901332
+      "damage_usd": 5206.382218326995
+    },
+    {
+      "province": "Abra",
+      "municipality": "Langiden",
+      "damage_usd": 4268.076494214503
     },
     {
       "province": "Isabela",
       "municipality": "Tumauini",
-      "damage_usd": 579.2640666608103
+      "damage_usd": 3502.3678516767104
     },
     {
-      "province": "Isabela",
-      "municipality": "Divilacan",
-      "damage_usd": 526.1924975222696
+      "province": "Ilocos Sur",
+      "municipality": "Santa Maria",
+      "damage_usd": 2607.0985133912477
+    },
+    {
+      "province": "Abra",
+      "municipality": "San Quintin",
+      "damage_usd": 2416.8691779113738
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Nagbukel",
+      "damage_usd": 1791.6180441968543
     },
     {
       "province": "Abra",
       "municipality": "San Isidro",
-      "damage_usd": 510.7082024228049
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Maconacon",
-      "damage_usd": 414.8865368048441
-    },
-    {
-      "province": "Kalinga",
-      "municipality": "Tanudan",
-      "damage_usd": 398.5518134781248
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Palanan",
-      "damage_usd": 360.3571562415583
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Quezon",
-      "damage_usd": 359.06400302925954
-    },
-    {
-      "province": "Kalinga",
-      "municipality": "Pasil",
-      "damage_usd": 278.6818779897559
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Ilagan",
-      "damage_usd": 242.06314907800348
+      "damage_usd": 1538.0710926248926
     },
     {
       "province": "Abra",
       "municipality": "Manabo",
-      "damage_usd": 231.99269430505223
+      "damage_usd": 1309.097229248491
     },
     {
-      "province": "Kalinga",
-      "municipality": "Lubuagan",
-      "damage_usd": 231.75500757031674
+      "province": "Isabela",
+      "municipality": "Quezon",
+      "damage_usd": 1301.542455760551
     },
     {
-      "province": "Ilocos Sur",
-      "municipality": "Santiago",
-      "damage_usd": 169.9161289116801
-    },
-    {
-      "province": "Kalinga",
-      "municipality": "Tinglayan",
-      "damage_usd": 161.1210086918984
-    },
-    {
-      "province": "Mountain Province",
-      "municipality": "Paracelis",
-      "damage_usd": 137.64251337984024
+      "province": "Isabela",
+      "municipality": "Ilagan",
+      "damage_usd": 1220.9791182020292
     },
     {
       "province": "Abra",
       "municipality": "Sallapadan",
-      "damage_usd": 135.87722081363023
+      "damage_usd": 1025.6864931034804
     },
     {
-      "province": "Abra",
-      "municipality": "Villaviciosa",
-      "damage_usd": 122.71350703056726
-    },
-    {
-      "province": "Abra",
-      "municipality": "Pilar",
-      "damage_usd": 106.62601707009316
-    },
-    {
-      "province": "Abra",
-      "municipality": "Boliney",
-      "damage_usd": 99.39539193231774
+      "province": "Isabela",
+      "municipality": "Divilacan",
+      "damage_usd": 877.5474635055516
     },
     {
       "province": "Isabela",
       "municipality": "Delfin Albano",
-      "damage_usd": 97.09342752489948
+      "damage_usd": 761.6516508353385
     },
     {
-      "province": "Ilocos Sur",
-      "municipality": "San Esteban",
-      "damage_usd": 79.88301534700591
+      "province": "Isabela",
+      "municipality": "Maconacon",
+      "damage_usd": 533.7248805231262
     },
     {
       "province": "Abra",
-      "municipality": "Daguioman",
-      "damage_usd": 76.24968622958801
+      "municipality": "Villaviciosa",
+      "damage_usd": 432.6893434376411
+    },
+    {
+      "province": "Kalinga",
+      "municipality": "Tanudan",
+      "damage_usd": 432.06821141042656
     },
     {
       "province": "Abra",
       "municipality": "Bucloc",
-      "damage_usd": 62.83362067823783
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Burgos",
-      "damage_usd": 34.45661583536429
-    },
-    {
-      "province": "Abra",
-      "municipality": "Luba",
-      "damage_usd": 29.979018227846563
-    },
-    {
-      "province": "Mountain Province",
-      "municipality": "Sadanga",
-      "damage_usd": 11.057855200455109
-    },
-    {
-      "province": "Cagayan",
-      "municipality": "Calayan",
-      "damage_usd": 8.184844164359475
-    },
-    {
-      "province": "Mountain Province",
-      "municipality": "Natonin",
-      "damage_usd": 8.089698804507318
+      "damage_usd": 427.2040423047843
     },
     {
       "province": "Isabela",
-      "municipality": "San Mariano",
-      "damage_usd": 2.1975176340194857
+      "municipality": "Palanan",
+      "damage_usd": 385.8337857307267
+    },
+    {
+      "province": "Kalinga",
+      "municipality": "Pasil",
+      "damage_usd": 344.194734463104
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Santiago",
+      "damage_usd": 285.21987325142567
+    },
+    {
+      "province": "Kalinga",
+      "municipality": "Lubuagan",
+      "damage_usd": 271.23124904486315
     },
     {
       "province": "Isabela",
       "municipality": "Mallig",
-      "damage_usd": 1.640059196699606
+      "damage_usd": 259.9227292147543
+    },
+    {
+      "province": "Abra",
+      "municipality": "Boliney",
+      "damage_usd": 236.1103839148287
+    },
+    {
+      "province": "Abra",
+      "municipality": "Daguioman",
+      "damage_usd": 218.1396171747595
+    },
+    {
+      "province": "Abra",
+      "municipality": "Pilar",
+      "damage_usd": 187.38002417138813
+    },
+    {
+      "province": "Mountain Province",
+      "municipality": "Paracelis",
+      "damage_usd": 184.3366957629313
+    },
+    {
+      "province": "Kalinga",
+      "municipality": "Tinglayan",
+      "damage_usd": 172.26103784844784
+    },
+    {
+      "province": "Isabela",
+      "municipality": "Quirino",
+      "damage_usd": 158.65712559865122
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "San Esteban",
+      "damage_usd": 142.36509363779393
+    },
+    {
+      "province": "Abra",
+      "municipality": "Luba",
+      "damage_usd": 116.76762795069314
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Burgos",
+      "damage_usd": 61.40753849281167
+    },
+    {
+      "province": "Cagayan",
+      "municipality": "Calayan",
+      "damage_usd": 36.95465093062702
+    },
+    {
+      "province": "Mountain Province",
+      "municipality": "Sadanga",
+      "damage_usd": 25.379326061398142
     },
     {
       "province": "Abra",
       "municipality": "Tubo",
-      "damage_usd": 1.3226951037212267
+      "damage_usd": 23.966974501022026
     },
     {
-      "province": "Quirino",
-      "municipality": "Aglipay",
+      "province": "Mountain Province",
+      "municipality": "Natonin",
+      "damage_usd": 9.09778214866155
+    },
+    {
+      "province": "Isabela",
+      "municipality": "San Mariano",
+      "damage_usd": 2.698684248123957
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "San Emilio",
+      "damage_usd": 1.6730223610217418
+    },
+    {
+      "province": "Mountain Province",
+      "municipality": "Bontoc",
+      "damage_usd": 0.07893665647514835
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Alilem",
       "damage_usd": 0.0
     },
     {
-      "province": "Quirino",
-      "municipality": "Diffun",
+      "province": "Ilocos Sur",
+      "municipality": "Candon City",
       "damage_usd": 0.0
     },
     {
-      "province": "Quirino",
-      "municipality": "Saguday",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Quirino",
-      "municipality": "Cabarroguis",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Quirino",
-      "municipality": "Maddela",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Quirino",
-      "municipality": "Nagtipunan",
+      "province": "Ilocos Sur",
+      "municipality": "Banayoyo",
       "damage_usd": 0.0
     },
     {
@@ -687,58 +687,43 @@
       "damage_usd": 0.0
     },
     {
-      "province": "Ilocos Sur",
-      "municipality": "Alilem",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Tarlac",
-      "municipality": "Anao",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Tarlac",
-      "municipality": "Camiling",
-      "damage_usd": 0.0
-    },
-    {
       "province": "Pangasinan",
       "municipality": "Urbiztondo",
       "damage_usd": 0.0
     },
     {
-      "province": "Ilocos Sur",
-      "municipality": "Cervantes",
+      "province": "Pangasinan",
+      "municipality": "Urdaneta City",
       "damage_usd": 0.0
     },
     {
-      "province": "Ilocos Sur",
-      "municipality": "Candon City",
+      "province": "Pangasinan",
+      "municipality": "Villasis",
       "damage_usd": 0.0
     },
     {
-      "province": "Ilocos Sur",
-      "municipality": "Banayoyo",
+      "province": "Pangasinan",
+      "municipality": "Umingan",
       "damage_usd": 0.0
     },
     {
-      "province": "Ilocos Sur",
-      "municipality": "Galimuyod",
+      "province": "Ifugao",
+      "municipality": "Hungduan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Ifugao",
+      "municipality": "Hingyon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Ifugao",
+      "municipality": "Banaue",
       "damage_usd": 0.0
     },
     {
       "province": "Ifugao",
       "municipality": "Asipulo",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Gregorio Del Pilar",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Ifugao",
-      "municipality": "Aguinaldo",
       "damage_usd": 0.0
     },
     {
@@ -748,7 +733,42 @@
     },
     {
       "province": "Ifugao",
-      "municipality": "Kiangan",
+      "municipality": "Aguinaldo",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Gregorio Del Pilar",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Galimuyod",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Salcedo",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Quirino",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Lidlidda",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Santa Cruz",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Ifugao",
+      "municipality": "Tinoc",
       "damage_usd": 0.0
     },
     {
@@ -763,42 +783,32 @@
     },
     {
       "province": "Ifugao",
-      "municipality": "Mayoyao",
+      "municipality": "Kiangan",
       "damage_usd": 0.0
     },
     {
-      "province": "Ifugao",
-      "municipality": "Tinoc",
+      "province": "Benguet",
+      "municipality": "La Trinidad",
       "damage_usd": 0.0
     },
     {
-      "province": "Ifugao",
-      "municipality": "Banaue",
+      "province": "Benguet",
+      "municipality": "Mankayan",
       "damage_usd": 0.0
     },
     {
-      "province": "Ifugao",
-      "municipality": "Hingyon",
+      "province": "Benguet",
+      "municipality": "Tuba",
       "damage_usd": 0.0
     },
     {
-      "province": "Ifugao",
-      "municipality": "Hungduan",
+      "province": "Benguet",
+      "municipality": "Sablan",
       "damage_usd": 0.0
     },
     {
-      "province": "Ilocos Sur",
-      "municipality": "San Emilio",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Santa Cruz",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Santa Lucia",
+      "province": "Benguet",
+      "municipality": "Tublay",
       "damage_usd": 0.0
     },
     {
@@ -837,8 +847,33 @@
       "damage_usd": 0.0
     },
     {
+      "province": "Ilocos Sur",
+      "municipality": "Santa Lucia",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Benguet",
+      "municipality": "Kapangan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Benguet",
+      "municipality": "Kibungan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Ifugao",
+      "municipality": "Mayoyao",
+      "damage_usd": 0.0
+    },
+    {
       "province": "Isabela",
-      "municipality": "Benito Soliven",
+      "municipality": "Cauayan City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Isabela",
+      "municipality": "Cabatuan",
       "damage_usd": 0.0
     },
     {
@@ -848,77 +883,7 @@
     },
     {
       "province": "Isabela",
-      "municipality": "Cabatuan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Lidlidda",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Quirino",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Salcedo",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Kapangan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Cordon",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Cauayan City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Mankayan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Sablan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Tuba",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Tublay",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Kibungan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Dinapigue",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Echague",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Jones",
+      "municipality": "Benito Soliven",
       "damage_usd": 0.0
     },
     {
@@ -928,7 +893,17 @@
     },
     {
       "province": "Isabela",
-      "municipality": "Luna",
+      "municipality": "Jones",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Isabela",
+      "municipality": "Echague",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Isabela",
+      "municipality": "Cordon",
       "damage_usd": 0.0
     },
     {
@@ -938,12 +913,7 @@
     },
     {
       "province": "Isabela",
-      "municipality": "Quirino",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "La Trinidad",
+      "municipality": "Luna",
       "damage_usd": 0.0
     },
     {
@@ -958,37 +928,7 @@
     },
     {
       "province": "Isabela",
-      "municipality": "San Agustin",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Isabela",
       "municipality": "Roxas",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "San Guillermo",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "San Isidro",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "San Manuel",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "San Mateo",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Santiago City",
       "damage_usd": 0.0
     },
     {
@@ -1002,6 +942,11 @@
       "damage_usd": 0.0
     },
     {
+      "province": "Isabela",
+      "municipality": "Dinapigue",
+      "damage_usd": 0.0
+    },
+    {
       "province": "Aurora",
       "municipality": "Dilasag",
       "damage_usd": 0.0
@@ -1009,26 +954,6 @@
     {
       "province": "Aurora",
       "municipality": "Dinalungan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Pangasinan",
-      "municipality": "Urdaneta City",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Pangasinan",
-      "municipality": "Villasis",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Pangasinan",
-      "municipality": "Umingan",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "Aurora",
-      "municipality": "San Luis",
       "damage_usd": 0.0
     },
     {
@@ -1048,7 +973,77 @@
     },
     {
       "province": "Benguet",
-      "municipality": "Buguias",
+      "municipality": "Baguio City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Benguet",
+      "municipality": "Bakun",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Cervantes",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quirino",
+      "municipality": "Cabarroguis",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quirino",
+      "municipality": "Diffun",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quirino",
+      "municipality": "Maddela",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quirino",
+      "municipality": "Nagtipunan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quirino",
+      "municipality": "Saguday",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Tarlac",
+      "municipality": "Anao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Tarlac",
+      "municipality": "Camiling",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quirino",
+      "municipality": "Aglipay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Isabela",
+      "municipality": "San Manuel",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Isabela",
+      "municipality": "San Isidro",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Isabela",
+      "municipality": "San Guillermo",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Isabela",
+      "municipality": "San Agustin",
       "damage_usd": 0.0
     },
     {
@@ -1058,17 +1053,22 @@
     },
     {
       "province": "Benguet",
-      "municipality": "Bakun",
+      "municipality": "Kabayan",
       "damage_usd": 0.0
     },
     {
       "province": "Benguet",
-      "municipality": "Baguio City",
+      "municipality": "Buguias",
       "damage_usd": 0.0
     },
     {
-      "province": "La Union",
-      "municipality": "Aringay",
+      "province": "Benguet",
+      "municipality": "Bokod",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Aurora",
+      "municipality": "San Luis",
       "damage_usd": 0.0
     },
     {
@@ -1078,7 +1078,7 @@
     },
     {
       "province": "La Union",
-      "municipality": "Bagulin",
+      "municipality": "Aringay",
       "damage_usd": 0.0
     },
     {
@@ -1097,13 +1097,13 @@
       "damage_usd": 0.0
     },
     {
-      "province": "Benguet",
-      "municipality": "Kabayan",
+      "province": "La Union",
+      "municipality": "Bagulin",
       "damage_usd": 0.0
     },
     {
-      "province": "Benguet",
-      "municipality": "Bokod",
+      "province": "Isabela",
+      "municipality": "Santiago City",
       "damage_usd": 0.0
     },
     {
@@ -1113,22 +1113,17 @@
     },
     {
       "province": "La Union",
+      "municipality": "Burgos",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "La Union",
       "municipality": "Luna",
       "damage_usd": 0.0
     },
     {
       "province": "La Union",
-      "municipality": "Pugo",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "La Union",
       "municipality": "Naguilian",
-      "damage_usd": 0.0
-    },
-    {
-      "province": "La Union",
-      "municipality": "Rosario",
       "damage_usd": 0.0
     },
     {
@@ -1143,12 +1138,22 @@
     },
     {
       "province": "La Union",
-      "municipality": "San Juan",
+      "municipality": "Pugo",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "La Union",
+      "municipality": "Rosario",
       "damage_usd": 0.0
     },
     {
       "province": "La Union",
       "municipality": "Santo Tomas",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "La Union",
+      "municipality": "San Juan",
       "damage_usd": 0.0
     },
     {
@@ -1162,23 +1167,18 @@
       "damage_usd": 0.0
     },
     {
-      "province": "La Union",
-      "municipality": "Tubao",
-      "damage_usd": 0.0
-    },
-    {
       "province": "Mountain Province",
       "municipality": "Barlig",
       "damage_usd": 0.0
     },
     {
-      "province": "Mountain Province",
-      "municipality": "Bauko",
+      "province": "La Union",
+      "municipality": "Tubao",
       "damage_usd": 0.0
     },
     {
-      "province": "La Union",
-      "municipality": "Burgos",
+      "province": "Isabela",
+      "municipality": "San Mateo",
       "damage_usd": 0.0
     },
     {
@@ -1188,7 +1188,7 @@
     },
     {
       "province": "Mountain Province",
-      "municipality": "Bontoc",
+      "municipality": "Bauko",
       "damage_usd": 0.0
     },
     {
@@ -1724,6 +1724,11 @@
       "affected_population": 11555.545873036732
     },
     {
+      "province": "Isabela",
+      "municipality": "Santiago City",
+      "affected_population": 10395.240997405392
+    },
+    {
       "province": "Cagayan",
       "municipality": "Pe\u00f1ablanca",
       "affected_population": 9953.20106440424
@@ -1732,6 +1737,11 @@
       "province": "Ilocos Sur",
       "municipality": "Santo Domingo",
       "affected_population": 9913.74596175073
+    },
+    {
+      "province": "Isabela",
+      "municipality": "Alicia",
+      "affected_population": 7882.513094308242
     },
     {
       "province": "Ilocos Sur",
@@ -1774,14 +1784,14 @@
       "affected_population": 5104.955436173381
     },
     {
+      "province": "Benguet",
+      "municipality": "Mankayan",
+      "affected_population": 5007.589335597817
+    },
+    {
       "province": "Ilocos Norte",
       "municipality": "Bacarra",
       "affected_population": 4844.54628212536
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Alicia",
-      "affected_population": 4724.836403211012
     },
     {
       "province": "Isabela",
@@ -1797,11 +1807,6 @@
       "province": "Ilocos Norte",
       "municipality": "Paoay",
       "affected_population": 4221.477199089065
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Mankayan",
-      "affected_population": 4155.676577636461
     },
     {
       "province": "Cagayan",
@@ -1824,6 +1829,16 @@
       "affected_population": 3375.7650625416945
     },
     {
+      "province": "Isabela",
+      "municipality": "Ramon",
+      "affected_population": 3303.8600727856733
+    },
+    {
+      "province": "Isabela",
+      "municipality": "Echague",
+      "affected_population": 3298.5002305278335
+    },
+    {
       "province": "Ilocos Sur",
       "municipality": "Galimuyod",
       "affected_population": 3208.310165597769
@@ -1835,6 +1850,11 @@
     },
     {
       "province": "Isabela",
+      "municipality": "San Isidro",
+      "affected_population": 2475.2168420492076
+    },
+    {
+      "province": "Isabela",
       "municipality": "Tumauini",
       "affected_population": 2359.755696680196
     },
@@ -1842,11 +1862,6 @@
       "province": "Ilocos Sur",
       "municipality": "Magsingal",
       "affected_population": 2234.69579295542
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Ramon",
-      "affected_population": 2179.156097691821
     },
     {
       "province": "Cagayan",
@@ -2079,6 +2094,11 @@
       "affected_population": 569.8327127755333
     },
     {
+      "province": "La Union",
+      "municipality": "Sudipen",
+      "affected_population": 545.0010139580397
+    },
+    {
       "province": "Mountain Province",
       "municipality": "Tadian",
       "affected_population": 533.8889314542521
@@ -2224,6 +2244,11 @@
       "affected_population": 309.00151487387814
     },
     {
+      "province": "Isabela",
+      "municipality": "Cordon",
+      "affected_population": 307.60516635997334
+    },
+    {
       "province": "Ilocos Sur",
       "municipality": "Suyo",
       "affected_population": 306.90880673337136
@@ -2242,11 +2267,6 @@
       "province": "Cagayan",
       "municipality": "Buguey",
       "affected_population": 298.93964894972044
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Echague",
-      "affected_population": 296.48437752548534
     },
     {
       "province": "Ilocos Norte",
@@ -2349,9 +2369,19 @@
       "affected_population": 185.39681916732061
     },
     {
+      "province": "Aurora",
+      "municipality": "Dilasag",
+      "affected_population": 183.5825257681691
+    },
+    {
       "province": "Kalinga",
       "municipality": "Tanudan",
       "affected_population": 181.44511961928086
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Alilem",
+      "affected_population": 179.9241676582488
     },
     {
       "province": "Ilocos Norte",
@@ -2369,6 +2399,11 @@
       "affected_population": 145.1044279763385
     },
     {
+      "province": "Benguet",
+      "municipality": "Bakun",
+      "affected_population": 142.3325603497014
+    },
+    {
       "province": "Abra",
       "municipality": "Pilar",
       "affected_population": 141.46780722704898
@@ -2377,11 +2412,6 @@
       "province": "Mountain Province",
       "municipality": "Besao",
       "affected_population": 132.64004725877757
-    },
-    {
-      "province": "Aurora",
-      "municipality": "Dilasag",
-      "affected_population": 131.03709391052664
     },
     {
       "province": "Mountain Province",
@@ -2514,19 +2544,19 @@
       "affected_population": 59.301137871605135
     },
     {
-      "province": "Ilocos Sur",
-      "municipality": "Alilem",
-      "affected_population": 56.212353888630815
-    },
-    {
       "province": "Abra",
       "municipality": "Danglas",
       "affected_population": 54.7798583658068
     },
     {
-      "province": "Benguet",
-      "municipality": "Bakun",
-      "affected_population": 52.746302671603175
+      "province": "Aurora",
+      "municipality": "Casiguran",
+      "affected_population": 54.15477718244485
+    },
+    {
+      "province": "Ilocos Sur",
+      "municipality": "Sugpon",
+      "affected_population": 54.1372549950302
     },
     {
       "province": "Ilocos Norte",
@@ -2564,9 +2594,9 @@
       "affected_population": 25.87318355118262
     },
     {
-      "province": "Isabela",
-      "municipality": "Santiago City",
-      "affected_population": 17.722054748240893
+      "province": "Nueva Vizcaya",
+      "municipality": "Diadi",
+      "affected_population": 25.812685323241162
     },
     {
       "province": "Abra",
@@ -2576,12 +2606,32 @@
     {
       "province": "Isabela",
       "municipality": "San Agustin",
-      "affected_population": 3.692138528296364
+      "affected_population": 13.264343215087706
     },
     {
       "province": "Quirino",
       "municipality": "Maddela",
-      "affected_population": 3.609929653588771
+      "affected_population": 5.679160870277416
+    },
+    {
+      "province": "Pangasinan",
+      "municipality": "Villasis",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Quirino",
+      "municipality": "Aglipay",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Pangasinan",
+      "municipality": "Urbiztondo",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Quirino",
+      "municipality": "Saguday",
+      "affected_population": 0.0
     },
     {
       "province": "Quirino",
@@ -2594,43 +2644,13 @@
       "affected_population": 0.0
     },
     {
-      "province": "Pangasinan",
-      "municipality": "Villasis",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Pangasinan",
-      "municipality": "Urbiztondo",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Pangasinan",
-      "municipality": "Umingan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Tarlac",
-      "municipality": "Anao",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Quirino",
-      "municipality": "Saguday",
-      "affected_population": 0.0
-    },
-    {
       "province": "Quirino",
       "municipality": "Nagtipunan",
       "affected_population": 0.0
     },
     {
-      "province": "Quirino",
-      "municipality": "Diffun",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Quirino",
-      "municipality": "Aglipay",
+      "province": "Tarlac",
+      "municipality": "Gerona",
       "affected_population": 0.0
     },
     {
@@ -2640,22 +2660,12 @@
     },
     {
       "province": "Tarlac",
-      "municipality": "La Paz",
+      "municipality": "Anao",
       "affected_population": 0.0
     },
     {
       "province": "Tarlac",
-      "municipality": "Gerona",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "Cordon",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Ilocos Sur",
-      "municipality": "Sugpon",
+      "municipality": "La Paz",
       "affected_population": 0.0
     },
     {
@@ -2669,6 +2679,16 @@
       "affected_population": 0.0
     },
     {
+      "province": "Quirino",
+      "municipality": "Diffun",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Pangasinan",
+      "municipality": "Umingan",
+      "affected_population": 0.0
+    },
+    {
       "province": "Ifugao",
       "municipality": "Lamut",
       "affected_population": 0.0
@@ -2679,53 +2699,13 @@
       "affected_population": 0.0
     },
     {
-      "province": "Ifugao",
-      "municipality": "Tinoc",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Isabela",
-      "municipality": "San Isidro",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Kapangan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Kibungan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "La Trinidad",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Sablan",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Tuba",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Benguet",
-      "municipality": "Tublay",
-      "affected_population": 0.0
-    },
-    {
       "province": "La Union",
       "municipality": "Agoo",
       "affected_population": 0.0
     },
     {
-      "province": "La Union",
-      "municipality": "Aringay",
+      "province": "Ifugao",
+      "municipality": "Tinoc",
       "affected_population": 0.0
     },
     {
@@ -2745,7 +2725,7 @@
     },
     {
       "province": "La Union",
-      "municipality": "Bangar",
+      "municipality": "Aringay",
       "affected_population": 0.0
     },
     {
@@ -2785,6 +2765,36 @@
     },
     {
       "province": "La Union",
+      "municipality": "Bangar",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Benguet",
+      "municipality": "Kibungan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Benguet",
+      "municipality": "La Trinidad",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Benguet",
+      "municipality": "Sablan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Benguet",
+      "municipality": "Tuba",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Benguet",
+      "municipality": "Tublay",
+      "affected_population": 0.0
+    },
+    {
+      "province": "La Union",
       "municipality": "San Fernando City",
       "affected_population": 0.0
     },
@@ -2810,22 +2820,12 @@
     },
     {
       "province": "La Union",
-      "municipality": "Sudipen",
-      "affected_population": 0.0
-    },
-    {
-      "province": "La Union",
       "municipality": "Tubao",
       "affected_population": 0.0
     },
     {
       "province": "Aurora",
       "municipality": "Baler",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Aurora",
-      "municipality": "Casiguran",
       "affected_population": 0.0
     },
     {
@@ -2844,8 +2844,8 @@
       "affected_population": 0.0
     },
     {
-      "province": "Aurora",
-      "municipality": "San Luis",
+      "province": "Benguet",
+      "municipality": "Kapangan",
       "affected_population": 0.0
     },
     {
@@ -3004,6 +3004,11 @@
       "affected_population": 0.0
     },
     {
+      "province": "Aurora",
+      "municipality": "San Luis",
+      "affected_population": 0.0
+    },
+    {
       "province": "Nueva Vizcaya",
       "municipality": "Bambang",
       "affected_population": 0.0
@@ -3011,11 +3016,6 @@
     {
       "province": "Nueva Vizcaya",
       "municipality": "Bayombong",
-      "affected_population": 0.0
-    },
-    {
-      "province": "Nueva Vizcaya",
-      "municipality": "Diadi",
       "affected_population": 0.0
     },
     {

@@ -133,11 +133,18 @@ def test_wind_grid_shape_matches_roi_bounds_at_150_arcsec():
 # row flip (which preserves shape); the peak's position and magnitude catch both. If these
 # fail after an intentional hazard/calibration change, re-verify orientation against the
 # track before re-pinning -- do not update the numbers just to make the test green.
+#
+# Re-pinned for v1.4 after the two-eye timestep fix (wind.py WIND_TIMESTEP_H): resampling
+# the track to 0.5 h before from_tracks changed the wind field, so the peak cells moved and
+# rose. Each new peak's orientation was re-verified before pinning -- it sits within ~1-1.5x
+# the storm's RMW of that storm's peak-intensity track segment *inside the ROI* (Haiyan
+# 62 km, Mangkhut 55 km near the Cagayan landfall, Odette 19 km, Rolly 9 km), on the storm's
+# path and not flipped. See docs/v1.4-phase1-result.md.
 _WIND_PEAK_PINS = {
-    "haiyan": (47, 108, 80.65),
-    "odette": (37, 157, 68.03),
-    "rolly": (27, 71, 82.32),
-    "mangkhut": (35, 104, 73.66),
+    "haiyan": (49, 119, 83.7),
+    "odette": (37, 160, 69.32),
+    "rolly": (27, 71, 82.35),
+    "mangkhut": (32, 91, 73.72),
 }
 
 

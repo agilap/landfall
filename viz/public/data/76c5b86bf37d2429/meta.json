@@ -11,7 +11,7 @@
     "intensity_delta_kn": 0.0
   },
   "scenario_hash": "76c5b86bf37d2429",
-  "source_cache_key": "595bc63390d1a4da",
+  "source_cache_key": "8cd07b9c68a0642f",
   "calibration_approach": "EDR",
   "calibration_point_quantile": 0.5,
   "calibration_range_quantiles": [
@@ -19,11 +19,12 @@
     0.75
   ],
   "hazard_model": "H1980",
+  "wind_timestep_h": 0.5,
   "units": {
     "damage": "USD",
     "wind": "m/s"
   },
-  "landfall_version": "v1.3-1-g135d2b7",
+  "landfall_version": "v1.3-5-g40e93f9",
   "disclaimer": "Research/preparedness demonstration only; counterfactuals are hypothetical.",
-  "provenance": "impact values copied verbatim from scenario cache 595bc63390d1a4da; wind grid recomputed deterministically from cached track via wind_field(); boundaries GADM v4.1 GID_2 (PSGC crosswalk: roadmap)"
+  "provenance": "impact values copied verbatim from scenario cache 8cd07b9c68a0642f; wind grid recomputed deterministically from cached track via wind_field(); boundaries GADM v4.1 GID_2 (PSGC crosswalk: roadmap)"
 }
