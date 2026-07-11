@@ -88,15 +88,16 @@ def cmd_compile(args: argparse.Namespace) -> None:
 
 
 def cmd_export_viz(args: argparse.Namespace) -> None:
+    timeseries = not args.no_timeseries
     try:
         if args.all_baselines:
-            for bundle_dir in export_all_baselines():
+            for bundle_dir in export_all_baselines(timeseries=timeseries):
                 print(f"Exported {bundle_dir}")
         else:
             if not args.scenario_hash:
                 print("Refused: scenario-hash is required unless --all-baselines is given")
                 raise SystemExit(1)
-            print(f"Exported {export_scenario(args.scenario_hash)}")
+            print(f"Exported {export_scenario(args.scenario_hash, timeseries=timeseries)}")
     except ScenarioNotFoundError as e:
         # Unlike the interactive commands above, a refused export must exit non-zero:
         # this command feeds the viz deploy pipeline, and CI must not ship on a refusal.
@@ -137,6 +138,11 @@ def main() -> None:
     p_export_viz = subparsers.add_parser("export-viz", help="Export a scenario cache bundle for Landfall Viz")
     p_export_viz.add_argument("scenario_hash", nargs="?", default=None)
     p_export_viz.add_argument("--all-baselines", action="store_true")
+    p_export_viz.add_argument(
+        "--no-timeseries",
+        action="store_true",
+        help="Export only the static Tier 1 bundle (skip per-frame cumulative damage + wind frames)",
+    )
     p_export_viz.set_defaults(func=cmd_export_viz)
 
     args = parser.parse_args()

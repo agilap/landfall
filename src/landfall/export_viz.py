@@ -21,9 +21,10 @@ import geopandas as gpd
 import numpy as np
 
 from landfall.hazard.tracks import get_track
-from landfall.hazard.wind import ARCSEC_150_IN_DEG, wind_field
+from landfall.hazard.wind import ARCSEC_150_IN_DEG, wind_field, wind_field_timeseries
 from landfall.impact.engine import CACHE_DIR, _cache_key, run_baseline
 from landfall.impact.municipality import GADM_PATH
+from landfall.impact.timeseries import frame_wind_grids, run_timeseries
 from landfall.scenario import ScenarioConfig, perturb_track
 from landfall.storms import STORMS
 
@@ -93,7 +94,15 @@ def find_cache_by_scenario_hash(scenario_hash: str) -> Path:
     return matches[0]
 
 
-def _write_meta(bundle_dir: Path, scenario: ScenarioConfig, storm_config, cache: dict, cache_path: Path, wind) -> None:
+def _write_meta(
+    bundle_dir: Path,
+    scenario: ScenarioConfig,
+    storm_config,
+    cache: dict,
+    cache_path: Path,
+    wind,
+    timeseries_meta: dict | None,
+) -> None:
     meta = {
         "storm_key": scenario.storm_key,
         "storm_name": scenario.storm_key.title(),
@@ -117,6 +126,10 @@ def _write_meta(bundle_dir: Path, scenario: ScenarioConfig, storm_config, cache:
             # max_sustained_wind field (track.json) is in knots; the two units genuinely differ.
             "wind": wind.units,
         },
+        # Tier 2 (landfall-viz-prd.md §7 Phase 3): per-frame cumulative-damage availability.
+        # None until the timeseries is exported alongside; a bundle without it still renders the
+        # static Tier 1 scene.
+        "timeseries": timeseries_meta,
         "landfall_version": _git_describe(),
         "disclaimer": DISCLAIMER,
         "provenance": (
@@ -152,24 +165,20 @@ def _write_track(bundle_dir: Path, tracks) -> None:
     (bundle_dir / "track.json").write_text(json.dumps(records, indent=2))
 
 
-def _write_wind(bundle_dir: Path, wind, bounds: tuple[float, float, float, float]) -> None:
+def _rasterize(lats, lons, intensity_flat, bounds: tuple[float, float, float, float]) -> np.ndarray:
+    """Map a centroid-ordered wind array onto the ROI's row-major (north->south, west->east)
+    2D grid, rounded to WIND_VALUE_ROUNDING. Grid position comes from each centroid's actual
+    lat/lon, not from flatten order -- confirmed empirically to already be row-major for
+    CLIMADA's Centroids.from_pnt_bounds, but this makes the mapping correct by construction
+    rather than by an unstated assumption about internal ordering."""
     lon_min, lat_min, lon_max, lat_max = bounds
     rows = round((lat_max - lat_min) / ARCSEC_150_IN_DEG) + 1
     cols = round((lon_max - lon_min) / ARCSEC_150_IN_DEG) + 1
-
-    lats = wind.centroids.lat
-    lons = wind.centroids.lon
-    intensity = wind.intensity[0].toarray().flatten()
     if lats.size != rows * cols:
         raise ExportIntegrityError(
             f"centroid count {lats.size} != rows*cols {rows}*{cols} -- ROI bounds or resolution "
             f"assumption is wrong, do not silently reshape a mismatched array"
         )
-
-    # Grid position is computed from each centroid's actual lat/lon, not trusted from
-    # flatten order -- confirmed empirically to already be row-major (north-to-south,
-    # west-to-east) for CLIMADA's Centroids.from_pnt_bounds, but this makes the mapping
-    # correct by construction rather than by an unstated assumption about internal ordering.
     row_idx = np.round((lat_max - lats) / ARCSEC_150_IN_DEG).astype(int)
     col_idx = np.round((lons - lon_min) / ARCSEC_150_IN_DEG).astype(int)
     if row_idx.min() < 0 or row_idx.max() >= rows or col_idx.min() < 0 or col_idx.max() >= cols:
@@ -177,24 +186,95 @@ def _write_wind(bundle_dir: Path, wind, bounds: tuple[float, float, float, float
             f"centroid falls outside the {rows}x{cols} grid (rows {row_idx.min()}..{row_idx.max()}, "
             f"cols {col_idx.min()}..{col_idx.max()}) -- centroid coordinates disagree with ROI bounds"
         )
-
     grid = np.zeros((rows, cols))
-    grid[row_idx, col_idx] = intensity
-    grid = np.round(grid, 2)
+    grid[row_idx, col_idx] = intensity_flat
+    return np.round(grid, 2)
 
-    payload = {
+
+def _grid_meta(bounds: tuple[float, float, float, float], shape, units: str) -> dict:
+    lon_min, lat_min, lon_max, lat_max = bounds
+    return {
         "bounds": [lon_min, lat_min, lon_max, lat_max],
         "res_deg": ARCSEC_150_IN_DEG,
-        "shape": [rows, cols],
-        "units": wind.units,
+        "shape": list(shape),
+        "units": units,
         "row_order": "row 0 is the north edge (lat_max); row index increases southward",
         "col_order": "col 0 is the west edge (lon_min); col index increases eastward",
         "value_rounding": WIND_VALUE_ROUNDING,
-        "values": grid.tolist(),
     }
+
+
+def _write_wind(bundle_dir: Path, wind, bounds: tuple[float, float, float, float]) -> None:
+    grid = _rasterize(wind.centroids.lat, wind.centroids.lon, wind.intensity[0].toarray().flatten(), bounds)
+    payload = {**_grid_meta(bounds, grid.shape, wind.units), "values": grid.tolist()}
     wind_dir = bundle_dir / "wind"
     wind_dir.mkdir(exist_ok=True)
     (wind_dir / "max_swath.json").write_text(json.dumps(payload))
+
+
+def _write_timeseries(bundle_dir: Path, ts: dict) -> None:
+    # Verbatim copy of the timeseries cache's numbers -- same "no new numbers" discipline as
+    # _write_damage. The per-frame cumulative damage + municipality breakdown come straight from
+    # impact/timeseries.py's cache (which self-checked final-frame == baseline at write time).
+    payload = {
+        "scenario_hash": ts["scenario_hash"],
+        "wind_timestep_h": ts["wind_timestep_h"],
+        "max_frames": ts["max_frames"],
+        "frame_cadence_rule": ts["frame_cadence_rule"],
+        "frame_count": ts["frame_count"],
+        "final_frame_reconciles_with_baseline": ts["final_frame_reconciles_with_baseline"],
+        "frames": [
+            {
+                "frame_index": f["frame_index"],
+                "time": f["time"],
+                "cumulative_total_damage_usd": f["cumulative_total_damage_usd"],
+                "cumulative_damage_by_municipality": f["cumulative_damage_by_municipality"],
+                "track_lat": f["track_lat"],
+                "track_lon": f["track_lon"],
+                "track_vmax_kn": f["track_vmax_kn"],
+            }
+            for f in ts["frames"]
+        ],
+    }
+    (bundle_dir / "timeseries.json").write_text(json.dumps(payload, indent=2))
+
+
+def _write_wind_frames(bundle_dir: Path, scenario, wind, bounds: tuple[float, float, float, float]) -> float:
+    """Per-frame running-max wind rasters, one combined `wind/frames.json` (not one file per
+    frame): the grid metadata -- bounds, shape, units, orientation -- is identical across
+    frames, so a single file states it once and lists only per-frame value grids, which is
+    smaller and needs one HTTP fetch instead of ~40-80. Same grid format as max_swath.json, so
+    the viz reuses its existing rasterizer.
+
+    Returns the max abs diff between the LAST frame's grid and the max-swath grid -- a viz-side
+    reconciliation of the same identity the engine checks: the final running-max wind field must
+    equal the single-pass max swath. Raises if they disagree beyond the display rounding."""
+    grids = frame_wind_grids(scenario, wind)  # reuses `wind`; aligned to ts frame_index
+    max_swath_grid = _rasterize(wind.centroids.lat, wind.centroids.lon, wind.intensity[0].toarray().flatten(), bounds)
+
+    frame_payloads = []
+    last_grid = None
+    for g in grids:
+        grid = _rasterize(g["lats"], g["lons"], g["values"], bounds)
+        frame_payloads.append({"frame_index": g["frame_index"], "values": grid.tolist()})
+        last_grid = grid
+
+    final_vs_max_swath_diff = float(np.abs(last_grid - max_swath_grid).max())
+    if final_vs_max_swath_diff > WIND_VALUE_ROUNDING:
+        raise ExportIntegrityError(
+            f"final wind frame disagrees with max_swath.json by {final_vs_max_swath_diff} m/s "
+            f"(> rounding {WIND_VALUE_ROUNDING}) -- the running-max final frame must equal the "
+            f"single max swath; refusing to export inconsistent wind grids"
+        )
+
+    payload = {
+        **_grid_meta(bounds, max_swath_grid.shape, wind.units),
+        "final_vs_max_swath_max_abs_diff": final_vs_max_swath_diff,
+        "frames": frame_payloads,
+    }
+    (bundle_dir / "wind").mkdir(exist_ok=True)
+    (bundle_dir / "wind" / "frames.json").write_text(json.dumps(payload))
+    return final_vs_max_swath_diff
 
 
 def _write_damage(bundle_dir: Path, cache: dict) -> None:
@@ -261,8 +341,14 @@ def _update_manifest(out_dir: Path, scenario: ScenarioConfig, storm_config, is_b
     manifest_path.write_text(json.dumps(manifest, indent=2))
 
 
-def export_scenario(scenario_hash: str, out_dir: Path = VIZ_DATA_DIR) -> Path:
-    """Export the cached scenario identified by `scenario_hash` to `out_dir/<scenario_hash>/`."""
+def export_scenario(scenario_hash: str, out_dir: Path = VIZ_DATA_DIR, timeseries: bool = True) -> Path:
+    """Export the cached scenario identified by `scenario_hash` to `out_dir/<scenario_hash>/`.
+
+    `timeseries=True` (default) also exports the Tier 2 per-frame cumulative-damage series
+    (`timeseries.json`) and the per-frame running-max wind rasters (`wind/frames.json`),
+    computing/caching the timeseries first if needed. Pass `timeseries=False` (CLI
+    `--no-timeseries`) for a static Tier 1 bundle only -- meta.json's `timeseries` field is then
+    null and the viz falls back to the max-swath static scene."""
     cache_path = find_cache_by_scenario_hash(scenario_hash)
     cache = json.loads(cache_path.read_text())
     scenario = ScenarioConfig(**cache["scenario"])
@@ -282,9 +368,31 @@ def export_scenario(scenario_hash: str, out_dir: Path = VIZ_DATA_DIR) -> Path:
     tracks = get_track(scenario.storm_key)
     if not scenario.is_historical_baseline():
         tracks = perturb_track(tracks, scenario)
-    wind = wind_field(tracks, storm_config.roi_bounds)  # not cached -- recomputed deterministically
+    # ONE from_tracks per export. When exporting the timeseries we compute the store_windfields
+    # variant and reuse its .intensity for max_swath (identical to wind_field's) and its
+    # .windfields for the per-frame grids -- opening the same track netCDF a second time in one
+    # process segfaults HDF5, so frame_wind_grids reuses this object rather than recomputing.
+    wind = (
+        wind_field_timeseries(tracks, storm_config.roi_bounds)
+        if timeseries
+        else wind_field(tracks, storm_config.roi_bounds)
+    )
 
-    _write_meta(bundle_dir, scenario, storm_config, cache, cache_path, wind)
+    timeseries_meta = None
+    if timeseries:
+        ts = run_timeseries(scenario)  # cache hit if already computed; self-checks reconciliation
+        _write_timeseries(bundle_dir, ts)
+        final_vs_max_swath_diff = _write_wind_frames(bundle_dir, scenario, wind, storm_config.roi_bounds)
+        timeseries_meta = {
+            "available": True,
+            "frame_count": ts["frame_count"],
+            "max_frames": ts["max_frames"],
+            "frame_cadence_rule": ts["frame_cadence_rule"],
+            "final_frame_reconciles_with_baseline": ts["final_frame_reconciles_with_baseline"],
+            "wind_final_frame_vs_max_swath_max_abs_diff": final_vs_max_swath_diff,
+        }
+
+    _write_meta(bundle_dir, scenario, storm_config, cache, cache_path, wind, timeseries_meta)
     _write_track(bundle_dir, tracks)
     _write_wind(bundle_dir, wind, storm_config.roi_bounds)
     _write_damage(bundle_dir, cache)
@@ -294,12 +402,12 @@ def export_scenario(scenario_hash: str, out_dir: Path = VIZ_DATA_DIR) -> Path:
     return bundle_dir
 
 
-def export_all_baselines(out_dir: Path = VIZ_DATA_DIR) -> list[Path]:
+def export_all_baselines(out_dir: Path = VIZ_DATA_DIR, timeseries: bool = True) -> list[Path]:
     """Export the four historical (zero-perturbation) baselines. Ensures each has a cache
     entry first (`run_baseline` is a cache hit if already run -- see engine.py's `run()`)."""
     bundle_dirs = []
     for storm_key in sorted(STORMS):
         run_baseline(storm_key)
         scenario_hash = ScenarioConfig(storm_key=storm_key).scenario_hash()
-        bundle_dirs.append(export_scenario(scenario_hash, out_dir))
+        bundle_dirs.append(export_scenario(scenario_hash, out_dir, timeseries=timeseries))
     return bundle_dirs

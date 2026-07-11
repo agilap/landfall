@@ -12,7 +12,7 @@ Run with pytest if installed: pytest tests/test_export_viz.py
 
 import json
 
-from landfall.export_viz import VIZ_DATA_DIR, find_cache_by_scenario_hash
+from landfall.export_viz import VIZ_DATA_DIR, WIND_VALUE_ROUNDING, find_cache_by_scenario_hash
 from landfall.hazard.tracks import get_track
 from landfall.hazard.wind import ARCSEC_150_IN_DEG
 from landfall.impact.engine import CACHE_DIR, _cache_key
@@ -182,6 +182,136 @@ def test_manifest_lists_all_exported_bundles():
     listed_hashes = {e["scenario_hash"] for e in manifest}
     for storm_key in exported:
         assert _bundle_dir_for(storm_key).name in listed_hashes
+
+
+# Phase 3 (Tier 2) timeseries reconciliation. The final animated frame is the elementwise
+# running max of the wind field over ALL resampled track positions, which is mathematically the
+# same field as the single max swath -- so its cumulative damage must equal the single-pass
+# damage.json figure. Tolerance is $1.00 absolute: the two wind fields are bit-identical (the
+# running max of the stored per-position vectors reproduces the collapsed intensity to 0.0 abs
+# diff), so the observed reconciliation difference is exactly 0; $1.00 is generous headroom for
+# any last-bit float noise and is many orders of magnitude below significance for the
+# billion-USD totals. See docs/v1.5-phase3-result.md.
+_TIMESERIES_RECONCILE_TOLERANCE_USD = 1.0
+
+
+def _timeseries_for(storm_key):
+    bundle_dir = _bundle_dir_for(storm_key)
+    path = bundle_dir / "timeseries.json"
+    return json.loads(path.read_text()) if path.is_file() else None
+
+
+def _exported_timeseries_storm_keys():
+    return [k for k in _exported_baseline_storm_keys() if _timeseries_for(k) is not None]
+
+
+def test_timeseries_final_frame_reconciles_with_damage_json_total():
+    exported = _exported_timeseries_storm_keys()
+    if not exported:
+        import pytest
+
+        pytest.skip(_SKIP + " (or exported with --no-timeseries)")
+    for storm_key in exported:
+        ts = _timeseries_for(storm_key)
+        damage = json.loads((_bundle_dir_for(storm_key) / "damage.json").read_text())
+        final_total = ts["frames"][-1]["cumulative_total_damage_usd"]
+        diff = abs(final_total - damage["total_damage_usd"])
+        assert diff <= _TIMESERIES_RECONCILE_TOLERANCE_USD, (
+            f"{storm_key}: final-frame cumulative {final_total} != damage.json total "
+            f"{damage['total_damage_usd']} (diff {diff} > {_TIMESERIES_RECONCILE_TOLERANCE_USD})"
+        )
+
+
+def test_timeseries_final_frame_reconciles_per_municipality():
+    exported = _exported_timeseries_storm_keys()
+    if not exported:
+        import pytest
+
+        pytest.skip(_SKIP + " (or exported with --no-timeseries)")
+    for storm_key in exported:
+        ts = _timeseries_for(storm_key)
+        damage = json.loads((_bundle_dir_for(storm_key) / "damage.json").read_text())
+        baseline = {(r["province"], r["municipality"]): r["damage_usd"] for r in damage["damage_by_municipality"]}
+        final = {
+            (r["province"], r["municipality"]): r["damage_usd"]
+            for r in ts["frames"][-1]["cumulative_damage_by_municipality"]
+        }
+        # Absent-in-one-side is treated as $0; every municipality must reconcile within tolerance.
+        for key in set(baseline) | set(final):
+            diff = abs(final.get(key, 0.0) - baseline.get(key, 0.0))
+            assert diff <= _TIMESERIES_RECONCILE_TOLERANCE_USD, (
+                f"{storm_key}: municipality {key} final-frame {final.get(key, 0.0)} != damage.json "
+                f"{baseline.get(key, 0.0)} (diff {diff})"
+            )
+
+
+def test_timeseries_cumulative_damage_is_monotonic():
+    # Damage is running-max-driven, so cumulative damage can never DECREASE from one frame to the
+    # next -- for the ROI total AND for every individual municipality (a building destroyed earlier
+    # is not un-destroyed later). This is a real physical invariant, not a nicety: a decrease would
+    # mean the running-max wind field went backwards somewhere, i.e. a computation bug.
+    exported = _exported_timeseries_storm_keys()
+    if not exported:
+        import pytest
+
+        pytest.skip(_SKIP + " (or exported with --no-timeseries)")
+    eps = 1e-6
+    for storm_key in exported:
+        ts = _timeseries_for(storm_key)
+        frames = ts["frames"]
+        totals = [f["cumulative_total_damage_usd"] for f in frames]
+        for i in range(len(totals) - 1):
+            assert totals[i + 1] >= totals[i] - eps, (
+                f"{storm_key}: total damage decreased frame {i}->{i + 1}: {totals[i]} -> {totals[i + 1]}"
+            )
+        prev = {}
+        for fi, frame in enumerate(frames):
+            cur = {
+                (r["province"], r["municipality"]): r["damage_usd"]
+                for r in frame["cumulative_damage_by_municipality"]
+            }
+            for key, val in cur.items():
+                if key in prev:
+                    assert val >= prev[key] - eps, (
+                        f"{storm_key}: municipality {key} damage decreased at frame {fi}: "
+                        f"{prev[key]} -> {val}"
+                    )
+            prev = cur
+
+
+def test_timeseries_final_wind_frame_matches_max_swath():
+    # Viz-side reconciliation: the last per-frame running-max wind grid must equal the static
+    # max_swath grid within display rounding -- the same identity the engine checks, verified on
+    # the exported rasters the viz actually paints.
+    exported = _exported_timeseries_storm_keys()
+    if not exported:
+        import pytest
+
+        pytest.skip(_SKIP + " (or exported with --no-timeseries)")
+    for storm_key in exported:
+        bundle_dir = _bundle_dir_for(storm_key)
+        max_swath = json.loads((bundle_dir / "wind" / "max_swath.json").read_text())["values"]
+        frames = json.loads((bundle_dir / "wind" / "frames.json").read_text())
+        last = frames["frames"][-1]["values"]
+        tol = frames["value_rounding"]
+        max_diff = max(
+            abs(last[r][c] - max_swath[r][c]) for r in range(len(max_swath)) for c in range(len(max_swath[0]))
+        )
+        assert max_diff <= tol, f"{storm_key}: final wind frame vs max_swath max abs diff {max_diff} > {tol}"
+
+
+def test_meta_timeseries_block_present_and_reconciles():
+    exported = _exported_timeseries_storm_keys()
+    if not exported:
+        import pytest
+
+        pytest.skip(_SKIP + " (or exported with --no-timeseries)")
+    for storm_key in exported:
+        meta = json.loads((_bundle_dir_for(storm_key) / "meta.json").read_text())
+        ts_meta = meta["timeseries"]
+        assert ts_meta is not None and ts_meta["available"] is True
+        assert ts_meta["final_frame_reconciles_with_baseline"]["within_rounding"] is True
+        assert ts_meta["wind_final_frame_vs_max_swath_max_abs_diff"] <= WIND_VALUE_ROUNDING
 
 
 def _run_all():

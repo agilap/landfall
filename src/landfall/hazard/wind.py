@@ -29,17 +29,42 @@ def roi_centroids(bounds: tuple[float, float, float, float], res_deg=ARCSEC_150_
     return Centroids.from_pnt_bounds(bounds, res_deg)
 
 
-def wind_field(tracks: TCTracks, bounds: tuple[float, float, float, float]) -> TropCyclone:
-    """Holland (1980) max-sustained-wind field, per PRD §5.1 — no custom meteorology."""
-    # equal_timestep() mutates in place, and wind_field's caller (export_viz.export_scenario)
-    # writes track.json from this same tracks object right after calling us — densifying it
-    # in place would silently turn the exported "raw observed IBTrACS track" into a
-    # sub-hourly interpolation we never observed. Densification is a hazard-internal step, so
-    # resample a deep copy and leave the caller's object (and its 3-hourly track.json) alone.
+def resample_track_hazard(tracks: TCTracks) -> TCTracks:
+    """Deep-copy `tracks` and densify to WIND_TIMESTEP_H — the v1.4 two-eye fix (see the
+    WIND_TIMESTEP_H comment for why sub-hourly resampling is required before from_tracks).
+
+    Returns a new object; the caller's track keeps its observed cadence. equal_timestep()
+    mutates in place, and wind_field's caller (export_viz.export_scenario) writes track.json
+    from the same tracks object right after — densifying it in place would silently turn the
+    exported "raw observed IBTrACS track" into a sub-hourly interpolation we never observed.
+    Densification is a hazard-internal step, so it happens on a copy here. The impact
+    timeseries (impact/timeseries.py) shares this exact resampling so its running-max wind
+    reconciles with wind_field's single max-swath to floating-point precision."""
     tracks = copy.deepcopy(tracks)
     tracks.equal_timestep(time_step_h=WIND_TIMESTEP_H)
+    return tracks
+
+
+def _tc_from_tracks(tracks: TCTracks, bounds, store_windfields: bool) -> TropCyclone:
+    tracks = resample_track_hazard(tracks)
     centroids = roi_centroids(bounds)
     # ignore_distance_to_coast: CLIMADA's default coastal filter needs a NASA raster
     # download that is currently blocked (403) from this network. Revisit once that's
     # resolved — until then this computes wind everywhere in the ROI, not just near-coast.
-    return TropCyclone.from_tracks(tracks, centroids, model="H1980", ignore_distance_to_coast=True)
+    return TropCyclone.from_tracks(
+        tracks, centroids, model="H1980", ignore_distance_to_coast=True, store_windfields=store_windfields
+    )
+
+
+def wind_field(tracks: TCTracks, bounds: tuple[float, float, float, float]) -> TropCyclone:
+    """Holland (1980) max-sustained-wind field, per PRD §5.1 — no custom meteorology."""
+    return _tc_from_tracks(tracks, bounds, store_windfields=False)
+
+
+def wind_field_timeseries(tracks: TCTracks, bounds: tuple[float, float, float, float]) -> TropCyclone:
+    """Same field as `wind_field`, but with `store_windfields=True` so the per-position wind
+    vectors are retained (TropCyclone.windfields). The elementwise running max of those
+    per-position vector magnitudes, thresholded at intensity_thres (17.5 m/s), equals
+    `wind_field`'s collapsed `intensity` at the final position — verified 0.0 max abs diff.
+    Used by impact/timeseries.py to compute cumulative damage frame by frame."""
+    return _tc_from_tracks(tracks, bounds, store_windfields=True)

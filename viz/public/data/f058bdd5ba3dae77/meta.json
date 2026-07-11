@@ -24,7 +24,21 @@
     "damage": "USD",
     "wind": "m/s"
   },
-  "landfall_version": "v1.3-5-g40e93f9",
+  "timeseries": {
+    "available": true,
+    "frame_count": 69,
+    "max_frames": 80,
+    "frame_cadence_rule": "subsample the ROI-transit window (positions with any >=17.5 m/s wind in the ROI) at stride N = max(1, ceil(window_len / 80)), capping the frame count at 80; the final frame is forced to the running max over ALL resampled positions so it equals the full max-swath exactly",
+    "final_frame_reconciles_with_baseline": {
+      "baseline_total_damage_usd": 197279587.28339115,
+      "final_frame_total_damage_usd": 197279587.28339115,
+      "difference": 0.0,
+      "tolerance_usd": 1.0,
+      "within_rounding": true
+    },
+    "wind_final_frame_vs_max_swath_max_abs_diff": 0.0
+  },
+  "landfall_version": "v1.3-6-g46afee3",
   "disclaimer": "Research/preparedness demonstration only; counterfactuals are hypothetical.",
   "provenance": "impact values copied verbatim from scenario cache 5d9a8b726a9ce257; wind grid recomputed deterministically from cached track via wind_field(); boundaries GADM v4.1 GID_2 (PSGC crosswalk: roadmap)"
 }
