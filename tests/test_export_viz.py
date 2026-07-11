@@ -127,6 +127,42 @@ def test_wind_grid_shape_matches_roi_bounds_at_150_arcsec():
         assert wind["bounds"] == [lon_min, lat_min, lon_max, lat_max]
 
 
+# Golden pins for the wind grid's peak cell, (row, col, value in m/s), extracted from the
+# reviewed Phase 1 export whose orientation was independently verified against each track's
+# peak-intensity point. Shape checks alone can't catch a hand-edited value or a north-south
+# row flip (which preserves shape); the peak's position and magnitude catch both. If these
+# fail after an intentional hazard/calibration change, re-verify orientation against the
+# track before re-pinning -- do not update the numbers just to make the test green.
+_WIND_PEAK_PINS = {
+    "haiyan": (47, 108, 80.65),
+    "odette": (37, 157, 68.03),
+    "rolly": (27, 71, 82.32),
+    "mangkhut": (35, 104, 73.66),
+}
+
+
+def test_wind_grid_peak_cell_matches_pinned_values():
+    exported = _exported_baseline_storm_keys()
+    if not exported:
+        import pytest
+
+        pytest.skip(_SKIP)
+    for storm_key in exported:
+        bundle_dir = _bundle_dir_for(storm_key)
+        wind = json.loads((bundle_dir / "wind" / "max_swath.json").read_text())
+        values = wind["values"]
+
+        peak_val = max(v for row in values for v in row)
+        peak_row, peak_col = next(
+            (r, row.index(peak_val)) for r, row in enumerate(values) if peak_val in row
+        )
+        expected_row, expected_col, expected_val = _WIND_PEAK_PINS[storm_key]
+        assert (peak_row, peak_col, peak_val) == (expected_row, expected_col, expected_val), (
+            f"{storm_key}: wind grid peak {peak_val} at ({peak_row}, {peak_col}) != pinned "
+            f"{expected_val} at ({expected_row}, {expected_col}) -- value drift or orientation flip"
+        )
+
+
 def test_manifest_lists_all_exported_bundles():
     exported = _exported_baseline_storm_keys()
     if not exported:

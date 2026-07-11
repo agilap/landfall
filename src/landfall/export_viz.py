@@ -44,6 +44,14 @@ class ScenarioNotFoundError(ValueError):
     """Raised when a scenario-hash argument doesn't resolve to exactly one cache file."""
 
 
+class ExportIntegrityError(RuntimeError):
+    """A provenance or grid-consistency check failed during export.
+
+    A real exception, not an `assert` -- these checks are the module's fail-loud
+    guarantee (CLAUDE.md) and must survive `python -O`, which strips asserts.
+    """
+
+
 def _git_describe() -> str:
     result = subprocess.run(
         ["git", "describe", "--tags", "--always"],
@@ -67,7 +75,10 @@ def find_cache_by_scenario_hash(scenario_hash: str) -> Path:
             matches.append(path)
 
     if not matches:
-        available = sorted(json.loads(p.read_text())["scenario_hash"] for p in CACHE_DIR.glob("*.json"))
+        # .get(): a legacy/malformed cache without the key should be skipped in this
+        # error-message listing, not turn the refusal into a KeyError.
+        embedded = (json.loads(p.read_text()).get("scenario_hash") for p in CACHE_DIR.glob("*.json"))
+        available = sorted(h for h in embedded if h is not None)
         raise ScenarioNotFoundError(
             f"No cached scenario found with scenario_hash={scenario_hash!r}. "
             f"Available scenario hashes ({len(available)}): {available}"
@@ -146,10 +157,11 @@ def _write_wind(bundle_dir: Path, wind, bounds: tuple[float, float, float, float
     lats = wind.centroids.lat
     lons = wind.centroids.lon
     intensity = wind.intensity[0].toarray().flatten()
-    assert lats.size == rows * cols, (
-        f"centroid count {lats.size} != rows*cols {rows}*{cols} -- ROI bounds or resolution "
-        f"assumption is wrong, do not silently reshape a mismatched array"
-    )
+    if lats.size != rows * cols:
+        raise ExportIntegrityError(
+            f"centroid count {lats.size} != rows*cols {rows}*{cols} -- ROI bounds or resolution "
+            f"assumption is wrong, do not silently reshape a mismatched array"
+        )
 
     # Grid position is computed from each centroid's actual lat/lon, not trusted from
     # flatten order -- confirmed empirically to already be row-major (north-to-south,
@@ -157,8 +169,11 @@ def _write_wind(bundle_dir: Path, wind, bounds: tuple[float, float, float, float
     # correct by construction rather than by an unstated assumption about internal ordering.
     row_idx = np.round((lat_max - lats) / ARCSEC_150_IN_DEG).astype(int)
     col_idx = np.round((lons - lon_min) / ARCSEC_150_IN_DEG).astype(int)
-    assert row_idx.min() >= 0 and row_idx.max() < rows
-    assert col_idx.min() >= 0 and col_idx.max() < cols
+    if row_idx.min() < 0 or row_idx.max() >= rows or col_idx.min() < 0 or col_idx.max() >= cols:
+        raise ExportIntegrityError(
+            f"centroid falls outside the {rows}x{cols} grid (rows {row_idx.min()}..{row_idx.max()}, "
+            f"cols {col_idx.min()}..{col_idx.max()}) -- centroid coordinates disagree with ROI bounds"
+        )
 
     grid = np.zeros((rows, cols))
     grid[row_idx, col_idx] = intensity
@@ -251,11 +266,12 @@ def export_scenario(scenario_hash: str, out_dir: Path = VIZ_DATA_DIR) -> Path:
     storm_config = STORMS[scenario.storm_key]
 
     recomputed_key = _cache_key(scenario, storm_config)
-    assert cache_path.stem == recomputed_key, (
-        f"cache file {cache_path.name} does not match its own scenario+calibration+ROI "
-        f"fingerprint (recomputed: {recomputed_key}) -- refusing to export a bundle whose "
-        f"provenance chain doesn't check out"
-    )
+    if cache_path.stem != recomputed_key:
+        raise ExportIntegrityError(
+            f"cache file {cache_path.name} does not match its own scenario+calibration+ROI "
+            f"fingerprint (recomputed: {recomputed_key}) -- refusing to export a bundle whose "
+            f"provenance chain doesn't check out"
+        )
 
     bundle_dir = out_dir / scenario_hash
     bundle_dir.mkdir(parents=True, exist_ok=True)

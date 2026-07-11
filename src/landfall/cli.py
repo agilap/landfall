@@ -95,10 +95,13 @@ def cmd_export_viz(args: argparse.Namespace) -> None:
         else:
             if not args.scenario_hash:
                 print("Refused: scenario-hash is required unless --all-baselines is given")
-                return
+                raise SystemExit(1)
             print(f"Exported {export_scenario(args.scenario_hash)}")
     except ScenarioNotFoundError as e:
+        # Unlike the interactive commands above, a refused export must exit non-zero:
+        # this command feeds the viz deploy pipeline, and CI must not ship on a refusal.
         print(f"Refused: {e}")
+        raise SystemExit(1)
 
 
 def cmd_ask(args: argparse.Namespace) -> None:
