@@ -6,6 +6,7 @@ interface Props {
   windUnits: string;
   columnScaleLabel: string;
   zeroDamageCount: number;
+  animated: boolean;
 }
 
 // Build a CSS gradient matching the wind color ramp so the legend is faithful
@@ -27,6 +28,7 @@ export default function Legend({
   windUnits,
   columnScaleLabel,
   zeroDamageCount,
+  animated,
 }: Props) {
   const mid = (windDomainMin + windDomainMax) / 2;
   return (
@@ -38,6 +40,12 @@ export default function Legend({
         <span>{mid.toFixed(0)}</span>
         <span>{windDomainMax.toFixed(0)}</span>
       </div>
+      {animated && (
+        <div className="scale-note">
+          Color scale spans the storm's full range and is fixed across the animation —
+          a given color means the same wind speed in every frame.
+        </div>
+      )}
       <div className="scale-note">
         Grid drawn at native 150″ (0.0417°) resolution — one texel per model cell,
         no smoothing. Cells below {windDomainMin.toFixed(0)} {windUnits} are transparent;

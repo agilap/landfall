@@ -12,8 +12,9 @@ export async function loadManifest(): Promise<ManifestEntry[]> {
   return getJSON<ManifestEntry[]>(`${DATA_ROOT}/manifest.json`);
 }
 
-// Load the 5 JSON files of one committed bundle. `path` comes from the manifest
-// (e.g. "data/289d30ecbb27bc03") and is relative to the app base.
+// Load one committed bundle. The 5 Tier-1 files always load; the 2 replay files
+// (timeseries.json, wind/frames.json) load only when meta.timeseries.available, so
+// Tier-1-only bundles still render. `path` comes from the manifest.
 export async function loadBundle(entry: ManifestEntry): Promise<Bundle> {
   const base = entry.path;
   const [meta, track, wind, damage, boundaries] = await Promise.all([
@@ -23,5 +24,15 @@ export async function loadBundle(entry: ManifestEntry): Promise<Bundle> {
     getJSON<Bundle['damage']>(`${base}/damage.json`),
     getJSON<Bundle['boundaries']>(`${base}/boundaries.json`),
   ]);
-  return { meta, track, wind, damage, boundaries };
+
+  let timeseries: Bundle['timeseries'] = null;
+  let windFrames: Bundle['windFrames'] = null;
+  if (meta.timeseries?.available) {
+    [timeseries, windFrames] = await Promise.all([
+      getJSON<NonNullable<Bundle['timeseries']>>(`${base}/timeseries.json`),
+      getJSON<NonNullable<Bundle['windFrames']>>(`${base}/wind/frames.json`),
+    ]);
+  }
+
+  return { meta, track, wind, damage, boundaries, timeseries, windFrames };
 }

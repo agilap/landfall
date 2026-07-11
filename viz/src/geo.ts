@@ -1,4 +1,4 @@
-import type { Boundaries, Damage, DamageColumn } from './types';
+import type { Boundaries, Damage, DamageColumn, MuniDamage } from './types';
 
 // Shoelace area + centroid of a single ring (assumed closed or not; handles both).
 // Returns null for degenerate rings (zero area) so callers can fall back.
@@ -56,10 +56,16 @@ function featureCentroid(
 const key = (province: string, municipality: string) =>
   `${province.trim().toLowerCase()}||${municipality.trim().toLowerCase()}`;
 
-// Join municipality polygons (for centroids) to damage_by_municipality by
-// (province, municipality) — the same name key the engine uses. Only municipalities
-// present in the damage table produce a column; unmatched polygons are dropped.
-export function buildDamageColumns(boundaries: Boundaries, damage: Damage): DamageColumn[] {
+// The expensive part of the join — polygon centroids and the affected-population
+// lookup — precomputed ONCE per bundle. During replay, columns for each frame come
+// from mapping that frame's damage list through this index (columnsFromDamage), so
+// centroids are never recomputed per frame.
+export interface CentroidIndex {
+  centroids: Map<string, [number, number]>;
+  popByKey: Map<string, number>;
+}
+
+export function buildCentroidIndex(boundaries: Boundaries, damage: Damage): CentroidIndex {
   const centroids = new Map<string, [number, number]>();
   for (const f of boundaries.features) {
     centroids.set(
@@ -71,21 +77,38 @@ export function buildDamageColumns(boundaries: Boundaries, damage: Damage): Dama
   for (const p of damage.affected_population_by_municipality) {
     popByKey.set(key(p.province, p.municipality), p.affected_population);
   }
+  return { centroids, popByKey };
+}
 
+// Map a damage-by-municipality list (final or a frame's cumulative snapshot) to
+// renderable columns via a precomputed index. Same key convention and $0/unmatched
+// drop rules as the static path — a $0 (or not-yet-damaged) municipality yields no
+// column, so during playback columns appear/grow as cumulative damage crosses zero.
+export function columnsFromDamage(
+  index: CentroidIndex,
+  damageByMunicipality: MuniDamage[],
+): DamageColumn[] {
   const columns: DamageColumn[] = [];
-  for (const d of damage.damage_by_municipality) {
+  for (const d of damageByMunicipality) {
     if (d.damage_usd <= 0) continue; // $0 modeled damage — no column (a flat disk
     // at ground level says nothing; the footer/tooltip totals are unaffected)
     const k = key(d.province, d.municipality);
-    const pos = centroids.get(k);
+    const pos = index.centroids.get(k);
     if (!pos) continue; // no polygon to place it — skip rather than invent a location
     columns.push({
       position: pos,
       province: d.province,
       municipality: d.municipality,
       damage_usd: d.damage_usd,
-      affected_population: popByKey.get(k) ?? null,
+      affected_population: index.popByKey.get(k) ?? null,
     });
   }
   return columns;
+}
+
+// Join municipality polygons (for centroids) to damage_by_municipality by
+// (province, municipality) — the same name key the engine uses. Only municipalities
+// present in the damage table produce a column; unmatched polygons are dropped.
+export function buildDamageColumns(boundaries: Boundaries, damage: Damage): DamageColumn[] {
+  return columnsFromDamage(buildCentroidIndex(boundaries, damage), damage.damage_by_municipality);
 }

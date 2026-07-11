@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 import DeckGL from '@deck.gl/react';
 import { TerrainLayer } from '@deck.gl/geo-layers';
-import { BitmapLayer, ColumnLayer, PathLayer } from '@deck.gl/layers';
+import { BitmapLayer, ColumnLayer, PathLayer, ScatterplotLayer } from '@deck.gl/layers';
 import { _TerrainExtension as TerrainExtension } from '@deck.gl/extensions';
 import type { TerrainExtensionProps } from '@deck.gl/extensions';
-import type { PickingInfo } from '@deck.gl/core';
+import type { Layer, PickingInfo } from '@deck.gl/core';
 import type { Bundle, DamageColumn } from '../types';
 import type { WindRaster } from '../wind';
 import type { HoverInfo } from './Tooltip';
@@ -33,14 +33,32 @@ function columnHeight(damageUsd: number): number {
   return Math.max(0, Math.log10(damageUsd) - LOG_FLOOR) * METERS_PER_DECADE;
 }
 
+// Current storm position during replay: snapped to a frame's reported track point
+// (no interpolation) and sized by that frame's reported max wind.
+export interface TrackMarker {
+  lon: number;
+  lat: number;
+  vmax_kn: number;
+}
+
 interface Props {
   bundle: Bundle;
   columns: DamageColumn[];
   windRaster: WindRaster;
   onHover: (info: HoverInfo | null) => void;
+  // Replay overlays — null in Tier-1 static rendering.
+  traveledPath: [number, number][] | null;
+  marker: TrackMarker | null;
 }
 
-export default function Scene3D({ bundle, columns, windRaster, onHover }: Props) {
+export default function Scene3D({
+  bundle,
+  columns,
+  windRaster,
+  onHover,
+  traveledPath,
+  marker,
+}: Props) {
   const hash = bundle.meta.scenario_hash;
 
   const initialViewState = useMemo(() => {
@@ -59,7 +77,7 @@ export default function Scene3D({ bundle, columns, windRaster, onHover }: Props)
     [bundle.track],
   );
 
-  const layers = [
+  const layers: Layer[] = [
     new TerrainLayer({
       id: `terrain-${hash}`,
       elevationData: TERRAIN_URL,
@@ -126,6 +144,43 @@ export default function Scene3D({ bundle, columns, windRaster, onHover }: Props)
       jointRounded: true,
     }),
   ];
+
+  // Replay overlays: the "traveled so far" segment (brighter, thicker) over the dim
+  // full track, and a marker snapped to the current frame's exact reported position
+  // (sized by its reported max wind — no interpolated in-between point).
+  if (traveledPath && traveledPath.length >= 2) {
+    layers.push(
+      new PathLayer<{ path: [number, number][] }>({
+        id: `track-traveled-${hash}`,
+        data: [{ path: traveledPath }],
+        getPath: (d) => d.path,
+        getColor: [255, 255, 255],
+        getWidth: 5,
+        widthUnits: 'pixels',
+        widthMinPixels: 3,
+        capRounded: true,
+        jointRounded: true,
+      }),
+    );
+  }
+  if (marker) {
+    layers.push(
+      new ScatterplotLayer<TrackMarker>({
+        id: `track-marker-${hash}`,
+        data: [marker],
+        getPosition: (d) => [d.lon, d.lat],
+        // Radius grows with reported max wind — bigger dot = stronger core.
+        getRadius: (d) => 4 + d.vmax_kn / 8,
+        radiusUnits: 'pixels',
+        radiusMinPixels: 4,
+        getFillColor: [255, 230, 120, 235],
+        stroked: true,
+        getLineColor: [40, 20, 0, 255],
+        lineWidthUnits: 'pixels',
+        getLineWidth: 1.5,
+      }),
+    );
+  }
 
   return (
     <div id="deck-root">

@@ -1,4 +1,4 @@
-import type { WindSwath } from './types';
+import type { WindSwath, WindFrames } from './types';
 
 // Sequential color stops for wind magnitude, normalized [0,1] over the swath's
 // own value range. ColorBrewer YlOrRd — a single perceptually-ordered warm
@@ -55,29 +55,41 @@ function windAlpha(t: number): number {
   return Math.round(ALPHA_MIN + c * (ALPHA_MAX - ALPHA_MIN));
 }
 
-// Rasterize the native-resolution grid to a canvas one texel per grid cell.
-// No interpolation here; the BitmapLayer must also use nearest-neighbour
-// sampling (see Scene3D) so cells stay crisp — honest rendering per PRD §4.3.
-export function rasterizeWind(swath: WindSwath): WindRaster {
-  const [rows, cols] = swath.shape;
-  let domainMax = 0;
-  for (const row of swath.values) {
-    for (const v of row) if (v > domainMax) domainMax = v;
+// Peak wind (m/s) over a grid — the max-swath domain that anchors the color scale.
+function gridMax(values: number[][]): number {
+  let m = 0;
+  for (const row of values) {
+    for (const v of row) if (v > m) m = v;
   }
-  const domainMin = MIN_VISIBLE_MS;
+  return m;
+}
 
+// Rasterize a native-resolution grid to a canvas, one texel per grid cell, coloring
+// against an EXPLICIT [domainMin, domainMax]. No interpolation; the BitmapLayer must
+// also use nearest-neighbour sampling (see Scene3D) so cells stay crisp (PRD §4.3).
+// Passing the domain in (rather than deriving it per grid) is what keeps an animation
+// honest: every frame is colored against the storm's full max-swath range, so a given
+// color means the same wind speed in every frame — no per-frame renormalization.
+function rasterizeGrid(
+  values: number[][],
+  rows: number,
+  cols: number,
+  bounds: [number, number, number, number],
+  domainMin: number,
+  domainMax: number,
+): WindRaster {
   const canvas = document.createElement('canvas');
   canvas.width = cols;
   canvas.height = rows;
   const ctx = canvas.getContext('2d')!;
   const img = ctx.createImageData(cols, rows);
 
-  // swath row 0 is the NORTH edge; canvas row 0 is the TOP — same orientation,
+  // grid row 0 is the NORTH edge; canvas row 0 is the TOP — same orientation,
   // so no vertical flip is needed. col 0 is the WEST edge = canvas left. Good.
   const span = Math.max(domainMax - domainMin, 1e-6);
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
-      const v = swath.values[r][c];
+      const v = values[r][c];
       const idx = (r * cols + c) * 4;
       if (v < MIN_VISIBLE_MS) {
         img.data[idx + 3] = 0; // transparent
@@ -93,11 +105,26 @@ export function rasterizeWind(swath: WindSwath): WindRaster {
   }
   ctx.putImageData(img, 0, 0);
 
-  const [lonMin, latMin, lonMax, latMax] = swath.bounds;
-  return {
-    canvas,
-    bounds: [lonMin, latMin, lonMax, latMax],
-    domainMin,
-    domainMax,
-  };
+  const [lonMin, latMin, lonMax, latMax] = bounds;
+  return { canvas, bounds: [lonMin, latMin, lonMax, latMax], domainMin, domainMax };
+}
+
+// Static max-swath raster. Its domainMax (the swath peak) is the fixed color-scale
+// anchor for the whole bundle — the Legend reads it, and the per-frame rasters below
+// reuse it so their colors never rescale as you scrub.
+export function rasterizeWind(swath: WindSwath): WindRaster {
+  const [rows, cols] = swath.shape;
+  return rasterizeGrid(swath.values, rows, cols, swath.bounds, MIN_VISIBLE_MS, gridMax(swath.values));
+}
+
+// One raster per replay frame, ALL colored against the same fixed domain
+// [MIN_VISIBLE_MS, domainMax] where domainMax is the bundle's max-swath peak (pass in
+// rasterizeWind(...).domainMax). Precomputed once at load; playback just swaps which
+// canvas the BitmapLayer points at — no re-rasterization per frame, no per-frame
+// rescaling. The frames share one bounds/shape, so those come from the top level.
+export function rasterizeWindFrames(windFrames: WindFrames, domainMax: number): WindRaster[] {
+  const [rows, cols] = windFrames.shape;
+  return windFrames.frames.map((f) =>
+    rasterizeGrid(f.values, rows, cols, windFrames.bounds, MIN_VISIBLE_MS, domainMax),
+  );
 }
