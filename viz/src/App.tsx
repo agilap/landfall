@@ -59,6 +59,17 @@ export default function App() {
     [bundle],
   );
 
+  // Municipalities the engine modeled at $0 damage — filtered out of the columns
+  // (buildDamageColumns) since a flat disk conveys nothing; surfaced honestly in
+  // the legend so their absence isn't mistaken for missing data.
+  const zeroDamageCount = useMemo(
+    () =>
+      bundle
+        ? bundle.damage.damage_by_municipality.filter((d) => d.damage_usd <= 0).length
+        : 0,
+    [bundle],
+  );
+
   const onSelect = (entry: ManifestEntry) => setSelectedHash(entry.scenario_hash);
 
   return (
@@ -86,6 +97,7 @@ export default function App() {
           windDomainMax={windRaster.domainMax}
           windUnits={bundle.wind.units}
           columnScaleLabel={COLUMN_SCALE_LABEL}
+          zeroDamageCount={zeroDamageCount}
         />
       )}
 

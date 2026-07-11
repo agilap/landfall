@@ -1,16 +1,18 @@
 import type { WindSwath } from './types';
 
 // Sequential color stops for wind magnitude, normalized [0,1] over the swath's
-// own value range. Multi-hue so magnitude differences read clearly; the legend
-// states the actual m/s span so no false precision is implied.
+// own value range. ColorBrewer YlOrRd — a single perceptually-ordered warm
+// progression (pale yellow -> deep red) so "hotter = stronger wind" reads without
+// implying a meaningful midpoint (wind speed has none). The legend states the
+// actual m/s span so no false precision is implied.
 const STOPS: Array<{ t: number; rgb: [number, number, number] }> = [
-  { t: 0.0, rgb: [69, 117, 180] }, // blue — weak
-  { t: 0.25, rgb: [116, 173, 209] },
-  { t: 0.45, rgb: [171, 217, 233] },
-  { t: 0.6, rgb: [254, 224, 144] }, // yellow
-  { t: 0.75, rgb: [253, 174, 97] }, // orange
-  { t: 0.88, rgb: [244, 109, 67] },
-  { t: 1.0, rgb: [165, 0, 38] }, // deep red — strongest
+  { t: 0.0, rgb: [255, 255, 204] }, // pale yellow — weakest shown
+  { t: 0.16, rgb: [255, 237, 160] },
+  { t: 0.33, rgb: [254, 217, 118] },
+  { t: 0.5, rgb: [254, 178, 76] }, // orange
+  { t: 0.66, rgb: [253, 141, 60] },
+  { t: 0.83, rgb: [252, 78, 42] },
+  { t: 1.0, rgb: [189, 0, 38] }, // deep red — strongest
 ];
 
 export function windColor(t: number): [number, number, number] {
@@ -39,8 +41,19 @@ export interface WindRaster {
 }
 
 // Cells below this (m/s) render fully transparent so calm areas show terrain,
-// rather than painting a blue wash implying wind where the model has ~none.
+// rather than painting a wash implying wind where the model has ~none.
 const MIN_VISIBLE_MS = 17.0; // ~tropical-storm force; below this we don't color
+
+// Alpha ramps with magnitude so weak-but-shown cells stay faint (terrain, basemap,
+// and place labels read through), strengthening to near-opaque at the peak. This
+// only changes how visible a cell is, never whether it exists — every cell >= the
+// 17 m/s cutoff is still drawn. t is the same normalized magnitude used for hue.
+const ALPHA_MIN = 70; // near MIN_VISIBLE_MS — barely-there
+const ALPHA_MAX = 230; // at the swath peak — near-opaque
+function windAlpha(t: number): number {
+  const c = Math.max(0, Math.min(1, t));
+  return Math.round(ALPHA_MIN + c * (ALPHA_MAX - ALPHA_MIN));
+}
 
 // Rasterize the native-resolution grid to a canvas one texel per grid cell.
 // No interpolation here; the BitmapLayer must also use nearest-neighbour
@@ -75,7 +88,7 @@ export function rasterizeWind(swath: WindSwath): WindRaster {
       img.data[idx] = red;
       img.data[idx + 1] = green;
       img.data[idx + 2] = blue;
-      img.data[idx + 3] = 200; // semi-opaque so terrain relief still reads
+      img.data[idx + 3] = windAlpha(t); // faint where weak, near-opaque at peak
     }
   }
   ctx.putImageData(img, 0, 0);

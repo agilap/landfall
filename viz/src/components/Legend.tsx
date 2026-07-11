@@ -5,6 +5,7 @@ interface Props {
   windDomainMax: number;
   windUnits: string;
   columnScaleLabel: string;
+  zeroDamageCount: number;
 }
 
 // Build a CSS gradient matching the wind color ramp so the legend is faithful
@@ -25,6 +26,7 @@ export default function Legend({
   windDomainMax,
   windUnits,
   columnScaleLabel,
+  zeroDamageCount,
 }: Props) {
   const mid = (windDomainMin + windDomainMax) / 2;
   return (
@@ -38,11 +40,20 @@ export default function Legend({
       </div>
       <div className="scale-note">
         Grid drawn at native 150″ (0.0417°) resolution — one texel per model cell,
-        no smoothing. Cells below {windDomainMin.toFixed(0)} {windUnits} are transparent.
+        no smoothing. Cells below {windDomainMin.toFixed(0)} {windUnits} are transparent;
+        weaker cells above it are drawn fainter (opacity rises with wind speed), so the
+        map reads through low-wind areas. All cells at or above the cutoff are still shown.
       </div>
       <div className="scale-note">
         <span className="swatch" />
         Damage columns: {columnScaleLabel}
+        {zeroDamageCount > 0 && (
+          <>
+            {' '}
+            ({zeroDamageCount} {zeroDamageCount === 1 ? 'municipality' : 'municipalities'} with
+            $0 modeled damage not shown.)
+          </>
+        )}
       </div>
       <div className="scale-note">
         <span className="swatch track-swatch" />

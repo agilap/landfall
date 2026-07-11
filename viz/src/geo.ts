@@ -74,6 +74,8 @@ export function buildDamageColumns(boundaries: Boundaries, damage: Damage): Dama
 
   const columns: DamageColumn[] = [];
   for (const d of damage.damage_by_municipality) {
+    if (d.damage_usd <= 0) continue; // $0 modeled damage — no column (a flat disk
+    // at ground level says nothing; the footer/tooltip totals are unaffected)
     const k = key(d.province, d.municipality);
     const pos = centroids.get(k);
     if (!pos) continue; // no polygon to place it — skip rather than invent a location

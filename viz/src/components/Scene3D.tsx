@@ -2,6 +2,8 @@ import { useMemo } from 'react';
 import DeckGL from '@deck.gl/react';
 import { TerrainLayer } from '@deck.gl/geo-layers';
 import { BitmapLayer, ColumnLayer, PathLayer } from '@deck.gl/layers';
+import { _TerrainExtension as TerrainExtension } from '@deck.gl/extensions';
+import type { TerrainExtensionProps } from '@deck.gl/extensions';
 import type { PickingInfo } from '@deck.gl/core';
 import type { Bundle, DamageColumn } from '../types';
 import type { WindRaster } from '../wind';
@@ -65,6 +67,11 @@ export default function Scene3D({ bundle, columns, windRaster, onHover }: Props)
       elevationDecoder: TERRARIUM_DECODER,
       minZoom: 0,
       maxZoom: 12,
+      // 'terrain+draw': render the terrain mesh normally AND expose it as the
+      // draping/height target the TerrainExtension on the wind and damage layers
+      // reads from. Propagates to the mesh sublayer (composite-layer forwards
+      // `operation`). Without this the extension finds no terrain and no-ops.
+      operation: 'terrain+draw',
     }),
     new BitmapLayer({
       id: `wind-${hash}`,
@@ -77,6 +84,10 @@ export default function Scene3D({ bundle, columns, windRaster, onHover }: Props)
         minFilter: 'nearest',
         magFilter: 'nearest',
       },
+      // Drape the flat raster onto the terrain surface instead of leaving it at
+      // z=0 slicing through relief. Placement only — no value/cell change.
+      extensions: [new TerrainExtension()],
+      terrainDrawMode: 'drape',
     }),
     new ColumnLayer<DamageColumn>({
       id: `damage-columns-${hash}`,
@@ -89,6 +100,12 @@ export default function Scene3D({ bundle, columns, windRaster, onHover }: Props)
       getPosition: (d) => d.position,
       getElevation: (d) => columnHeight(d.damage_usd),
       getFillColor: [255, 170, 40, 220],
+      // Offset each column's base to the terrain height at its anchor so it rises
+      // from the ground, not sea level. Heights (columnHeight) are unchanged.
+      // Spread the typed extension prop so it isn't rejected as an unknown key on
+      // ColumnLayerProps (the extension consumes it at runtime).
+      extensions: [new TerrainExtension()],
+      ...({ terrainDrawMode: 'offset' } as TerrainExtensionProps),
       onHover: (info: PickingInfo<DamageColumn>) => {
         if (info.object) {
           onHover({ column: info.object, x: info.x, y: info.y });
