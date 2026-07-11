@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0b0f14;
+  color: #e6edf3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+#deck-root {
+  position: absolute;
+  inset: 0;
+}
+
+.panel {
+  position: absolute;
+  background: rgba(16, 22, 30, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  padding: 12px 14px;
+  z-index: 10;
+}
+
+/* Scenario picker — top left */
+.picker {
+  top: 12px;
+  left: 12px;
+  max-width: 320px;
+}
+.picker h1 {
+  font-size: 14px;
+  margin: 0 0 8px;
+  letter-spacing: 0.02em;
+}
+.picker .storm-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.picker button {
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e6edf3;
+  font-size: 13px;
+  cursor: pointer;
+}
+.picker button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.picker button.active {
+  border-color: #ffaa28;
+  background: rgba(255, 170, 40, 0.16);
+}
+.picker .storm-meta {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #9fb0c0;
+}
+
+/* Legend — top right */
+.legend {
+  top: 12px;
+  right: 12px;
+  width: 240px;
+  font-size: 12px;
+}
+.legend h2 {
+  font-size: 12px;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #9fb0c0;
+}
+.legend .ramp {
+  height: 12px;
+  border-radius: 3px;
+  margin: 4px 0 2px;
+}
+.legend .ramp-labels {
+  display: flex;
+  justify-content: space-between;
+  color: #9fb0c0;
+  font-variant-numeric: tabular-nums;
+}
+.legend .scale-note {
+  margin-top: 10px;
+  color: #cdd9e5;
+  line-height: 1.5;
+}
+.legend .swatch {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  margin-right: 6px;
+  vertical-align: -1px;
+  background: #ffaa28;
+}
+.legend .track-swatch {
+  background: #4de1ff;
+}
+
+/* Tooltip — follows cursor */
+.tooltip {
+  position: absolute;
+  z-index: 20;
+  pointer-events: none;
+  background: rgba(10, 14, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 260px;
+  transform: translate(12px, 12px);
+}
+.tooltip .muni {
+  font-weight: 600;
+  font-size: 13px;
+}
+.tooltip .prov {
+  color: #9fb0c0;
+}
+.tooltip .dmg {
+  color: #ffce7a;
+  font-variant-numeric: tabular-nums;
+}
+.tooltip .prov-hash {
+  margin-top: 4px;
+  color: #7d8ea0;
+  font-size: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Footer — always visible, full width */
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(10, 14, 20, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 7px 14px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #9fb0c0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  align-items: baseline;
+}
+.footer .disclaimer {
+  color: #cdd9e5;
+}
+.footer .hashes {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #7d8ea0;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #9fb0c0;
+  font-size: 14px;
+  z-index: 5;
+}
+.error {
+  color: #ff9b9b;
+}
