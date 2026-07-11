@@ -1,0 +1,29 @@
+{
+  "storm_key": "haiyan",
+  "storm_name": "Haiyan",
+  "ibtracs_sid": "2013306N07162",
+  "ibtracs_name": "HAIYAN",
+  "year": 2013,
+  "scenario": {
+    "storm_key": "haiyan",
+    "track_offset_km": 0.0,
+    "track_bearing_deg": 0.0,
+    "intensity_delta_kn": 0.0
+  },
+  "scenario_hash": "289d30ecbb27bc03",
+  "source_cache_key": "f4c72b646734a686",
+  "calibration_approach": "EDR",
+  "calibration_point_quantile": 0.5,
+  "calibration_range_quantiles": [
+    0.25,
+    0.75
+  ],
+  "hazard_model": "H1980",
+  "units": {
+    "damage": "USD",
+    "wind": "m/s"
+  },
+  "landfall_version": "v1.3-1-g135d2b7",
+  "disclaimer": "Research/preparedness demonstration only; counterfactuals are hypothetical.",
+  "provenance": "impact values copied verbatim from scenario cache f4c72b646734a686; wind grid recomputed deterministically from cached track via wind_field(); boundaries GADM v4.1 GID_2 (PSGC crosswalk: roadmap)"
+}

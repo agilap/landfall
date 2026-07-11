@@ -1,0 +1,1852 @@
+{
+  "total_damage_usd": 81398985.18364987,
+  "total_damage_usd_range": {
+    "low": 5417032.942801741,
+    "high": 456757901.120238
+  },
+  "affected_population": 2926998.063819194,
+  "damage_by_municipality": [
+    {
+      "province": "Catanduanes",
+      "municipality": "Virac",
+      "damage_usd": 44517050.64136398
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Buhi",
+      "damage_usd": 9741383.43612544
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Baras",
+      "damage_usd": 6944990.382671756
+    },
+    {
+      "province": "Albay",
+      "municipality": "Tiwi",
+      "damage_usd": 4990416.24231695
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "San Miguel",
+      "damage_usd": 4637206.582617579
+    },
+    {
+      "province": "Albay",
+      "municipality": "Malinao",
+      "damage_usd": 2010219.07525461
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "San Andres",
+      "damage_usd": 1707999.1931179191
+    },
+    {
+      "province": "Albay",
+      "municipality": "Tabaco City",
+      "damage_usd": 1496936.1955276143
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Sagnay",
+      "damage_usd": 1152699.1776428428
+    },
+    {
+      "province": "Albay",
+      "municipality": "Polangui",
+      "damage_usd": 812499.8341187307
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Tigaon",
+      "damage_usd": 697518.7883825562
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Buhi Lake",
+      "damage_usd": 671665.8658169517
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Iriga City",
+      "damage_usd": 653288.0265560253
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Gigmoto",
+      "damage_usd": 546297.9275058819
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Viga",
+      "damage_usd": 194954.66997243013
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Ocampo",
+      "damage_usd": 96915.29394047557
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Caramoran",
+      "damage_usd": 93170.08238148864
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "San Jose",
+      "damage_usd": 73346.11916854768
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Goa",
+      "damage_usd": 69956.38595568849
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Bato",
+      "damage_usd": 61301.96476159712
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Baao",
+      "damage_usd": 57586.12973185855
+    },
+    {
+      "province": "Albay",
+      "municipality": "Malilipot",
+      "damage_usd": 41306.00140146529
+    },
+    {
+      "province": "Quezon",
+      "municipality": "San Narciso",
+      "damage_usd": 23473.076742179263
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Lagonoy",
+      "damage_usd": 14199.019844764616
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Nabua",
+      "damage_usd": 12172.887579416676
+    },
+    {
+      "province": "Albay",
+      "municipality": "Oas",
+      "damage_usd": 9618.662632414142
+    },
+    {
+      "province": "Albay",
+      "municipality": "Ligao City",
+      "damage_usd": 7976.315930240499
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Libmanan",
+      "damage_usd": 7820.061690555327
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Presentacion",
+      "damage_usd": 4459.253067430021
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Panganiban",
+      "damage_usd": 3939.546854785625
+    },
+    {
+      "province": "Quezon",
+      "municipality": "San Andres",
+      "damage_usd": 1646.5298600600784
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Bato",
+      "damage_usd": 1306.8263017931413
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Pasacao",
+      "damage_usd": 1244.1166217725486
+    },
+    {
+      "province": "Albay",
+      "municipality": "Libon",
+      "damage_usd": 1240.9560177584533
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Mulanay",
+      "damage_usd": 1221.7368925934184
+    },
+    {
+      "province": "Quezon",
+      "municipality": "San Francisco",
+      "damage_usd": 1061.7078621533997
+    },
+    {
+      "province": "Albay",
+      "municipality": "Bacacay",
+      "damage_usd": 860.6239487909353
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Pili",
+      "damage_usd": 694.9229632329773
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Bula",
+      "damage_usd": 590.9472743232153
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Sipocot",
+      "damage_usd": 589.9981859436487
+    },
+    {
+      "province": "Albay",
+      "municipality": "Guinobatan",
+      "damage_usd": 412.6295206081325
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Ragay",
+      "damage_usd": 288.3028132446595
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Lupi",
+      "damage_usd": 253.9631567648165
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Buenavista",
+      "damage_usd": 101.3220742064829
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Bagamanoc",
+      "damage_usd": 96.12360826649955
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Unisan",
+      "damage_usd": 54.45994176565642
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Pitogo",
+      "damage_usd": 30.362510176926982
+    },
+    {
+      "province": "Albay",
+      "municipality": "Santo Domingo",
+      "damage_usd": 8.532508465508474
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Jose Panganiban",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Labo",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Capalonga",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Basud",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Manito",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Daet",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Legazpi City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Naga City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Minalabac",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Milaor",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Magarao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Del Gallego",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Caramoan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Garchitorena",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Gainza",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Canaman",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Camaligan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Santa Elena",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "San Vicente",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Bombon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Balatan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Cabusao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Calabanga",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Paracale",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "San Lorenzo Ruiz",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Mercedes",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Vinzons",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Talisay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Jovellar",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Camalig",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Daraga",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Rapu-Rapu",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Pio Duran",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Arteche",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "San Fernando",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Tinambac",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Siruma",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Pamplona",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Pandan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Marinduque",
+      "municipality": "Torrijos",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Aroroy",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Baleno",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Balud",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Batuan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Cataingan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Cawayan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Claveria",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Dimasalang",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Mandaon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Masbate City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Milagros",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Mobo",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Monreal",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Palanas",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Placer",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "San Fernando",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "San Jacinto",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "San Pascual",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Uson",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Allen",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Bobon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Capul",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Catarman",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Catubig",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Can-Avid",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Dolores",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Jipapad",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Maslog",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Oras",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "San Policarpo",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Marinduque",
+      "municipality": "Santa Cruz",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Mapanas",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Lope de Vega",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Lavezares",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Las Navas",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Lapinig",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Laoang",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Gamay",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Mondragon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Silvino Lobos",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Victoria",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Pambujan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Palapag",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "San Isidro",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "San Jose",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "San Roque",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Rosario",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Gumaca",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Guinayangan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "General Luna",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Catanauan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Calauag",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Alabat",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Lopez",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Jomalig",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Polillo",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Plaridel",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Patnanungan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Macalelon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Quezon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Tagkawayan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Alcantara",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Cajidiocan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Calatrava",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Looc",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Magdiwang",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Odiongan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Romblon",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "San Agustin",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "San Andres",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "San Fernando",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Santa Fe",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Santa Maria",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "Calbayog City",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "Gandara",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "Matuguinao",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "San Jorge",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "San Jose de Buan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "Santa Margarita",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "Tagapul-An",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Barcelona",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Bulan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Bulusan",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Casiguran",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Castilla",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Donsol",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Gubat",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Irosin",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Juban",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Magallanes",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Matnog",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Pilar",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Prieto Diaz",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Santa Magdalena",
+      "damage_usd": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Sorsogon City",
+      "damage_usd": 0.0
+    }
+  ],
+  "affected_population_by_municipality": [
+    {
+      "province": "Albay",
+      "municipality": "Tabaco City",
+      "affected_population": 139166.06889007267
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Iriga City",
+      "affected_population": 114457.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Libmanan",
+      "affected_population": 112994.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Naga City",
+      "affected_population": 103351.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Pili",
+      "affected_population": 99196.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Ligao City",
+      "affected_population": 97251.54971218875
+    },
+    {
+      "province": "Albay",
+      "municipality": "Polangui",
+      "affected_population": 89176.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Nabua",
+      "affected_population": 86490.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Buhi",
+      "affected_population": 81306.0
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Virac",
+      "affected_population": 76520.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Guinobatan",
+      "affected_population": 73769.29326184407
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Bula",
+      "affected_population": 69812.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Daraga",
+      "affected_population": 69777.21621080974
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Sipocot",
+      "affected_population": 68169.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Goa",
+      "affected_population": 66439.22090421205
+    },
+    {
+      "province": "Albay",
+      "municipality": "Bacacay",
+      "affected_population": 63742.00291205496
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Baao",
+      "affected_population": 61493.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Tigaon",
+      "affected_population": 60524.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Ragay",
+      "affected_population": 59770.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Libon",
+      "affected_population": 59460.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Pasacao",
+      "affected_population": 53461.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Ocampo",
+      "affected_population": 51073.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Calabanga",
+      "affected_population": 50715.922689200386
+    },
+    {
+      "province": "Albay",
+      "municipality": "Tiwi",
+      "affected_population": 50555.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Minalabac",
+      "affected_population": 49585.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Lagonoy",
+      "affected_population": 48860.29580228559
+    },
+    {
+      "province": "Albay",
+      "municipality": "Malinao",
+      "affected_population": 47395.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Camalig",
+      "affected_population": 46956.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Oas",
+      "affected_population": 44796.81380697609
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "San Jose",
+      "affected_population": 43973.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Bato",
+      "affected_population": 40899.49294841939
+    },
+    {
+      "province": "Albay",
+      "municipality": "Malilipot",
+      "affected_population": 40857.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Caramoan",
+      "affected_population": 40634.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Pamplona",
+      "affected_population": 39333.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "San Fernando",
+      "affected_population": 38626.0
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "San Andres",
+      "affected_population": 38480.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Sagnay",
+      "affected_population": 36841.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Santo Domingo",
+      "affected_population": 36594.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Lupi",
+      "affected_population": 33897.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Legazpi City",
+      "affected_population": 33393.375474991895
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Canaman",
+      "affected_population": 33013.0
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Caramoran",
+      "affected_population": 32114.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Milaor",
+      "affected_population": 29172.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Del Gallego",
+      "affected_population": 26403.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Camaligan",
+      "affected_population": 25036.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Tinambac",
+      "affected_population": 23650.861875990213
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Presentacion",
+      "affected_population": 22591.0
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Viga",
+      "affected_population": 21486.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Cabusao",
+      "affected_population": 19257.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Garchitorena",
+      "affected_population": 18202.0
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Pandan",
+      "affected_population": 17421.610869470358
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Magarao",
+      "affected_population": 16934.5919335324
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "San Miguel",
+      "affected_population": 13753.549367318385
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Baras",
+      "affected_population": 12481.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Gainza",
+      "affected_population": 11584.0
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Bagamanoc",
+      "affected_population": 10819.0
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Panganiban",
+      "affected_population": 9713.0
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Gigmoto",
+      "affected_population": 8712.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Bombon",
+      "affected_population": 8592.570653749783
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Balatan",
+      "affected_population": 7709.119807848656
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Lopez",
+      "affected_population": 4816.55621391702
+    },
+    {
+      "province": "Albay",
+      "municipality": "Rapu-Rapu",
+      "affected_population": 4633.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Gumaca",
+      "affected_population": 4156.716695050418
+    },
+    {
+      "province": "Catanduanes",
+      "municipality": "Bato",
+      "affected_population": 3306.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Catanauan",
+      "affected_population": 2439.471865261339
+    },
+    {
+      "province": "Quezon",
+      "municipality": "San Francisco",
+      "affected_population": 1975.5518428874273
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Calauag",
+      "affected_population": 1684.2783566023666
+    },
+    {
+      "province": "Quezon",
+      "municipality": "San Narciso",
+      "affected_population": 1261.4207754126303
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Tagkawayan",
+      "affected_population": 907.8480505081227
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Mulanay",
+      "affected_population": 883.3999400230194
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Buenavista",
+      "affected_population": 669.6762318627387
+    },
+    {
+      "province": "Marinduque",
+      "municipality": "Santa Cruz",
+      "affected_population": 493.28955837842193
+    },
+    {
+      "province": "Quezon",
+      "municipality": "General Luna",
+      "affected_population": 461.1913387414488
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Guinayangan",
+      "affected_population": 460.3518863219346
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Plaridel",
+      "affected_population": 422.25028663159617
+    },
+    {
+      "province": "Quezon",
+      "municipality": "San Andres",
+      "affected_population": 410.82622748851486
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Macalelon",
+      "affected_population": 352.1474556467576
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Pitogo",
+      "affected_population": 229.51169913554742
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Unisan",
+      "affected_population": 137.81551700062522
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Basud",
+      "affected_population": 121.01779100583005
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "San Lorenzo Ruiz",
+      "affected_population": 78.07304298809751
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Alabat",
+      "affected_population": 49.655698571031245
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Quezon",
+      "affected_population": 47.00606815199412
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Mercedes",
+      "affected_population": 16.34942489904007
+    },
+    {
+      "province": "Albay",
+      "municipality": "Pio Duran",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Capalonga",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Daet",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Jose Panganiban",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Manito",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Paracale",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Talisay",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "San Vicente",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Santa Elena",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Bato Lake",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Vinzons",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Buhi Lake",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Norte",
+      "municipality": "Labo",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Jovellar",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Albay",
+      "municipality": "Bato Lake",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Dimasalang",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Mandaon",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Mobo",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Monreal",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Masbate City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Milagros",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Marinduque",
+      "municipality": "Torrijos",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Aroroy",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Baleno",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Balud",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Batuan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Cataingan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Cawayan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Claveria",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Camarines Sur",
+      "municipality": "Siruma",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Arteche",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Dolores",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Can-Avid",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Jipapad",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Maslog",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "Oras",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Eastern Samar",
+      "municipality": "San Policarpo",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Mapanas",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Lope de Vega",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Lavezares",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Las Navas",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Lapinig",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Laoang",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Gamay",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Catubig",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Catarman",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Capul",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Bobon",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Allen",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Uson",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "San Pascual",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "San Jacinto",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "San Fernando",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Placer",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Masbate",
+      "municipality": "Palanas",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Victoria",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Rosario",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "San Isidro",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "San Jose",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "San Roque",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Silvino Lobos",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Mondragon",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Palapag",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Northern Samar",
+      "municipality": "Pambujan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Jomalig",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Polillo",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Quezon",
+      "municipality": "Patnanungan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Alcantara",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Cajidiocan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Calatrava",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Looc",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Magdiwang",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Odiongan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Romblon",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "San Agustin",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "San Andres",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "San Fernando",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Santa Fe",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Romblon",
+      "municipality": "Santa Maria",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "Calbayog City",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "Gandara",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "Matuguinao",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "San Jorge",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "San Jose de Buan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "Santa Margarita",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Samar",
+      "municipality": "Tagapul-An",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Barcelona",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Bulan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Bulusan",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Casiguran",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Castilla",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Donsol",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Gubat",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Irosin",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Juban",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Magallanes",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Matnog",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Pilar",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Prieto Diaz",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Santa Magdalena",
+      "affected_population": 0.0
+    },
+    {
+      "province": "Sorsogon",
+      "municipality": "Sorsogon City",
+      "affected_population": 0.0
+    }
+  ]
+}

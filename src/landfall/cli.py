@@ -5,6 +5,7 @@ rules: this is argparse dispatch to functions that already exist elsewhere.
 
 import argparse
 
+from landfall.export_viz import ScenarioNotFoundError, export_all_baselines, export_scenario
 from landfall.impact.engine import ROICoverageError, run, run_baseline
 from landfall.llm.compiler import compile_scenario
 from landfall.llm.rag_answer import answer_verified
@@ -86,6 +87,20 @@ def cmd_compile(args: argparse.Namespace) -> None:
         print(result.config.model_dump())
 
 
+def cmd_export_viz(args: argparse.Namespace) -> None:
+    try:
+        if args.all_baselines:
+            for bundle_dir in export_all_baselines():
+                print(f"Exported {bundle_dir}")
+        else:
+            if not args.scenario_hash:
+                print("Refused: scenario-hash is required unless --all-baselines is given")
+                return
+            print(f"Exported {export_scenario(args.scenario_hash)}")
+    except ScenarioNotFoundError as e:
+        print(f"Refused: {e}")
+
+
 def cmd_ask(args: argparse.Namespace) -> None:
     text, results, _raw_report, final_report = answer_verified(args.question, storm_key=args.storm)
     print(text)
@@ -115,6 +130,11 @@ def main() -> None:
     p_ask.add_argument("question")
     p_ask.add_argument("--storm", choices=sorted(STORMS), default=None)
     p_ask.set_defaults(func=cmd_ask)
+
+    p_export_viz = subparsers.add_parser("export-viz", help="Export a scenario cache bundle for Landfall Viz")
+    p_export_viz.add_argument("scenario_hash", nargs="?", default=None)
+    p_export_viz.add_argument("--all-baselines", action="store_true")
+    p_export_viz.set_defaults(func=cmd_export_viz)
 
     args = parser.parse_args()
     args.func(args)

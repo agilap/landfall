@@ -1,0 +1,30 @@
+[
+  {
+    "scenario_hash": "289d30ecbb27bc03",
+    "storm_key": "haiyan",
+    "label": "Haiyan (2013) -- historical baseline",
+    "is_baseline": true,
+    "path": "data/289d30ecbb27bc03"
+  },
+  {
+    "scenario_hash": "f058bdd5ba3dae77",
+    "storm_key": "mangkhut",
+    "label": "Mangkhut (2018) -- historical baseline",
+    "is_baseline": true,
+    "path": "data/f058bdd5ba3dae77"
+  },
+  {
+    "scenario_hash": "76c5b86bf37d2429",
+    "storm_key": "odette",
+    "label": "Odette (2021) -- historical baseline",
+    "is_baseline": true,
+    "path": "data/76c5b86bf37d2429"
+  },
+  {
+    "scenario_hash": "d8dc995da27f883e",
+    "storm_key": "rolly",
+    "label": "Rolly (2020) -- historical baseline",
+    "is_baseline": true,
+    "path": "data/d8dc995da27f883e"
+  }
+]
